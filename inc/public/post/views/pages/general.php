@@ -49,13 +49,11 @@
 
 	<?php _e($block_schedule, false) ?>
 	<div>
-		<form action="">
 			<div class="form-group">
 				<input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
 			</div>
 
 			<button class="btn" id="idea" onclick="idea()"><?php _e("Get Post Idea") ?></button>
-		</form>
 		<div class="caption m-t-15">
 			<textarea id="ideagenerator" disabled="true" class="form-control post-message"></textarea>
 			<div class="caption-toolbar">
