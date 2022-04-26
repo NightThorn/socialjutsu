@@ -85,7 +85,7 @@ class post extends MY_Controller
 		$topic = $_POST['topic'];
 
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-		$authorization = "Authorization: Bearer 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";
+		$authorization = "Authorization: Bearer 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";
 
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
