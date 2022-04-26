@@ -85,6 +85,7 @@ class post extends MY_Controller
 		$topic = $_POST['topic'];
 
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
+$key = getenv('OPENAPI_KEY');
 
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
@@ -102,7 +103,7 @@ class post extends MY_Controller
 		curl_setopt(
 			$curl,
 			CURLOPT_HTTPHEADER,
-			array("Content-type: application/json", OPENAPI_KEY)
+			array("Content-type: application/json", $key)
 		);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
