@@ -1,5 +1,6 @@
 <script>
-	$('#idea').submit(function() {
+	$('#idea').click(function(e) {
+		e.preventDefault();
 		$(this).ajaxSubmit({
 			type: "POST",
 			//set the data type
