@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
 	function idea() {
 		var topic = $("#topic").val();
@@ -49,11 +50,11 @@
 
 	<?php _e($block_schedule, false) ?>
 	<div>
-			<div class="form-group">
-				<input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
-			</div>
+		<div class="form-group">
+			<input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
+		</div>
 
-			<button class="btn" id="idea" onclick="idea()"><?php _e("Get Post Idea") ?></button>
+		<button class="btn" id="idea" onclick="idea()"><?php _e("Get Post Idea") ?></button>
 		<div class="caption m-t-15">
 			<textarea id="ideagenerator" disabled="true" class="form-control post-message"></textarea>
 			<div class="caption-toolbar">
