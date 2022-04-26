@@ -1,28 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script>
-	$("idea").click(function() {
-				var topic = $("#topic").val();
-
-				$.ajax({
-					type: "POST",
-					//set the data type
-					dataType: 'json',
-					data: {
-						topic: $topic
-					},
-					url: 'inc/public/post/controllers/idea.php', // target element(s) to be updated with server response 
-					cache: false,
-					//check this in Firefox browser
-					success: function(response) {
-						console.log(response);
-						document.getElementById("ideagenerator").innerHTML = response;
-
-					},
-					error: onFailRegistered
-				});
-				return false;
-			});
-</script>
 <div class="post post-create">
 
 	<?php _e($block_post_type, false) ?>
@@ -50,11 +25,14 @@
 
 	<?php _e($block_schedule, false) ?>
 	<div>
-		<div class="form-group">
-			<input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
-		</div>
+		<form class="actionLogin" action="<?php _e(get_module_url('topic', $this)) ?>" method="post">
 
-		<button class="btn" id="idea"><?php _e("Get Post Idea") ?></button>
+			<div class="form-group">
+				<input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
+			</div>
+			<button class="btn wimax-btn w-100" type="submit"><?php _e("Get Post Idea") ?></button>
+
+		</form>
 		<div class="caption m-t-15">
 			<textarea id="ideagenerator" disabled="true" class="form-control post-message"></textarea>
 			<div class="caption-toolbar">
