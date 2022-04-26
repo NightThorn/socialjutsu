@@ -81,7 +81,7 @@ class post extends MY_Controller {
 		$topic = $_POST['topic'];
 
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-		$OPENAI_API_KEY = "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";
+		$OPENAI_API_KEY = "qxstRFuGrFtQtZpgYSAzT3BlbkFJWgaeFcoBx2If9HXXuBLx";
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
 			"temperature" => 0.83,
