@@ -26,7 +26,7 @@
       <div class="col-12 col-md-6">
         <div class="welcome_text_area">
           <h2 class="wow fadeInUp" data-wow-delay="0.2s"><?php _e("SocialJutsu™") ?></h2>
-          <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">The Ninja-Level Marketing Software</h3>
+          <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">The Ninja-Level Social Media Marketing Software</h3>
           <!-- <h5 class="wow fadeInUp" data-wow-delay="0.3s"><?php _e("With our service will help you save time and optimize profile management on social networks. Visually Plan, Schedule post and automation on social networks.") ?></h5><a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Start A Free Trial") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
 -->
           <div class="register-form">
