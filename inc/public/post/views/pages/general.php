@@ -31,7 +31,7 @@
 
 		<button class="btn wimax-btn w-100" type="submit"><?php _e("Get Post Idea") ?></button>
 	</form>
-
+	<h3><?php echo $result; ?></h3>
 	<div class="caption m-t-15">
 		<textarea name="topicgenerator" disabled="true" class="form-control post-message" placeholder="<?php _e('Awaiting topic input') ?>"></textarea>
 		<div class="caption-toolbar">
