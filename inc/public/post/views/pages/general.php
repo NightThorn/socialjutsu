@@ -1,12 +1,13 @@
 <script>
-	$('#idea').click(function(e) {
-		e.preventDefault();
-		$(this).ajaxSubmit({
+	function idea() {
+		var topic = $("#topic").val();
+
+		$.ajax({
 			type: "POST",
 			//set the data type
 			dataType: 'json',
 			data: {
-				topic: topic
+				topic: $topic
 			},
 			url: 'inc/public/post/controllers/idea.php', // target element(s) to be updated with server response 
 			cache: false,
@@ -19,7 +20,7 @@
 			error: onFailRegistered
 		});
 		return false;
-	});
+	}
 </script>
 <div class="post post-create">
 
@@ -50,10 +51,10 @@
 	<div>
 		<form action="">
 			<div class="form-group">
-				<input class="form-control" type="text" name="topic" placeholder="<?php _e("Enter a topic") ?>">
+				<input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
 			</div>
 
-			<button class="btn" id="idea" type="submit"><?php _e("Get Post Idea") ?></button>
+			<button class="btn" id="idea" onclick="idea()"><?php _e("Get Post Idea") ?></button>
 		</form>
 		<div class="caption m-t-15">
 			<textarea id="ideagenerator" disabled="true" class="form-control post-message"></textarea>
