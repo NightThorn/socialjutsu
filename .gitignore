@@ -20,3 +20,4 @@ application/logs/*
 **/database/
 inc/plugins/**
 **/plugins/
+.env

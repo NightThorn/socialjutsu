@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+define('OPENAPI_KEY', 'Authorization: Bearer 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');
 
 /*
 |--------------------------------------------------------------------------
