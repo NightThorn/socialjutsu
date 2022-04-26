@@ -1,19 +1,21 @@
 <?php
-class post extends MY_Controller {
-	
+class post extends MY_Controller
+{
+
 	public $tb_account_manager = "sp_account_manager";
 	public $tb_posts = "sp_posts";
 
-	public function __construct(){
+	public function __construct()
+	{
 		parent::__construct();
 
-		_permission(get_class($this)."_enable");
-		$this->load->model(get_class($this).'_model', 'model');
+		_permission(get_class($this) . "_enable");
+		$this->load->model(get_class($this) . '_model', 'model');
 
 		//
-		$this->module_name = get_module_config( $this, 'name' );
-		$this->module_icon = get_module_config( $this, 'icon' );
-		$this->module_color = get_module_config( $this, 'color' );
+		$this->module_name = get_module_config($this, 'name');
+		$this->module_icon = get_module_config($this, 'icon');
+		$this->module_color = get_module_config($this, 'color');
 		$this->dir = get_directory_block(__DIR__, get_class($this));
 	}
 
@@ -53,35 +55,37 @@ class post extends MY_Controller {
 		$block_schedule = Modules::run("post/block_schedule");
 
 		$views = [
-			"subheader" => view( 'main/subheader', [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon ], true ),
+			"subheader" => view('main/subheader', ['module_name' => $this->module_name, 'module_icon' => $this->module_icon], true),
 			"column_one" => $block_accounts,
-			"column_two" => view("pages/general", [ 
-				'file_manager_photo' => $block_file_photo, 
-				'file_manager_video' => $block_file_video, 
-				'file_manager_link' => $block_file_link, 
-				'block_post_type' => $block_post_type, 
-				'block_link' => $block_link, 
-				'block_caption' => $block_caption, 
-				'block_schedule' => $block_schedule 
-			] ,true), 
-			"column_three" => $block_preview, 
+			"column_two" => view("pages/general", [
+				'file_manager_photo' => $block_file_photo,
+				'file_manager_video' => $block_file_video,
+				'file_manager_link' => $block_file_link,
+				'block_post_type' => $block_post_type,
+				'block_link' => $block_link,
+				'block_caption' => $block_caption,
+				'block_schedule' => $block_schedule
+			], true),
+			"column_three" => $block_preview,
 		];
-		
-		views( [
+
+		views([
 			"title" => $this->module_name,
 			"fragment" => "fragment_three",
 			"views" => $views
-		] );
+		]);
 	}
 
-	public function block(){}
+	public function block()
+	{
+	}
 	public function topic()
 	{
 
 		$topic = $_POST['topic'];
 
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-		$OPENAI_API_KEY = "qxstRFuGrFtQtZpgYSAzT3BlbkFJWgaeFcoBx2If9HXXuBLx";
+		$OPENAI_API_KEY = "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";
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
 			"temperature" => 0.83,
@@ -98,8 +102,9 @@ class post extends MY_Controller {
 		curl_setopt(
 			$curl,
 			CURLOPT_HTTPHEADER,
-			array("Content-type: application/json", "Authorization: Bearer $OPENAI_API_KEY")
+			array("Content-type: application/json")
 		);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, "Authorization: Bearer $OPENAI_API_KEY");
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 
@@ -119,8 +124,9 @@ class post extends MY_Controller {
 		$response = json_decode($json_response, true);
 		return $response;
 	}
-	
-	public function save($skip_validate = false){
+
+	public function save($skip_validate = false)
+	{
 
 		$post_type = post("post_type");
 		$accounts = post("account");
@@ -163,32 +169,31 @@ class post extends MY_Controller {
 				break;
 
 			case 'carousel':
-				if(count($medias) <= 1){
+				if (count($medias) <= 1) {
 					ms([
 						"status" => "error",
 						"message" => __('Please select at least 2 medias')
 					]);
 				}
 				break;
-			
+
 			default:
 				validate('null', __('Post type'), $post_type);
 				break;
 		}
 
-		if($post_type != "story"){
+		if ($post_type != "story") {
 			validate('null', __('Caption'), $caption);
 		}
 		validate('null', __('Time post'), $time_post);
 		validate('repost_frequency', __('Repost frequency'), $repost_frequency, 0);
 		validate('min_number', __('Interval per post'), $interval_per_post, 1);
 
-		if($repost_frequency > 0)
-		{
+		if ($repost_frequency > 0) {
 			validate('null', __('Repost until'), $repost_until);
 		}
 
-		if($repost_frequency > 0 && $time_post > $repost_until){
+		if ($repost_frequency > 0 && $time_post > $repost_until) {
 			ms([
 				"status" => "error",
 				"message" => __("Time post must be smaller than repost until")
@@ -212,7 +217,7 @@ class post extends MY_Controller {
 		$validator = $this->model->post_validator($data);
 
 		$social_can_post = json_decode($validator["can_post"]);
-		if( ($skip_validate && !empty($social_can_post)) || $validator["status"] == "success" ){
+		if (($skip_validate && !empty($social_can_post)) || $validator["status"] == "success") {
 			$result = $this->model->post($data, $social_can_post);
 			ms($result);
 		}
@@ -222,7 +227,7 @@ class post extends MY_Controller {
 
 	public function block_post_type($post_types = [])
 	{
-		return view($this->dir."pages/block_post_type", [ "post_types" => $post_types ], true);
+		return view($this->dir . "pages/block_post_type", ["post_types" => $post_types], true);
 	}
 
 	public function block_preview($social_networks = [])
@@ -231,110 +236,104 @@ class post extends MY_Controller {
 		$module_paths = get_module_paths();
 		$preview_data = array();
 		$general = "";
-		
 
-		if(!empty($module_paths))
-		{
-		    foreach ($module_paths as $module_path) 
-		    {
 
-		        $models = $module_path.'/models/*.php';
-		        $models = glob($models);
+		if (!empty($module_paths)) {
+			foreach ($module_paths as $module_path) {
 
-		        if(empty($models)) continue;
+				$models = $module_path . '/models/*.php';
+				$models = glob($models);
 
-		        foreach ($models as $model) 
-		        {
-		        	//Get Directory
-		        	$dir = str_replace(DIR_ROOT, "", $model);
-		        	$dir = explode("/", $dir);
-		        	$dir = $dir[0]."/";
+				if (empty($models)) continue;
 
-		        	//Get file name
-		        	$file_tmp = str_replace(".php", "", $model);
-		        	$file_tmp = explode("/", $file_tmp);
-		        	$file_name = end($file_tmp);
+				foreach ($models as $model) {
+					//Get Directory
+					$dir = str_replace(DIR_ROOT, "", $model);
+					$dir = explode("/", $dir);
+					$dir = $dir[0] . "/";
 
-		        	//Get folder name
-		        	$folder_name = str_replace("_model", "", $file_name);
+					//Get file name
+					$file_tmp = str_replace(".php", "", $model);
+					$file_tmp = explode("/", $file_tmp);
+					$file_name = end($file_tmp);
 
-		        	$model_content = file_get_contents($model);
-		        	if(_p($folder_name."_enable")){
-			        	if (preg_match("/block_post_preview/i", $model_content))
-						{	
-							$path = '../../'.DIR_ROOT.$dir.$folder_name.'/models/'.strtolower($file_name);
+					//Get folder name
+					$folder_name = str_replace("_model", "", $file_name);
+
+					$model_content = file_get_contents($model);
+					if (_p($folder_name . "_enable")) {
+						if (preg_match("/block_post_preview/i", $model_content)) {
+							$path = '../../' . DIR_ROOT . $dir . $folder_name . '/models/' . strtolower($file_name);
 							$key = md5($path);
-							
-							if(!empty($social_networks)){
-								
-								if(in_array($folder_name, $social_networks, true)){
+
+							if (!empty($social_networks)) {
+
+								if (in_array($folder_name, $social_networks, true)) {
 									$CI->load->model($path, $key);
 									$preview_data[$key] = $CI->$key->block_post_preview($key);
 								}
-
-							}else{
+							} else {
 								$CI->load->model($path, $key);
 								$preview_data[$key] = $CI->$key->block_post_preview($key);
 							}
 						}
 					}
-
-		        }
-
-		    }
+				}
+			}
 		}
 
-		if( !empty($preview_data)){
-			usort($preview_data, function($a, $b) {
-	            return $a['position'] <=> $b['position'];
-	        });
+		if (!empty($preview_data)) {
+			usort($preview_data, function ($a, $b) {
+				return $a['position'] <=> $b['position'];
+			});
 		}
 
-		return view($this->dir."pages/block_preview", [ 'result' => $preview_data ], true, $this);
+		return view($this->dir . "pages/block_preview", ['result' => $preview_data], true, $this);
 	}
 
 	public function block_link()
 	{
-		return view($this->dir."pages/block_link", [], true, $this);
+		return view($this->dir . "pages/block_link", [], true, $this);
 	}
 
 	public function block_caption()
 	{
-		return view($this->dir."pages/block_caption", [], true, $this);
+		return view($this->dir . "pages/block_caption", [], true, $this);
 	}
 
 	public function block_schedule()
 	{
 		$ids = addslashes(post("edit"));
 		$post = $this->model->get("*", $this->tb_posts, "ids = '{$ids}'");
-		return view($this->dir."pages/block_schedule", ["post" => $post], true, $this);
+		return view($this->dir . "pages/block_schedule", ["post" => $post], true, $this);
 	}
 
-	public function block_accounts($social_network = "", $where = ""){
+	public function block_accounts($social_network = "", $where = "")
+	{
 		$block_group = Modules::run("group_manager/block_group");
-		Modules::run(get_class($this)."/block");
+		Modules::run(get_class($this) . "/block");
 
 		$team_id = _t("id");
-		if( $social_network != "" ){
-			$where = "AND social_network = '".$social_network."'";
+		if ($social_network != "") {
+			$where = "AND social_network = '" . $social_network . "'";
 		}
 
-		$result = $this->model->fetch('*', $this->tb_account_manager, " status = '1' AND team_id = '{$team_id}' AND can_post = 1 ".$where, "social_network, category", "ASC");
+		$result = $this->model->fetch('*', $this->tb_account_manager, " status = '1' AND team_id = '{$team_id}' AND can_post = 1 " . $where, "social_network, category", "ASC");
 		$result_final = [];
 
 		$ids = addslashes(post("edit"));
 		$post = $this->model->get("*", $this->tb_posts, "ids = '{$ids}'");
 
-		if($result){
+		if ($result) {
 			foreach ($result as $row) {
 				$social_network = $row->social_network;
-				if(_p($social_network."_post_enable")){
+				if (_p($social_network . "_post_enable")) {
 					$result_final[] = $row;
 				}
 			}
 		}
 
-		return $this->load->view($this->dir."main/sidebar", [ 'post' => $post, 'result' => $result_final, 'block_group' => $block_group, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon ], true, $this);
+		return $this->load->view($this->dir . "main/sidebar", ['post' => $post, 'result' => $result_final, 'block_group' => $block_group, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon], true, $this);
 	}
 
 	public function get_link()
@@ -346,19 +345,19 @@ class post extends MY_Controller {
 		ms($data);
 	}
 
-	public function cron(  )
+	public function cron()
 	{
 
 		$posts = $this->model->get_posts();
-		if(!$posts){ 
+		if (!$posts) {
 			_e("Empty schedule");
 			exit(0);
 		}
 
 		foreach ($posts as $post) {
-			
+
 			$accounts = [
-				$post->social_network."__".$post->account_ids
+				$post->social_network . "__" . $post->account_ids
 			];
 
 			$data_posts = json_decode($post->data);
@@ -383,7 +382,7 @@ class post extends MY_Controller {
 			$status = $post->status;
 			$changed = $post->changed;
 			$created = $post->created;
-			
+
 			$result = $this->model->post([
 				"id" => $id,
 				"team_id" => $team_id,
@@ -398,14 +397,14 @@ class post extends MY_Controller {
 				"repost_frequency" => $repost_frequency,
 				"repost_until" => $repost_until,
 				"advance" => $advance
-			] );
+			]);
 
 			//Repost
-			if($repost_frequency != 0){
-				$next_time = $repost_frequency*86400;
+			if ($repost_frequency != 0) {
+				$next_time = $repost_frequency * 86400;
 
 				$result_data = $this->model->get("result", $this->tb_posts, "id = '{$id}'")->result;
-				$this->model->update( $this->tb_posts, [
+				$this->model->update($this->tb_posts, [
 					"ids" => ids(),
 					"team_id" => $team_id,
 					"account_id" => $account_id,
@@ -419,15 +418,15 @@ class post extends MY_Controller {
 					"repost_frequency" => 0,
 					"repost_until" => NULL,
 					"result" => $result_data,
-					"status" => $result['status']=="success"?3:4,
+					"status" => $result['status'] == "success" ? 3 : 4,
 					"changed" => now(),
 					"created" => $created,
-				], [ "id" => $id ]);
+				], ["id" => $id]);
 
-				if($time_post < $repost_until){
+				if ($time_post < $repost_until) {
 					$time_post += $next_time;
 
-					$this->model->insert( $this->tb_posts, [
+					$this->model->insert($this->tb_posts, [
 						"ids" => $ids,
 						"team_id" => $team_id,
 						"account_id" => $account_id,
@@ -439,7 +438,7 @@ class post extends MY_Controller {
 						"time_delete" => $time_delete,
 						"delay" => $delay,
 						"repost_frequency" => $repost_frequency,
-						"repost_until" => $repost_frequency? $repost_until :NULL,
+						"repost_until" => $repost_frequency ? $repost_until : NULL,
 						"status" => 1,
 						"changed" => $changed,
 						"created" => $created
@@ -447,9 +446,7 @@ class post extends MY_Controller {
 				}
 			}
 
-			_e( strtoupper( __( ucfirst($result['status']) ) ).": ".__( $result['message']) . "<br/>" , false);
+			_e(strtoupper(__(ucfirst($result['status']))) . ": " . __($result['message']) . "<br/>", false);
 		}
-
 	}
-
 }
