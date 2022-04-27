@@ -52,7 +52,22 @@
     border-right: 1px solid #f1f1f1;
     float: left;
 }
-
+.post .ai .caption .caption-toolbar {
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+    background: #fbfbfb;
+    border-radius: 0 0 4px 4px;
+    height: 30px;
+}
+.post .ai .caption .caption-toolbar .item {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    display: inline-block;
+    border-right: 1px solid #f1f1f1;
+    float: left;
+}
 .post .post-content .caption .caption-toolbar a.item{
     color: #74788d;
 }

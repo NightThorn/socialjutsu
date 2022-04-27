@@ -1,4 +1,4 @@
- <div>
+ <div class="ai">
      <div class="fm-action text-center">
 
          OR
@@ -21,7 +21,7 @@
      <div class="caption m-t-15">
          <textarea id="ideagenerator" disabled="true" style="height: 400px; width: 100%;"></textarea>
          <div class="caption-toolbar" style="display: flex;">
-             <div class="item" style="height: 30px; line-height: 30px; padding: 0 10px; display: inline-block; border-right: 1px solid #f1f1f1; float: left;">
+             <div class="item" >
                  <div class="count-word"><i class="fas fa-text-width"></i> <span>0</span></div>
              </div>
          </div>
