@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -136,7 +136,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = APPPATH.'libraries/vendor/autoload.php';
+$config['composer_autoload'] = APPPATH . 'libraries/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -449,16 +449,16 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
 
-if(stripos($_SERVER['REQUEST_URI'], "/webhook") === FALSE){
+if (stripos($_SERVER['REQUEST_URI'], "/webhook") === FALSE) {
 	$config['csrf_protection'] = TRUE;
-}else{
+} else {
 	$config['csrf_protection'] = FALSE;
 }
 $config['csrf_token_name'] = 'token';
 $config['csrf_cookie_name'] = 'token';
 $config['csrf_expire'] = 1209600;
 $config['csrf_regenerate'] = FALSE;
-$config['csrf_exclude_uris'] = array();
+$config['csrf_exclude_uris'] = array('post/topic');
 
 /*
 |--------------------------------------------------------------------------
