@@ -93,7 +93,6 @@ class post extends MY_Controller
 			->row()
 			->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-	echo $topic;
 
 	$data = '{
 	"prompt": "Write a post for '.$topic.'",
@@ -103,7 +102,8 @@ class post extends MY_Controller
 	"frequency_penalty": 0,
 	"presence_penalty": 2
 }';
-		
+		echo $topic;
+	
 echo $data;
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_HEADER, false);
