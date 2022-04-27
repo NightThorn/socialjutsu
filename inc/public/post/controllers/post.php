@@ -85,7 +85,7 @@ class post extends MY_Controller
 	{
 		$topic = $this->input->post('topic');
 		$getkey = $this->db->select('apikey')->from('apikeys')->where('id', '1')->limit(1)->get()->row();
-		$apikey =  $getkey->key;
+		$apikey =  $getkey->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
 		$data = array(
