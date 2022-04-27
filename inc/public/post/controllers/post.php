@@ -110,7 +110,7 @@ class post extends MY_Controller
 		curl_setopt(
 			$curl,
 			CURLOPT_HTTPHEADER,
-			array("Content-type: application/json", $apikey)
+			array("Content-type: application/json", "Authorization: Bearer ".$apikey)
 		);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
