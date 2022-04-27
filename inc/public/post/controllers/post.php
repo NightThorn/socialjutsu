@@ -93,7 +93,6 @@ class post extends MY_Controller
 			->row()
 			->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-		echo $apikey;
 		$data = [
 			'prompt' => "Write a post for" + $topic,
 			'temperature' => 0.83,
@@ -102,7 +101,8 @@ class post extends MY_Controller
 			'frequency_penalty' => 0,
 			'presence_penalty' => 2
 		];
-		$data_string = addslashes(json_encode($data)); 
+		$data_string = addslashes(json_encode($data));
+		echo $data_string;
 
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_HEADER, false);
@@ -110,7 +110,7 @@ class post extends MY_Controller
 		curl_setopt(
 			$curl,
 			CURLOPT_HTTPHEADER,
-			array("Content-type: application/json", "Authorization: Bearer ".$apikey)
+			array("Content-type: application/json", "Authorization: Bearer " . $apikey)
 		);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
