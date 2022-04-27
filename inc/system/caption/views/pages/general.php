@@ -4,7 +4,7 @@
             <?php foreach ($result as $key => $row) : ?>
                 <div class="col-lg-3 col-md-4 m-b-30 item">
 
-                    <div class="card" style="height: 500px; font-size: smaller;">
+                    <div class="card" style="height: 500px; font-size: smaller; border-radius: 15px; border: 2px solid;">
 
                         <div class="card-body nicescroll h-200 no-update">
                             <div class="card-toolbar">
