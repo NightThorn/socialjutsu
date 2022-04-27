@@ -93,14 +93,14 @@ class post extends MY_Controller
 			->row()
 			->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-		$data = [
-			"prompt" => "Write a post for" + $topic,
+		$data = array(
+			'prompt' => 'Write a post for' + $topic,
 			'temperature' => 0.83,
 			'max_tokens' => 483,
 			'top_p' => 1,
 			'frequency_penalty' => 0,
 			'presence_penalty' => 2
-		];
+		);
 		$data_string = addslashes(json_encode($data));
 		echo $data_string;
 
