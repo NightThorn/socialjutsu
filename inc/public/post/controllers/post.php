@@ -93,7 +93,7 @@ class post extends MY_Controller
 			->row()
 			->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-echo $apikey;
+		echo $apikey;
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
 			"temperature" => 0.83,
