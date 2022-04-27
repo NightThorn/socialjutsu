@@ -104,7 +104,7 @@ class post extends MY_Controller
 	"presence_penalty": 2
 }';
 		$data_string = addslashes(json_encode($data));
-		echo $data_string;
+		
 
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_HEADER, false);
@@ -127,8 +127,7 @@ class post extends MY_Controller
 		curl_close($curl);
 
 		$response = json_decode($json_response, true);
-
-		return $response;
+		echo $response;
 	}
 
 	public function save($skip_validate = false)
