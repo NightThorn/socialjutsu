@@ -95,7 +95,7 @@ class post extends MY_Controller
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
 	$data = '{
-	"prompt": "Write a post for '.$topic.'",
+	"prompt": "Write a post for '.$topic.' \\n",
 	"temperature": 0.83,
 	"max_tokens": 483,
 	"top_p": 1,

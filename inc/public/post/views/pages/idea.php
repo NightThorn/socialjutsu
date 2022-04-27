@@ -28,7 +28,6 @@
      $("#generate").click(function(e) {
          e.preventDefault();
          var topic = $("#topic").val();
-         alert(topic);
          $.ajax({
              url: "<?php echo site_url('post/topic'); ?>",
              method: "POST",
