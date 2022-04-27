@@ -29,5 +29,5 @@ $lang["Save"] = "Save";
 $lang["Save and update subscribers"] = "Save and update subscribers";
 $lang["Active"] = "Active";
 $lang["Upgrade now"] = "Upgrade now";
-$lang["Subscription expire: %s"] = "Subscription expire: %s";
+$lang["Subscription expires: %s"] = "Subscription expires: %s";
 $lang["Your subscription has expired. Renew your subscription so as not to interrupt your plan."] = "Your subscription has expired. Renew your subscription so as not to interrupt your plan.";

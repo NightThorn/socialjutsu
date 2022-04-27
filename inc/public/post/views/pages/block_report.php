@@ -1,7 +1,7 @@
 <?php 
 $report_list = get_ci_value("reports_list");
 $module_name = "facebook_post";
-$successed = schedule_report(segment(3), "all", 3);
+$Successful = schedule_report(segment(3), "all", 3);
 $failed = schedule_report(segment(3), "all", 4);
 
 $success_total = 0;
@@ -33,13 +33,13 @@ if(!empty($report_list)){
             		setTimeout(function(){
 						Core.lineChart(
 							"line-stacked-area",
-							<?=$successed->date?>, 
+							<?= $Successful->date?>, 
 							[
-								<?=$successed->value?>,
+								<?= $Successful->value?>,
 								<?=$failed->value?>
 							],
 							[
-								"<?php _e('Successed')?>",
+								"<?php _e('Successful')?>",
 								"<?php _e('Failed')?>"
 							]
 						);
@@ -56,7 +56,7 @@ if(!empty($report_list)){
             <div class="wrap-m">
                 <div>
                     <h3 class="success w-100"><?php _e( $success_total )?></h3>
-                    <div><?php _e('Successed')?></div>
+                    <div><?php _e('Successful')?></div>
                 </div>
                 <div class="wrap-c">
                     <i class="fas fa-paper-plane float-right text-info fs-45"></i>

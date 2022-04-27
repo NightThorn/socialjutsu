@@ -1,6 +1,6 @@
 <?php 
 $module_name = "instagram_post";
-$successed = schedule_report(segment(3), $module_name, 3);
+$Successful = schedule_report(segment(3), $module_name, 3);
 $failed = schedule_report(segment(3), $module_name, 4);
 ?>
 <div class="row">
@@ -17,13 +17,13 @@ $failed = schedule_report(segment(3), $module_name, 4);
             		setTimeout(function(){
 						Core.lineChart(
 							"line-stacked-area",
-							<?=$successed->date?>, 
+							<?= $Successful->date?>, 
 							[
-								<?=$successed->value?>,
+								<?= $Successful->value?>,
 								<?=$failed->value?>
 							],
 							[
-								"<?php _e('Successed')?>",
+								"<?php _e('Successful')?>",
 								"<?php _e('Failed')?>"
 							]
 						);
@@ -68,7 +68,7 @@ $failed = schedule_report(segment(3), $module_name, 4);
             <div class="wrap-m">
                 <div>
                     <h3 class="success w-100"><?php _e( _gt($module_name."_success_count", 0))?></h3>
-                    <div><?php _e('Successed')?></div>
+                    <div><?php _e('Successful')?></div>
                 </div>
                 <div class="wrap-c">
                     <i class="fas fa-paper-plane float-right text-info fs-45"></i>

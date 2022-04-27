@@ -16,7 +16,7 @@ if($team->owner == $uid){
 	<span class="position-absolute w-100 text-white bg-danger l-1 t-65 p-t-16 p-b-16 p-l-25 p-r-25"><i class="far fa-bell"></i> <?php _e("Your subscription has expired. Renew your subscription so as not to interrupt your plan.")?></span>
 <?php }else{?>
 <div class="m-t-10 d-none d-sm-block">
-    	<span class="m-r-10"><?php _e( sprintf(__("Subscription expire: %s"), date_show( $expiration_date ) ) )?></span>
+    	<span class="m-r-10"><?php _e( sprintf(__("Subscription expires: %s"), date_show( $expiration_date ) ) )?></span>
 </div>
 <?php }?>
 <div class="m-r-10 m-t-2 d-none d-sm-block">
