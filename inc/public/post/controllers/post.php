@@ -52,6 +52,7 @@ class post extends MY_Controller
 		$block_accounts = Modules::run("post/block_accounts");
 		$block_link = Modules::run("post/block_link");
 		$block_caption = Modules::run("post/block_caption");
+		$idea = Modules::run("post/idea");
 		$block_schedule = Modules::run("post/block_schedule");
 
 		$views = [
@@ -64,6 +65,7 @@ class post extends MY_Controller
 				'block_post_type' => $block_post_type,
 				'block_link' => $block_link,
 				'block_caption' => $block_caption,
+				'idea' => $idea,
 				'block_schedule' => $block_schedule
 			], true),
 			"column_three" => $block_preview,
@@ -299,6 +301,10 @@ class post extends MY_Controller
 	public function block_caption()
 	{
 		return view($this->dir . "pages/block_caption", [], true, $this);
+	}
+	public function idea()
+	{
+		return view($this->dir . "pages/idea", [], true, $this);
 	}
 
 	public function block_schedule()
