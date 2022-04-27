@@ -38,6 +38,8 @@
                  console.log(data);
                  alert(data);
                  $("#ideagenerator").val(data);
+                 $("#ideagenerator").css("display", "block");
+
 
              },
              error: function() {
