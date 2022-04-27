@@ -83,8 +83,8 @@ class post extends MY_Controller
 	}
 	public function topic()
 	{
-
-		$topic = $_POST['topic'];
+		$topic = $this->input->post('topic');
+		echo "<div class='alert'>Thanks for Subscribing! Please stay tuned to get awesome tips...</div>";
 		$getkey = $this->db->select('apikey')->from('apikeys')->where('id', '1')->limit(1)->get()->row();
 		$apikey =  $getkey->key;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
@@ -125,7 +125,6 @@ class post extends MY_Controller
 
 		$response = json_decode($json_response, true);
 		return $response;
-
 	}
 
 	public function save($skip_validate = false)
