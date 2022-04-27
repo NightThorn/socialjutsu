@@ -96,7 +96,7 @@ class post extends MY_Controller
 	
 
 	$data = '{
-	"prompt": "Write a post for",
+	"prompt": "Write a post for '.$topic.'",
 	"temperature": 0.83,
 	"max_tokens": 483,
 	"top_p": 1,

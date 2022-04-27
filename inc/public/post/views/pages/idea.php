@@ -12,7 +12,7 @@
 
      </form>
      <div class="caption m-t-15">
-         <textarea id="ideagenerator" disabled="true" class="form-control post-message"></textarea>
+         <textarea id="ideagenerator" disabled="true" style="height: 300px;" class="form-control post-message"></textarea>
          <div class="caption-toolbar">
              <div class="item">
                  <div class="count-word"><i class="fas fa-text-width"></i> <span>0</span></div>
@@ -35,15 +35,13 @@
                  topic: topic
              },
              success: function(data) {
-                 console.log(data);
-                 alert(data);
                  $("#ideagenerator").val(data);
                  $("#ideagenerator").css("display", "block");
 
 
              },
              error: function() {
-                 alert("oof");
+                 alert("Something went wrong. Please try again later.");
              }
          });
      });
