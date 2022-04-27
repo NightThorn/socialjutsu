@@ -102,9 +102,7 @@ class post extends MY_Controller
 	"frequency_penalty": 0,
 	"presence_penalty": 2
 }';
-		echo $topic;
 	
-echo $data;
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -126,6 +124,7 @@ echo $data;
 		curl_close($curl);
 
 		$response = json_decode($json_response, true);
+		echo "Here is a generated post for the topic: $topic \n\n ";
 		echo $response['choices'][0]['text'];
 	}
 
