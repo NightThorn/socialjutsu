@@ -3,7 +3,7 @@
 
          OR
      </div>
-     <div></div>
+     <div style="padding-bottom: 20px;"></div>
      <div></div>
      <div style="padding: 10px;" class="title fs-16 text-info"><i class="far fa-hand-spock"></i> Let our A.I. Get You Some Post Ideas</div>
      <h3></h3>
@@ -21,7 +21,7 @@
      <div class="caption m-t-15">
          <textarea id="ideagenerator" disabled="true" style="height: 400px; width: 100%;"></textarea>
          <div class="caption-toolbar" style="display: flex;">
-             <div class="item" style="padding: 7px;">
+             <div class="item" style="height: 30px; line-height: 30px; padding: 0 10px; display: inline-block; border-right: 1px solid #f1f1f1; float: left;">
                  <div class="count-word"><i class="fas fa-text-width"></i> <span>0</span></div>
              </div>
          </div>
