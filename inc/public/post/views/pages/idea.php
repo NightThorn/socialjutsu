@@ -35,6 +35,9 @@
                  topic: topic
              },
              success: function(data) {
+                 console.log(data);
+                 alert(data);
+
                  $("#ideagenerator").html(data);
              },
              error: function() {
