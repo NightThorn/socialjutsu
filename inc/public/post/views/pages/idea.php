@@ -1,4 +1,5 @@
-<div>
+<div><div></div>
+    <h3>Get Post Idea</h3>
     <form class="actionLogin" action="<?php _e(get_module_url('topic', $this)) ?>" method="post">
 
         <div class="form-group">
@@ -6,7 +7,7 @@
             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
         </div>
-        <button class="btn wimax-btn w-100" type="submit"><?php _e("Get Post Idea") ?></button>
+        <button type="submit"><?php _e("Generate") ?></button>
 
     </form>
     <div class="caption m-t-15">
