@@ -20,7 +20,7 @@
      </form>
      <div class="caption m-t-15">
          <textarea id="ideagenerator" disabled="true" style="height: 400px; width: 100%;"></textarea>
-         <div class="caption-toolbar" style="display: flex;">
+         <div class="caption-toolbar">
              <div class="item" >
                  <div class="count-word"><i class="fas fa-text-width"></i> <span>0</span></div>
              </div>
