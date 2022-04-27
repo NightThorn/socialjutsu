@@ -127,7 +127,7 @@ class post extends MY_Controller
 		curl_close($curl);
 
 		$response = json_decode($json_response, true);
-		echo $response;
+		echo $json_response;
 	}
 
 	public function save($skip_validate = false)
