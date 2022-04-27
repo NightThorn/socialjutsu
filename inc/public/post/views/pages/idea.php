@@ -5,7 +5,7 @@
      </div>
      <div></div>
      <div></div>
-     <div style="padding: 10px;" class="title fs-16 text-info"><i class="fa-brands fa-android"></i> Let our A.I. Get You Some Post Ideas</div>
+     <div style="padding: 10px;" class="title fs-16 text-info"><i class="far fa-hand-spock"></i> Let our A.I. Get You Some Post Ideas</div>
      <h3></h3>
      <form id="ideaform" method="post">
 
