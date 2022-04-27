@@ -84,11 +84,16 @@ class post extends MY_Controller
 	public function topic()
 	{
 		$topic = $this->input->post('topic');
-		$getkey = $this->db->select('apikey')->from('apikeys')->where('id', '1')->limit(1)->get()->row();
-		$apikey =  $getkey->apikey;
+		$apikey = $this
+			->db
+			->select('apikey')
+			->where('id', 1)
+			->limit(1)
+			->get('apikeys')
+			->row()
+			->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
-		echo "test";
-
+echo $apikey;
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
 			"temperature" => 0.83,
