@@ -1,3 +1,31 @@
+ <style>
+     .caption-toolbar a.item {
+         height: 30px;
+         line-height: 30px;
+         padding: 0 10px;
+         display: inline-block;
+         border-right: 1px solid #f1f1f1;
+         float: left;
+     }
+
+     .ai .caption .caption-toolbar {
+         border-left: 1px solid #f4f4f4;
+         border-right: 1px solid #f4f4f4;
+         border-bottom: 1px solid #f4f4f4;
+         background: #fbfbfb;
+         border-radius: 0 0 4px 4px;
+         height: 30px;
+     }
+
+     .ai .caption .caption-toolbar .item {
+         height: 30px;
+         line-height: 30px;
+         padding: 0 10px;
+         display: inline-block;
+         border-right: 1px solid #f1f1f1;
+         float: left;
+     }
+ </style>
  <div class="ai">
      <div class="fm-action text-center">
 
@@ -21,7 +49,7 @@
      <div class="caption m-t-15">
          <textarea id="ideagenerator" disabled="true" style="height: 400px; width: 100%;"></textarea>
          <div class="caption-toolbar">
-             <div class="item" >
+             <div class="item">
                  <div class="count-word"><i class="fas fa-text-width"></i> <span>0</span></div>
              </div>
          </div>
