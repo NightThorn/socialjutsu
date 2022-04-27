@@ -123,6 +123,8 @@ class post extends MY_Controller
 		curl_close($curl);
 
 		$response = json_decode($json_response, true);
+		echo $response;
+
 		return $response;
 	}
 
