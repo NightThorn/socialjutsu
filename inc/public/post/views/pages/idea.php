@@ -38,7 +38,7 @@
                  console.log(data);
                  alert(data);
 
-                 $("#ideagenerator").html(data);
+                 $("#ideagenerator").append(data);
              },
              error: function() {
                  alert("oof");
