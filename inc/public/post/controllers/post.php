@@ -87,6 +87,7 @@ class post extends MY_Controller
 		$getkey = $this->db->select('apikey')->from('apikeys')->where('id', '1')->limit(1)->get()->row();
 		$apikey =  $getkey->apikey;
 		$url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
+		echo "test";
 
 		$data = array(
 			"prompt" => "Write a post for" + $topic,
@@ -123,7 +124,6 @@ class post extends MY_Controller
 		curl_close($curl);
 
 		$response = json_decode($json_response, true);
-		echo $response;
 
 		return $response;
 	}
