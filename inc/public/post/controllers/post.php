@@ -105,7 +105,7 @@ class post extends MY_Controller
 }';
 		$data_string = addslashes(json_encode($data));
 		
-
+echo $data;
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
