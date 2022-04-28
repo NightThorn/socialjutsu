@@ -84,7 +84,7 @@
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.4s">
                 <div class="feature_icon"><i class="lni-layers"></i></div>
                 <h6><?php _e("Schedule posts") ?></h6>
-                <p><?php _e("Select your date, time or whenever you want to publish on each your social accounts just need a few click to complete and enjoy") ?></p>
+                <p><?php _e("Select your date, time or whenever you want to publish on each of your social accounts with just a few clicks") ?></p>
               </div>
             </div>
           </div>
@@ -100,14 +100,14 @@
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.2s">
                 <div class="feature_icon"><i class="lni lni-pie-chart"></i></div>
                 <h6><?php _e("Analytics performance") ?></h6>
-                <p><?php _e("You can see all your posts how it work and increase does. It will help you control your audiences and target") ?></p>
+                <p><?php _e("Our Twitter and Instagram Analytics feature helps you get a sense on what posts work and which posts don't") ?></p>
               </div>
             </div>
             <div class="col-12">
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.3s">
                 <div class="feature_icon"><i class="lni lni-network"></i></div>
-                <h6><?php _e("Influencer Marketing") ?></h6>
-                <p><?php _e("Focus on your top influencers & supporters so you don't miss their engagements follow them") ?></p>
+                <h6><?php _e("Maximize Connections") ?></h6>
+                <p><?php _e("Respond to Direct Messages for Twitter and Instagram and stay connected to your audience") ?></p>
               </div>
             </div>
             <div class="col-12">
@@ -179,7 +179,7 @@
       <div class="col-12 col-md-6 col-lg-5">
         <div class="about_us_text_area wow fadeInUp" data-wow-delay="0.2s">
           <h3><?php _e("Streamline your social media processes & delivery for your clients") ?></h3>
-          <p><?php _e("Whether focusing on a campaign for one brand or managing social across hundreds, Our service helps agency teams be more productive by managing all their client activities from a centralized hub. Our service is guaranteed to save your hours each day") ?></p>
+          <p><?php _e("Whether focusing on a campaign for one brand or managing socials across hundreds, Our service helps social media influencers be more productive by managing all their activities from a centralized hub. Our service is guaranteed to save your hours each day") ?></p>
         </div>
       </div>
     </div>
@@ -255,7 +255,7 @@
   <div class="border-top"></div>
 </div>
 <section class="testimonial_area section_padding_130" id="rating">
-  <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
+ <!-- <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
   <div class="testimonial-bottom-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-bottom.png')) ?>" alt=""></div>
   <div class="container">
     <div class="row justify-content-center">
@@ -266,8 +266,8 @@
           <div class="line"></div>
         </div>
       </div>
-    </div>
-    <!--  <div class="row justify-content-center">
+    </div> 
+     <div class="row justify-content-center">
       <div class="col-10 col-md-9 col-lg-7">
         <div class="card border-0 p-4 p-sm-5 testimonials owl-carousel">
           <div class="single_testimonial_area text-center">
