@@ -1,11 +1,10 @@
 <?php include "top.php" ?>
 <?php include "header.php" ?>
 <script>
-    
-    function thanks(){
-        
+  function thanks() {
+
     document.getElementById("thanks").style.display = "";
-    }
+  }
 </script>
 <section class="hero-barishal welcome_area" id="home">
   <div class="background-shapes">
@@ -27,6 +26,8 @@
         <div class="welcome_text_area">
           <h2 class="wow fadeInUp" data-wow-delay="0.2s"><?php _e("SocialJutsu™") ?></h2>
           <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">The Ninja-Level Social Media Marketing Software</h3>
+          <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Save time and energy by posting to all of your socials from one spot! Schedule your posts, view analytics, and let our AI Post Generator provide you with post ideas to engage and market to your audience!</h5>
+
           <!-- <h5 class="wow fadeInUp" data-wow-delay="0.3s"><?php _e("With our service will help you save time and optimize profile management on social networks. Visually Plan, Schedule post and automation on social networks.") ?></h5><a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Start A Free Trial") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
 -->
           <div class="register-form">
@@ -36,7 +37,7 @@
               </div>
               <span class="show-message"></span>
               <button class="btn wimax-btn w-100" onClick="thanks()" type="submit">Join the waitlist!</button>
-                      <span style="display: none;" id="thanks">Thank you. You will receive an email when the site is live!</span>
+              <span style="display: none;" id="thanks">Thank you. You will receive an email when the site is live!</span>
 
             </form>
           </div>
@@ -255,7 +256,7 @@
   <div class="border-top"></div>
 </div>
 <section class="testimonial_area section_padding_130" id="rating">
- <!-- <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
+  <!-- <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
   <div class="testimonial-bottom-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-bottom.png')) ?>" alt=""></div>
   <div class="container">
     <div class="row justify-content-center">
@@ -308,16 +309,16 @@
     </div>
   </div> -->
 
-    <div class="register-form">
-      <form action="<?php _e(get_module_url("ajax_email", $this)) ?>" class="actionLogin" method="post" data-redirect="<?php _e(post('redirect') ? post('redirect') : get_url('dashboard')) ?>">
-        <div class="form-group">
-          <input class="form-control" type="text" name="email" placeholder="<?php _e("Email") ?>">
-        </div>
-        <span class="show-message"></span>
-        <button class="btn wimax-btn w-100" type="submit">Join the waitlist!</button>
-         <span style="display: none;" id="thanks">Thank you. You will receive an email when the site is live!</span>
-      </form>
-    </div>
+  <div class="register-form">
+    <form action="<?php _e(get_module_url("ajax_email", $this)) ?>" class="actionLogin" method="post" data-redirect="<?php _e(post('redirect') ? post('redirect') : get_url('dashboard')) ?>">
+      <div class="form-group">
+        <input class="form-control" type="text" name="email" placeholder="<?php _e("Email") ?>">
+      </div>
+      <span class="show-message"></span>
+      <button class="btn wimax-btn w-100" type="submit">Join the waitlist!</button>
+      <span style="display: none;" id="thanks">Thank you. You will receive an email when the site is live!</span>
+    </form>
+  </div>
 </section>
 <?php if (!empty($faqs)) { ?>
   <div class="faq_area section_padding_130" id="faq">
