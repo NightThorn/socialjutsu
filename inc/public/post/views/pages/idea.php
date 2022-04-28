@@ -27,12 +27,12 @@
      }
 
      #overlay {
-         position: fixed;
+         position: static;
          top: 0;
          z-index: 100;
          width: 100%;
-         height: 100%;
          display: none;
+         margin-top: 20px;
          background: rgba(0, 0, 0, 0.6);
      }
 
