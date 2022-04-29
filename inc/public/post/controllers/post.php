@@ -189,8 +189,8 @@ class post extends MY_Controller
 			validate('null', __('Caption'), $caption);
 		}
 		validate('null', __('Time post'), $time_post);
-		validate('repost_frequency', __('Repost frequency'), $repost_frequency, 0);
-		validate('min_number', __('Interval per post'), $interval_per_post, 1);
+		validate('repost_frequency', __('How many reposts per day?'), $repost_frequency, 0);
+		validate('min_number', __('How much time between each post is sent'), $interval_per_post, 1);
 
 		if ($repost_frequency > 0) {
 			validate('null', __('Repost until'), $repost_until);
@@ -199,7 +199,7 @@ class post extends MY_Controller
 		if ($repost_frequency > 0 && $time_post > $repost_until) {
 			ms([
 				"status" => "error",
-				"message" => __("Time post must be smaller than repost until")
+				"message" => __("Post time must be prior to repost time")
 			]);
 		}
 
