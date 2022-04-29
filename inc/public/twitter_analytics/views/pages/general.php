@@ -17,7 +17,7 @@ if (!empty($result)) {
 		<div class="profile-info m-t-25">
 
 			<div class="avatar">
-				<img src="<?php _e($profile_info->profile_image_url_https) ?>">
+				<img src="<?php _e($profile_info->profile_image_url_https) ?>" style="width: 200px;">
 			</div>
 			<div class="info">
 				<div class="name"><?php _e($profile_info->name) ?></div>
@@ -379,7 +379,7 @@ if (!empty($result)) {
 							foreach ($top_mentions as $key => $value) {
 							?>
 								<li class="item">
-									<div class="num"><?php _e($count) ?></div> <a href="https://www.instagram.com/<?php _e($key) ?>" target="_blank">@<?php _e($key) ?></a> (<span class="text-info"><?php _e($value) ?></span>)
+									<div class="num"><?php _e($count) ?></div> <a href="https://www.twitter.com/<?php _e($key) ?>" target="_blank"><?php _e($key) ?></a> (<span class="text-info"><?php _e($value) ?></span>)
 								</li>
 							<?php $count++;
 							} ?>
@@ -399,7 +399,7 @@ if (!empty($result)) {
 							foreach ($top_hashtags as $key => $value) {
 							?>
 								<li class="item">
-									<div class="num"><?php _e($count) ?></div> <a href="https://www.instagram.com/explore/tags/<?php _e($key) ?>" target="_blank">#<?php _e($key) ?></a> (<span class="text-info"><?php _e($value) ?></span>)
+									<div class="num"><?php _e($count) ?></div> <a href="https://www.twitter.com/hashtag/<?php _e($key) ?>" target="_blank"><?php _e($key) ?></a> (<span class="text-info"><?php _e($value) ?></span>)
 								</li>
 							<?php $count++;
 							} ?>
