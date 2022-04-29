@@ -18,7 +18,7 @@ if(!empty($result)){
 	<div class="profile-info m-t-25">
 	
 		<div class="avatar">
-			<img src="<?php _e("https://twitter-avatar.now.sh/".$profile_info->screen_name)?>">
+			<img src="<?php _e("https://twitter.com/".$profile_info->screen_name."/photo")?>">
 		</div>
 		<div class="info">
 			<div class="name"><?php _e($profile_info->name)?></div>
