@@ -351,10 +351,9 @@ public function emaillist($email){
 			            $id = $response->id ? $response->id : NULL;
 		            	$fullname = $response->name ? $response->name : NULL;
 		            	$email = $response->email ? $response->email : NULL;
-							var_dump($response);
-		            	// if(!$email){
-		            	//	throw new Exception( _e("Your social network account does not exist email") );
-		            	//} 
+		            	 if(!$email){
+		            		throw new Exception( _e("Your social network account does not exist email") );
+		            		} 
 
 		            	$this->add_social_account("twitter", $id, $fullname, $email);
 			        }
