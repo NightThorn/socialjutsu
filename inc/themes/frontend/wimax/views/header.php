@@ -51,7 +51,7 @@
               <!-- Login Button-->
               <?php if(!_s("uid")){?>
                 <?php if( get_option("signup_status", 1) ){?>
-                <div class="login-btn-area ml-5 mt-5 mt-lg-0"><a class="btn wimax-btn" href="<?php _e( get_url("signup") )?>"><?php _e("Get Started")?></a></div>
+               <!-- <div class="login-btn-area ml-5 mt-5 mt-lg-0"><a class="btn wimax-btn" href="<?php _e( get_url("signup") )?>"><?php _e("Get Started")?></a></div> -->
                 <?php }?>
               <?php }else{?>
                 <div class="login-btn-area ml-5 mt-5 mt-lg-0"><a class="btn wimax-btn" href="<?php _e( get_url("dashboard") )?>"><?php _e( sprintf( __("Hi, %s"), _u("fullname") ) )?></a></div>
