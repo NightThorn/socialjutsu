@@ -409,6 +409,8 @@ if (!empty($result)) {
 			</div>
 		</div>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
