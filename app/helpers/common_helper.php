@@ -312,8 +312,9 @@ if(!function_exists('datetime_show')){
             if(!is_numeric($data)){
                 $data = strtotime($data);
             }
+            date_default_timezone_set("America/New_York");
 
-            return date( get_option('format_datetime', 'd/m/Y g:i A') , $data);
+            return date( get_option('format_datetime', 'd/m/Y g:i A e') , $data);
         }else{
             return false;
         }
