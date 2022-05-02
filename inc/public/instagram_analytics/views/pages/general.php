@@ -11,7 +11,7 @@ if(!empty($result)){
 ?>
 
 <div class="headline">
-	<div class="title"><i class="far fa-chart-bar text-info"></i> <?php _e( sprintf( __("Analytic for  %s") , $profile_info->username) )?></div>
+	<div class="title"><i class="far fa-chart-bar text-info"></i> <?php _e( sprintf( __("Analytics for  %s") , $profile_info->username) )?></div>
 </div>
 
 <div class="wrap-analytics" id="wrap-analytics">

@@ -10,7 +10,7 @@ if (!empty($result)) {
 	$total_days = $result->total_days;
 ?>
 	<div class="headline">
-		<div class="title"><i class="far fa-chart-bar text-info"></i> <?php _e(sprintf(__("Analytic for  %s"), $profile_info->name)) ?></div>
+		<div class="title"><i class="far fa-chart-bar text-info"></i> <?php _e(sprintf(__("Analytics for  %s"), $profile_info->name)) ?></div>
 	</div>
 
 	<div class="wrap-analytics" id="wrap-analytics">
@@ -36,13 +36,13 @@ if (!empty($result)) {
 			<li>
 				<div>
 					<span><?php _e($account_data->engagement) ?>%</span><?php _e("Engagement") ?>
-					<i class="activity-option-help webuiPopover fa fa-question-circle" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="" data-original-title="<?php _e("The engagement rate is the number of active favorites / retweets on each post") ?>"></i>
+					<i class="activity-option-help webuiPopover fa fa-question-circle" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="" data-original-title="<?php _e("The engagement rate is the number of active likes / retweets on each post") ?>"></i>
 				</div>
 			</li>
 			<li>
 				<div>
-					<span><?php _e($account_data->average_likes) ?></span><?php _e("Average Favorites") ?>
-					<i class="activity-option-help webuiPopover fa fa-question-circle" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="" data-original-title="<?php _e("Average favorites based on the last 10 posts") ?>"></i>
+					<span><?php _e($account_data->average_likes) ?></span><?php _e("Average Likes") ?>
+					<i class="activity-option-help webuiPopover fa fa-question-circle" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="" data-original-title="<?php _e("Average likes based on the last 10 posts") ?>"></i>
 				</div>
 			</li>
 			<li>
