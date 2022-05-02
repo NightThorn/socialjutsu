@@ -28,8 +28,8 @@
 		<div class="col-md-4 col-sm-6 m-b-25">
 			<div class="tw-ac-option wrap-m">
 				<div class="info wrap-c">
-					<span class="p-r-5"><?php _e("Min. favorites filter")?> </span>
-					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Interact only with media that have minimum selected amount of favorites.<br/><br/>Use it along with <b>Max. favorites filter</b> to set desired range of media popularity.<br/><br/>Recommended value: 0.<br/><br/>Set to zero to disable this filter.", false)?>"></i>
+					<span class="p-r-5"><?php _e("Min. likes filter")?> </span>
+					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Interact only with media that have minimum selected amount of likes.<br/><br/>Use it along with <b>Max. favorites filter</b> to set desired range of media popularity.<br/><br/>Recommended value: 0.<br/><br/>Set to zero to disable this filter.", false)?>"></i>
 				</div>
 				<div class="action wrap-c">
 					<input type="number" class="form-control action-save" name="filters[min_favorite]" value="<?php twav($a, "filters", "min_favorite")?>">
@@ -40,8 +40,8 @@
 		<div class="col-md-4 col-sm-6 m-b-25">
 			<div class="tw-ac-option wrap-m">
 				<div class="info wrap-c">
-					<span class="p-r-5"><?php _e("Max. favorites filter")?> </span>
-					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Interact only with media that have maximum selected amount of favorites.<br/><br/>Use it along with <b>Min. favorites filter</b> to set desired range of media popularity.<br/><br/>Recommended values: 50-100.<br/><br/>Set to zero to disable this filter.", false)?>"></i>
+					<span class="p-r-5"><?php _e("Max. likes filter")?> </span>
+					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Interact only with media that have maximum selected amount of likes.<br/><br/>Use it along with <b>Min. favorites filter</b> to set desired range of media popularity.<br/><br/>Recommended values: 50-100.<br/><br/>Set to zero to disable this filter.", false)?>"></i>
 				</div>
 				<div class="action wrap-c">
 					<input type="number" class="form-control action-save" name="filters[max_favorite]" value="<?php twav($a, "filters", "max_favorite")?>">

@@ -244,7 +244,7 @@ class twitter_activity extends MY_Controller {
 		if($favorite_speed > 60 || $favorite_speed < 1){
 			ms([
 				"status" => "error",
-				"message" => __('Just allowed values 1-60 favorites per hour')
+				"message" => __('Just allowed values 1-60 likes per hour')
 			]);
 		}
 

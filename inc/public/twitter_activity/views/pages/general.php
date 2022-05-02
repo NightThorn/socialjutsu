@@ -41,7 +41,7 @@
 			<div class="stats">
 				<div class="stats-item wrap-m">
 					<div class="wrap-c">
-						<?php _e("Favorites")?>
+						<?php _e("Likes")?>
 						<?php if( tw_get_setting("favorite_block", "", $row->id) ){?>
 						<i class="fas fa-exclamation-circle text-warning m-l-3" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="" data-original-title="<?php _e( tw_get_setting("favorite_block", "", $row->id) )?>"></i>
 						<?php }?>

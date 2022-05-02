@@ -5,7 +5,7 @@
 		<div class="col-md-4 col-sm-6 m-b-25">
 			<div class="tw-ac-option wrap-m">
 				<div class="info wrap-c">
-					<span class="p-r-5"><?php _e("Favorites counter")?> </span>
+					<span class="p-r-5"><?php _e("Likes counter")?> </span>
 					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("When this number of favorites will be done your activity will be stopped automatically. Set to zero to disable the limit.", false)?>"></i>
 				</div>
 				<div class="action wrap-c">
