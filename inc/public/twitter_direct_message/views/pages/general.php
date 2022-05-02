@@ -9,7 +9,6 @@ $thread_id = segment(4);
 $avaliable_type = array("text", "link", "media");
 $item_type = "text";
 $avatars = [ $account->pid => BASE.$account->avatar ];
-var_dump($items);
 ?>
 
 <form action="<?php _e( get_module_url("send/".$account_id."/".$thread_id) )?>" method="POST" class="actionFormInbox">
@@ -38,7 +37,7 @@ var_dump($items);
 
 					<div class="message">
 						<?php _e( nl2br($item->message_create->message_data->text) )?>
-						<div class="time"><?php _e( datetime_show( $item->created_timestamp/1000000) )?></div>
+						<div class="time"><?php _e( date('m/d/Y H:i:s', $item->created_timestamp) )?></div>
 					</div>
 				</div>
 				<div class="clearfix"></div>
