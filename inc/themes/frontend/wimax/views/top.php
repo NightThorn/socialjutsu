@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Title-->
-    <title><?php _e( get_option('website_title', 'Stackposts - Social Marketing Tool') )?></title>
+    <title><?php _e( get_option('website_title', 'SocialJutsu - Social Marketing Tool') )?></title>
     <meta name="description" content="<?php _e( get_option('website_desc', '#1 Marketing Platform for Social Network') )?>">
     <meta name="keywords" content="<?php _e( get_option('website_keywords', 'social network, marketing, brands, businesses, agencies, individuals') )?>">
     <!-- Favicon-->
