@@ -37,7 +37,7 @@ if (!empty($result)) {
 
 									<div class="message">
 										<?php _e(nl2br($item->message_create->message_data->text)) ?>
-										<div class="time"><?php _e(datetime_show($item->created_timestamp / 1000)) ?></div>
+										<div class="time"><?php _e(datetime_show($item->created_timestamp / 1000)) ?> EST</div>
 									</div>
 								</div>
 								<div class="clearfix"></div>
