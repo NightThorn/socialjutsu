@@ -9,6 +9,7 @@ $thread_id = segment(4);
 $avaliable_type = array("text", "link", "media");
 $item_type = "text";
 $avatars = [ $account->pid => BASE.$account->avatar ];
+var_dump($items);
 ?>
 
 <form action="<?php _e( get_module_url("send/".$account_id."/".$thread_id) )?>" method="POST" class="actionFormInbox">
