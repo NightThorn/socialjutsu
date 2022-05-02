@@ -22,8 +22,8 @@
 		<div class="col-md-4 col-sm-6 m-b-25">
 			<div class="tw-ac-option wrap-m">
 				<div class="info wrap-c">
-					<span class="p-r-5"><?php _e("Favorites/hour")?> </span>
-					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Number of favorite actions that your activity will try to post in an hour.<br/><br/>Allowed values: <b>1</b>-<b>60</b><br/><br/><span class='text-danger'>Use with caution!</span>", false)?>"></i>
+					<span class="p-r-5"><?php _e("Likes/hour")?> </span>
+					<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Number of like actions that your activity will try to post in an hour.<br/><br/>Allowed values: <b>1</b>-<b>60</b><br/><br/><span class='text-danger'>Use with caution!</span>", false)?>"></i>
 				</div>
 				<div class="action wrap-c">
 					<input type="number" class="form-control item-speed action-save" name="speeds[favorite]" value="<?php twav($a, "speeds", "favorite")?>">

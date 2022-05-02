@@ -7,8 +7,8 @@
 				<span></span>
 			</label>
 			<div class="name fs-16">
-				<?php _e("Favorite")?>
-				<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Turn this switch on to automate your favorites activity.<br/><br/> The counter shows how many medias you've favorited since your last activity start.", false)?>"></i>
+				<?php _e("Like")?>
+				<i class="fa fa-question-circle" data-toggle="tooltip-custom" data-trigger="hover" data-placement="top" data-html="true" title="" data-original-title="<?php _e("Turn this switch on to automate your Likes activity.<br/><br/> The counter shows how many medias you've liked since your last activity start.", false)?>"></i>
 
 				<?php if( $activity && tw_get_setting("favorite_block", "", $activity->id) ){?>
 				<i class="fas fa-exclamation-circle text-warning" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="" data-original-title="<?php _e( tw_get_setting("favorite_block", "", $activity->id) )?>"></i>
