@@ -8,17 +8,7 @@ if($activity){
 	$status = $activity->status;
 }
 
-$ip     = $_SERVER['REMOTE_ADDR']; // means we got user's IP address 
-$json   = file_get_contents( 'http://smart-ip.net/geoip-json/' . $ip); // this one service we gonna use to obtain timezone by IP
-// maybe it's good to add some checks (if/else you've got an answer and if json could be decoded, etc.)
-$ipData = json_decode( $json, true);
 
-if ($ipData['timezone']) {
-    $tz = new DateTimeZone( $ipData['timezone']);
-    $time = new DateTime($activity->changed, $tz);
-} else {
-	$time = datetime_show($activity->changed);
-}
 $directs = twav($a, "directs");
 $replies = twav($a, "replies");
 $reposts = twav($a, "reposts");
@@ -120,7 +110,7 @@ $(function(){
 							</div>							
 							<div class="item-info wrap-m">
 								<div class="wrap-c"><?php _e("Started on")?></div>
-								<div class="wrap-c"><?php _e( (isset($activity->changed) && $activity->status != "")?$time:_e("--") )?></div>
+								<div class="wrap-c"><?php _e( (isset($activity->changed) && $activity->status != "")?datetime_show( $activity->changed ):_e("--") )?></div>
 							</div>							
 						</div>
 
