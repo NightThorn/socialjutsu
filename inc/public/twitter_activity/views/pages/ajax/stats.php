@@ -13,8 +13,8 @@
 	<div class="widget-card p-20">
 		<div class="widget-details wrap-m">
 			<div class="widget-info wrap-c">
-				<div class="widget-title text-info text-uppercase"><?php _e("Favorite action")?></div>
-				<div class="widget-desc"><?php _e("Total of favorite actions")?></div>
+				<div class="widget-title text-info text-uppercase"><?php _e("Like action")?></div>
+				<div class="widget-desc"><?php _e("Total likes")?></div>
 			</div>
 		<div class="widget-stats wrap-c text-info"><?php _e( $result->favorite_count )?></div>
 		</div>
@@ -32,7 +32,7 @@
 		<div class="widget-details wrap-m">
 			<div class="widget-info wrap-c">
 				<div class="widget-title text-info text-uppercase"><?php _e("Reply action")?></div>
-				<div class="widget-desc"><?php _e("Total of reply actions")?></div>
+				<div class="widget-desc"><?php _e("Total replies")?></div>
 			</div>
 		<div class="widget-stats wrap-c text-info"><?php _e( $result->reply_count )?></div>
 		</div>
@@ -50,7 +50,7 @@
 		<div class="widget-details wrap-m">
 			<div class="widget-info wrap-c">
 				<div class="widget-title text-info text-uppercase"><?php _e("Retweet action")?></div>
-				<div class="widget-desc"><?php _e("Total of retweet actions")?></div>
+				<div class="widget-desc"><?php _e("Total retweets")?></div>
 			</div>
 		<div class="widget-stats wrap-c text-info"><?php _e( $result->retweet_count )?></div>
 		</div>
@@ -68,7 +68,7 @@
 		<div class="widget-details wrap-m">
 			<div class="widget-info wrap-c">
 				<div class="widget-title text-info text-uppercase"><?php _e("Follow action")?></div>
-				<div class="widget-desc"><?php _e("Total of follow actions")?></div>
+				<div class="widget-desc"><?php _e("Total follows")?></div>
 			</div>
 		<div class="widget-stats wrap-c text-info"><?php _e( $result->follow_count )?></div>
 		</div>
@@ -86,7 +86,7 @@
 		<div class="widget-details wrap-m">
 			<div class="widget-info wrap-c">
 				<div class="widget-title text-info text-uppercase"><?php _e("Unfollow action")?></div>
-				<div class="widget-desc"><?php _e("Total of unfollow actions")?></div>
+				<div class="widget-desc"><?php _e("Total unfollows")?></div>
 			</div>
 		<div class="widget-stats wrap-c text-info"><?php _e( $result->unfollow_count )?></div>
 		</div>
@@ -104,7 +104,7 @@
 		<div class="widget-details wrap-m">
 			<div class="widget-info wrap-c">
 				<div class="widget-title text-info text-uppercase"><?php _e("Welcome DM action")?></div>
-				<div class="widget-desc"><?php _e("Total of welcome DM actions")?></div>
+				<div class="widget-desc"><?php _e("Total welcome DMs")?></div>
 			</div>
 		<div class="widget-stats wrap-c text-info"><?php _e( $result->direct_count )?></div>
 		</div>
@@ -155,7 +155,7 @@
 					<?php _e($result->direct_chart->value)?>,
 				],
 				[
-					"<?php _e('Favorite')?>",
+					"<?php _e('Like')?>",
 					"<?php _e('Reply')?>",
 					"<?php _e('Retweet')?>",
 					"<?php _e('Follow')?>",
