@@ -37,7 +37,7 @@ $avatars = [ $account->pid => BASE.$account->avatar ];
 
 					<div class="message">
 						<?php _e( nl2br($item->message_create->message_data->text) )?>
-						<div class="time"><?php _e( date('m/d/Y H:i:s', $item->created_timestamp) )?></div>
+						<div class="time"><?php _e( datetime_show( $item->created_timestamp/1000) )?></div>
 					</div>
 				</div>
 				<div class="clearfix"></div>
