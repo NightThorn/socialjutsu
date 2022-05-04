@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta property='twitter:card' content='summary'>
+  <meta property='twitter:card' content='summary_large_image'>
   <meta property='twitter:site' content='https://socialjutsu.com/<?php _e($blog->slug) ?>'>
   <meta property='twitter:title' content='<?php _e($blog->name) ?>'>
   <meta property='twitter:description' content='<?php _e($blog->desc) ?>'>
