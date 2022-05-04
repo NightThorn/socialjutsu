@@ -9,7 +9,6 @@ class ggs_profiles extends MY_Controller {
 		parent::__construct();
         _permission("account_manager_enable");
 		$this->load->model(get_class($this).'_model', 'model');
-		include get_module_path($this, 'libraries/vendor/autoload.php', true);
 
 		//
 		$this->module_name = get_module_config( $this, 'name' );
@@ -79,13 +78,12 @@ class ggs_profiles extends MY_Controller {
 	{
 		$public = get_option('ggs_consumer_key', '');
 
-        $url = "https://ggs.tv/api/oauth?app_id=" + $public;
+        $url = "https://ggs.tv/api/oauth?app_id=$public";
         redirect($url);
 	}
 
 	public function save()
 	{
-        $accessToken = _s('accessToken');
 
             $ids = post('id');
             $team_id = _t("id");
@@ -95,13 +93,11 @@ class ggs_profiles extends MY_Controller {
             $get = file_get_contents("https://ggs.tv/api/authorize?app_id=$public&app_secret=$private&auth_key=$auth_key");
             $json = json_decode($get, true);
 
-            if (!empty($json['access_token'])) {
 
-                $access_token = $json['access_token']; // your access token
+                $accessToken = $json['access_token']; // your access token
 
-            }
+            
 
-            validate('empty', __('Please select a profile to add'), $ids);
 
         $respon = file_get_contents("https://ggs.tv/api/get_user_info?access_token=$accessToken");
         $response = json_decode($respon);
