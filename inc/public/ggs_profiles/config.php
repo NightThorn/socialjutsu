@@ -7,5 +7,6 @@ return [
     'version' => '1.0',
     'desc' => '',
     'icon' => '',
-    'color' => '#00acee'
+    'img' => 'https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/photos/2022/04/gg_a542a716a5e431dbeee72402d1fcdb0b.png',
+    'color' => '#00FF00'
 ];

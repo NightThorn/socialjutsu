@@ -9,7 +9,7 @@
 	<meta name="description" content="<?php _e(get_option('website_desc', '#1 Marketing Platform for Social Network')) ?>">
 	<meta name="keywords" content="<?php _e(get_option('website_keywords', 'social network, marketing, brands, businesses, agencies, individuals')) ?>">
 	<link rel="icon" type="image/png" href="<?php _e(get_option('website_favicon', get_url("inc/themes/backend/default/assets/img/favicon.png"))) ?>" />
-	
+
 	<!--Css-->
 	<link rel="stylesheet" type="text/css" href="<?php _e(get_theme_backend_url('assets/fonts/line/line-awesome.min.css')) ?>">
 	<link rel="stylesheet" type="text/css" href="<?php _e(get_theme_backend_url('assets/fonts/feather/feather.css')) ?>">
@@ -126,7 +126,7 @@
 					<?php if (!get_data($row, 'sub_menu')) { ?>
 						<div class="menu-item <?php _e(segment(1) == get_data($row, 'id') ? 'active' : '') ?>">
 							<a href="<?php _e(get_url(get_data($row, 'id'))) ?>">
-								<span class="menu-icon"><i class="<?php _e(get_data($row, 'icon')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"></i></span>
+								<span class="menu-icon"><img src="<?php _e(get_data($row, 'img')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"><i class="<?php _e(get_data($row, 'icon')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"></i></span>
 								<span class="menu-desc"><?php _e(get_data($row, 'name')) ?></span>
 							</a>
 						</div>
