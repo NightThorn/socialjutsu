@@ -126,7 +126,7 @@
 					<?php if (!get_data($row, 'sub_menu')) { ?>
 						<div class="menu-item <?php _e(segment(1) == get_data($row, 'id') ? 'active' : '') ?>">
 							<a href="<?php _e(get_url(get_data($row, 'id'))) ?>">
-								<span class="menu-icon"><img src="<?php _e(get_data($row, 'img')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"><i class="<?php _e(get_data($row, 'icon')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"></i></span>
+								<span class="menu-icon"><img height="30" src="<?php _e(get_data($row, 'img')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"><i class="<?php _e(get_data($row, 'icon')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"></i></span>
 								<span class="menu-desc"><?php _e(get_data($row, 'name')) ?></span>
 							</a>
 						</div>

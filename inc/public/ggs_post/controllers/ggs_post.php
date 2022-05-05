@@ -12,7 +12,8 @@ class ggs_post extends MY_Controller {
 		$this->module_name = get_module_config( $this, 'name' );
 		$this->module_icon = get_module_config( $this, 'icon' );
 		$this->module_color = get_module_config( $this, 'color' );
-		//
+		$this->module_img = get_module_config($this, 'img');
+
 
 		$app_id = get_option('ggs_client_id', '');
         $app_secret = get_option('ggs_client_secret', '');
@@ -54,7 +55,7 @@ class ggs_post extends MY_Controller {
 		Modules::run(get_class($this)."/block");
 
 		$views = [
-			"subheader" => view( 'main/subheader', [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color ], true ),
+			"subheader" => view( 'main/subheader', ['module_img' => $this->module_img, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color ], true ),
 			"column_one" => $block_accounts,
 			"column_two" => view("pages/general", [ 'file_manager' => $block_file, 'block_post_type' => $block_post_type, 'block_link' => $block_link, 'block_caption' => $block_caption, 'block_schedule' => $block_schedule ] ,true), 
 			"column_three" => $block_preview, 
