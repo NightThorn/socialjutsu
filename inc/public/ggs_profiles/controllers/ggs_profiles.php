@@ -1,28 +1,30 @@
 <?php
 
-class ggs_profiles extends MY_Controller {
-	
-	public $tb_account_manager = "sp_account_manager";
-	public $module_name;
+class ggs_profiles extends MY_Controller
+{
 
-	public function __construct(){
-		parent::__construct();
+    public $tb_account_manager = "sp_account_manager";
+    public $module_name;
+
+    public function __construct()
+    {
+        parent::__construct();
         _permission("account_manager_enable");
-		$this->load->model(get_class($this).'_model', 'model');
+        $this->load->model(get_class($this) . '_model', 'model');
 
-		//
-		$this->module_name = get_module_config( $this, 'name' );
-		$this->module_icon = get_module_config( $this, 'icon' );
-		$this->module_color = get_module_config( $this, 'color' );
-		//
+        //
+        $this->module_name = get_module_config($this, 'name');
+        $this->module_icon = get_module_config($this, 'icon');
+        $this->module_color = get_module_config($this, 'color');
+        //
 
-        $this->consumer_key = get_option('ggs_consumer_key', '') ;
+        $this->consumer_key = get_option('ggs_consumer_key', '');
         $this->consumer_secret = get_option('ggs_consumer_secret', '');
 
-        
+
 
         $this->callback_url = get_module_url();
-	}
+    }
 
     public function index($page = "", $ids = "")
     {
@@ -52,7 +54,6 @@ class ggs_profiles extends MY_Controller {
                 "status" => "success",
                 "result" => $result
             ];
-           
         } catch (Exception $e) {
             $data = [
                 "status" => "error",
@@ -140,7 +141,7 @@ class ggs_profiles extends MY_Controller {
                         'name' => $response->user_info->user_name,
                         'username' => $response->user_info->user_name,
                         'token' => $accessToken,
-                        'avatar' => $avatar,
+                        'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture,
                         'url' => 'https://ggs.tv/' . $response->user_info->user_name,
                         'data' => NULL,
                         'status' => 1,
@@ -162,7 +163,7 @@ class ggs_profiles extends MY_Controller {
                         'name' => $response->user_info->user_name,
                         'username' => $response->user_info->user_name,
                         'token' => $accessToken,
-                        'avatar' => $avatar,
+                        'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture,
                         'url' => 'https://ggs.tv/' . $response->user_info->user_name,
                         'status' => 1,
                         'changed' => now(),
@@ -184,17 +185,16 @@ class ggs_profiles extends MY_Controller {
         }
     }
 
-	public function get($params, $accessToken){
+    public function get($params, $accessToken)
+    {
 
-		try {
+        try {
             $response = $this->fb->get($params, $accessToken);
-            return json_decode($response->getBody()); 
-        } catch(Facebook\Exceptions\FacebookResponseException $e) {
+            return json_decode($response->getBody());
+        } catch (Facebook\Exceptions\FacebookResponseException $e) {
             return $e->getMessage();
-        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (Facebook\Exceptions\FacebookSDKException $e) {
             return $e->getMessage();
         }
-
-	}
-
+    }
 }
