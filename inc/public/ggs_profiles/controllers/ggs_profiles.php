@@ -62,7 +62,7 @@ class ggs_profiles extends MY_Controller
         }
 
         $views = [
-            "subheader" => view('main/subheader', ['module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color], true),
+            "subheader" => view('main/subheader', ['module_img' => $this->module_img, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color], true),
             "column_one" => page($this, "pages", "general", $page, $data),
         ];
 
