@@ -129,6 +129,7 @@ class pre_controller{
                     $config['menu']['id'] = @$config['id'];
                     $config['menu']['icon'] = @$config['icon'];
                     $config['menu']['color'] = @$config['color'];
+                    $config['menu']['img'] = @$config['img'];
 
                     $menus[] = $config['menu'];
                 }
@@ -163,6 +164,8 @@ class pre_controller{
                         $group[$name]['name'] = $menu['name'];
                         $group[$name]['icon'] = $menu['icon'];
                         $group[$name]['color'] = $menu['color'];
+                        $group[$name]['img'] = $menu['img'];
+
 
                         if( isset( $menu['sub_menu'] ) ){
                             $group[$name]['sub_menu'][] = $menu['sub_menu'];
