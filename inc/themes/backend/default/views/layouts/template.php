@@ -140,7 +140,7 @@
 						?>
 						<div class="menu-item <?php _e(in_array(segment(1), $ids, true) ? 'active' : '') ?>">
 							<a href="javascript:void(0);">
-								<span class="menu-icon"><i class="<?php _e(get_data($row, 'icon')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"></i></span>
+								<span class="menu-icon"><img height="30" src="<?php _e(get_data($row, 'img')) ?>"><i class="<?php _e(get_data($row, 'icon')) ?>" style="<?php _e((get_option('appearance_icon_color', 0) &&  get_data($row, 'color')) ? "color: " . get_data($row, 'color') : "") ?>"></i></span>
 								<span class="menu-desc"><?php _e(get_data($row, 'name')) ?></span>
 							</a>
 
