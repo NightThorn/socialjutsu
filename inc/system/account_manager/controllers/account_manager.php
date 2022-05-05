@@ -12,6 +12,8 @@ class account_manager extends MY_Controller {
 		$this->dir = get_directory_block(__DIR__, get_class($this));
 		$this->module_name = get_module_config( $this, 'name' );
 		$this->module_icon = get_module_config( $this, 'icon' );
+		$this->module_img = get_module_config($this, 'img');
+
 		//
 	}
 

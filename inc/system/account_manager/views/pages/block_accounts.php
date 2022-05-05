@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-6 <?php _e("am_" . $module_id) ?>">
 	<div class="card m-b-30">
 		<div class="card-header wrap-m">
-			<div class="card-title wrap-c m-b-0"><i class="<?php _e($module_icon) ?> p-r-5" style="color: <?php _e($module_color) ?>"></i> <?php _e($module_name) ?></div>
+			<div class="card-title wrap-c m-b-0"><img src="<?php _e($module_img) ?>"><i class="<?php _e($module_icon) ?> p-r-5" style="color: <?php _e($module_color) ?>"></i> <?php _e($module_name) ?></div>
 		</div>
 		<div class="card-body widget-list check-wrap-all h-300 nicescroll p-0 no-update">
 			<?php if (!empty($result)) { ?>
@@ -25,7 +25,7 @@
 								<span></span>
 							</label>
 							<a href="<?php _e(get_data($row, 'url')) ?>" target="_blank" class="m-l-30">
-								<div class="icon"><img src="<?php _e(get_data($row, 'avatar')) ?>"><img src="<?php _e(get_url(get_data($row, 'img'))) ?>"></div>
+								<div class="icon"><img src="<?php _e(get_data($row, 'avatar')) ?>"></div>
 								<?php if ($row->status == 1) { ?>
 									<div class="content content position-absolute t-10 m-l-80">
 										<div class="title fw-4"><?php _e(get_data($row, 'name')) ?></div>
