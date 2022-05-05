@@ -53,7 +53,7 @@ class ggs_profiles_model extends MY_Model {
 				'desc' => __('GGs API Configuration'),
 				'color' => $this->module_color,
 				'icon' => $this->module_icon,
-				"module_img" => $this->module_img,
+				'img' => $this->module_img,
 				'content' => view( $dir.'settings/configuration', ['path' => $path], true, $this ),
 			]
 		];
