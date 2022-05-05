@@ -125,7 +125,7 @@ class ggs_profiles extends MY_Controller {
             ];
             if (in_array($response->user_info->user_id, $ids, true)) {
 
-                $avatar = save_img($response->user_info->user_picture, TMP_PATH . 'avatar/');
+                $avatar = save_img("https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture, TMP_PATH . 'avatar/');
 
                 $item = $this->model->get('*', $this->tb_account_manager, "social_network = 'ggs' AND team_id = 1 AND pid = '{$response->id}'");
                 if (!$item) {
