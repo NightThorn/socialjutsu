@@ -27,34 +27,32 @@ class ggs_profiles extends MY_Controller {
     public function index($page = "", $ids = "")
     {
         $team_id = _t('id');
-
-        $callback_url = get_module_url();
         try {
-            $token = $this->main_model->fetch('*', $this->tb_account_manager, "social_network = 'ggs' AND category = 'profile' AND team_id = '" . $team_id . "'");
+            $public =  get_option('ggs_consumer_key', '');
+            $private = get_option('ggs_consumer_secret', '');
+            $auth_key = $_GET['auth_key']; // the returned auth key from previous step
+            $get = file_get_contents("https://ggs.tv/api/authorize?app_id=$public&app_secret=$private&auth_key=$auth_key");
+            $json = json_decode($get, true);
 
-            $accessToken = $token[0]['token'];
+
+            $accessToken = $json['access_token']; // your access token
             _ss('accessToken', $accessToken);
             $respon = file_get_contents("https://ggs.tv/api/get_user_info?access_token=$accessToken");
             $response = json_decode($respon);
-            if (!is_string($response)) {
+
             $result = [];
             $result[] = (object)[
-                'id' => $response->user_id,
-                'name' => $response->user_name,
-                'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/".$response->user_picture,
-                'desc' => $response->user_biography
+                'id' => $response->user_info->user_id,
+                'name' => $response->user_info->user_name,
+                'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture,
+                'desc' => $response->user_info->user_biography
             ];
 
             $data = [
                 "status" => "success",
                 "result" => $result
             ];
-            } else {
-                $data = [
-                    "status" => "error",
-                    "message" => $response
-                ];
-            }
+           
         } catch (Exception $e) {
             $data = [
                 "status" => "error",
@@ -74,13 +72,33 @@ class ggs_profiles extends MY_Controller {
         ]);
     }
 
-	public function oauth()
-	{
-		$public = get_option('ggs_consumer_key', '');
+    public function oauth()
+    {
+        $public = get_option('ggs_consumer_key', '');
 
         $url = "https://ggs.tv/api/oauth?app_id=$public";
         redirect($url);
-	}
+        $public =  get_option('ggs_consumer_key', '');
+        $private = get_option('ggs_consumer_secret', '');
+        $auth_key = $_GET['auth_key']; // the returned auth key from previous step
+        $get = file_get_contents("https://ggs.tv/api/authorize?app_id=$public&app_secret=$private&auth_key=$auth_key");
+        $json = json_decode($get, true);
+
+
+        $accessToken = $json['access_token']; // your access token
+        _ss('accessToken', $accessToken);
+        $respon = file_get_contents("https://ggs.tv/api/get_user_info?access_token=$accessToken");
+        $response = json_decode($respon);
+        if (!is_string($response)) {
+            $result = [];
+            $result[] = (object)[
+                'id' => $response->user_info->user_id,
+                'name' => $response->user_info->user_name,
+                'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture,
+                'desc' => $response->user_info->user_biography
+            ];
+        }
+    }
 
 	public function save()
 	{
@@ -96,9 +114,6 @@ class ggs_profiles extends MY_Controller {
 
                 $accessToken = $json['access_token']; // your access token
 
-            
-
-
         $respon = file_get_contents("https://ggs.tv/api/get_user_info?access_token=$accessToken");
         $response = json_decode($respon);
             _us('accessToken');
@@ -106,14 +121,14 @@ class ggs_profiles extends MY_Controller {
             if (!is_string($response)) {
             $result = [];
             $result[] = (object)[
-                'id' => $response->user_id,
-                'name' => $response->user_name,
-                'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_picture,
-                'desc' => $response->user_biography
+                'id' => $response->user_info->user_id,
+                'name' => $response->user_info->user_name,
+                'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture,
+                'desc' => $response->user_info->user_biography
             ];
-                if (in_array($response->id, $ids, true)) {
+                if (in_array($response->user_info->user_id, $ids, true)) {
 
-                    $avatar = save_img($response->picture->data->url, TMP_PATH . 'avatar/');
+                    $avatar = save_img($response->user_info->user_picture, TMP_PATH . 'avatar/');
 
                     $item = $this->model->get('*', $this->tb_account_manager, "social_network = 'ggs' AND team_id = 1 AND pid = '{$response->id}'");
                     if (!$item) {
@@ -124,12 +139,12 @@ class ggs_profiles extends MY_Controller {
                             'login_type' => 1,
                             'can_post' => 1,
                             'team_id' => $team_id,
-                            'pid' => $response->id,
-                            'name' => $response->name,
-                            'username' => $response->name,
+                            'pid' => $response->user_info->id,
+                            'name' => $response->user_info->name,
+                            'username' => $response->user_info->name,
                             'token' => $accessToken,
                             'avatar' => $avatar,
-                            'url' => 'https://ggs.tv/' . $response->name,
+                            'url' => 'https://ggs.tv/' . $response->user_info->name,
                             'data' => NULL,
                             'status' => 1,
                             'changed' => now(),
@@ -146,12 +161,12 @@ class ggs_profiles extends MY_Controller {
                             'login_type' => 1,
                             'can_post' => 1,
                             'team_id' => $team_id,
-                            'pid' => $response->id,
-                            'name' => $response->name,
-                            'username' => $response->name,
+                            'pid' => $response->user_info->id,
+                            'name' => $response->user_info->name,
+                            'username' => $response->user_info->name,
                             'token' => $accessToken,
                             'avatar' => $avatar,
-                            'url' => 'https://ggs.tv/' . $response->name,
+                            'url' => 'https://ggs.tv/' . $response->user_info->name,
                             'status' => 1,
                             'changed' => now(),
                         ];
