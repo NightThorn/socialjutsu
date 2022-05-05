@@ -95,6 +95,7 @@ class account_manager extends MY_Controller {
 			"module_name" => $data["module_name"],
 			"module_icon" => $data["module_icon"],
 			"module_color" => $data["module_color"],
+			"module_img" => $data["module_img"],
 			"result" => $data["result"]
 		], true);
 	}
@@ -105,6 +106,7 @@ class account_manager extends MY_Controller {
 			"module_name" => $data["module_name"],
 			"module_icon" => $data["module_icon"],
 			"module_color" => $data["module_color"],
+			"module_img" => $data["module_img"],
 			"text" => $data["text"],
 			"url" => $data["url"]
 		], true);
