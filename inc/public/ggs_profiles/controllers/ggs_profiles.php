@@ -17,7 +17,7 @@ class ggs_profiles extends MY_Controller
         $this->module_icon = get_module_config($this, 'icon');
         $this->module_color = get_module_config($this, 'color');
         //
-
+        $this->module_img = get_module_config($this, 'img');
         $this->consumer_key = get_option('ggs_consumer_key', '');
         $this->consumer_secret = get_option('ggs_consumer_secret', '');
 
