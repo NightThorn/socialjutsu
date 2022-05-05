@@ -100,25 +100,22 @@ class ggs_profiles extends MY_Controller {
         }
     }
 
-	public function save()
-	{
+    public function save()
+    {
 
-            $ids = post('id');
-            $team_id = _t("id");
-            $public =  get_option('ggs_consumer_key', '');
-            $private = get_option('ggs_consumer_secret', '');
-            $auth_key = $_GET['auth_key']; // the returned auth key from previous step
-            $get = file_get_contents("https://ggs.tv/api/authorize?app_id=$public&app_secret=$private&auth_key=$auth_key");
-            $json = json_decode($get, true);
+        $ids = post('id');
+        $team_id = _t("id");
+        $public =  get_option('ggs_consumer_key', '');
+        $private = get_option('ggs_consumer_secret', '');
 
 
-                $accessToken = $json['access_token']; // your access token
+        $accessToken = _s('accessToken');
 
         $respon = file_get_contents("https://ggs.tv/api/get_user_info?access_token=$accessToken");
         $response = json_decode($respon);
-            _us('accessToken');
+        _us('accessToken');
 
-            if (!is_string($response)) {
+        if (!is_string($response)) {
             $result = [];
             $result[] = (object)[
                 'id' => $response->user_info->user_id,
@@ -126,66 +123,66 @@ class ggs_profiles extends MY_Controller {
                 'avatar' => "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/" . $response->user_info->user_picture,
                 'desc' => $response->user_info->user_biography
             ];
-                if (in_array($response->user_info->user_id, $ids, true)) {
+            if (in_array($response->user_info->user_id, $ids, true)) {
 
-                    $avatar = save_img($response->user_info->user_picture, TMP_PATH . 'avatar/');
+                $avatar = save_img($response->user_info->user_picture, TMP_PATH . 'avatar/');
 
-                    $item = $this->model->get('*', $this->tb_account_manager, "social_network = 'ggs' AND team_id = 1 AND pid = '{$response->id}'");
-                    if (!$item) {
-                        $data = [
-                            'ids' => ids(),
-                            'social_network' => 'ggs',
-                            'category' => 'profile',
-                            'login_type' => 1,
-                            'can_post' => 1,
-                            'team_id' => $team_id,
-                            'pid' => $response->user_info->id,
-                            'name' => $response->user_info->name,
-                            'username' => $response->user_info->name,
-                            'token' => $accessToken,
-                            'avatar' => $avatar,
-                            'url' => 'https://ggs.tv/' . $response->user_info->name,
-                            'data' => NULL,
-                            'status' => 1,
-                            'changed' => now(),
-                            'created' => now()
-                        ];
+                $item = $this->model->get('*', $this->tb_account_manager, "social_network = 'ggs' AND team_id = 1 AND pid = '{$response->id}'");
+                if (!$item) {
+                    $data = [
+                        'ids' => ids(),
+                        'social_network' => 'ggs',
+                        'category' => 'profile',
+                        'login_type' => 1,
+                        'can_post' => 1,
+                        'team_id' => $team_id,
+                        'pid' => $response->user_info->user_id,
+                        'name' => $response->user_info->user_name,
+                        'username' => $response->user_info->user_name,
+                        'token' => $accessToken,
+                        'avatar' => $avatar,
+                        'url' => 'https://ggs.tv/' . $response->user_info->user_name,
+                        'data' => NULL,
+                        'status' => 1,
+                        'changed' => now(),
+                        'created' => now()
+                    ];
 
-                        $this->model->insert($this->tb_account_manager, $data);
-                    } else {
-                        @unlink($item->avatar);
+                    $this->model->insert($this->tb_account_manager, $data);
+                } else {
+                    @unlink($item->avatar);
 
-                        $data = [
-                            'social_network' => 'ggs',
-                            'category' => 'profile',
-                            'login_type' => 1,
-                            'can_post' => 1,
-                            'team_id' => $team_id,
-                            'pid' => $response->user_info->id,
-                            'name' => $response->user_info->name,
-                            'username' => $response->user_info->name,
-                            'token' => $accessToken,
-                            'avatar' => $avatar,
-                            'url' => 'https://ggs.tv/' . $response->user_info->name,
-                            'status' => 1,
-                            'changed' => now(),
-                        ];
+                    $data = [
+                        'social_network' => 'ggs',
+                        'category' => 'profile',
+                        'login_type' => 1,
+                        'can_post' => 1,
+                        'team_id' => $team_id,
+                        'pid' => $response->user_info->user_id,
+                        'name' => $response->user_info->user_name,
+                        'username' => $response->user_info->user_name,
+                        'token' => $accessToken,
+                        'avatar' => $avatar,
+                        'url' => 'https://ggs.tv/' . $response->user_info->user_name,
+                        'status' => 1,
+                        'changed' => now(),
+                    ];
 
-                        $this->model->update($this->tb_account_manager, $data, ['id' => $item->id]);
-                    }
+                    $this->model->update($this->tb_account_manager, $data, ['id' => $item->id]);
                 }
-
-                ms([
-                    "status" => "success",
-                    "message" => __("Success")
-                ]);
-            } else {
-                ms([
-                    "status" => "error",
-                    "message" => $response
-                ]);
             }
+
+            ms([
+                "status" => "success",
+                "message" => __("Success")
+            ]);
+        } else {
+            ms([
+                "status" => "error",
+                "message" => $response
+            ]);
         }
+    }
 
 	public function get($params, $accessToken){
 
