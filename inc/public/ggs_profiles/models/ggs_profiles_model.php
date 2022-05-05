@@ -28,6 +28,7 @@ class ggs_profiles_model extends MY_Model {
 				"module_name" => $this->module_name,
 				"module_icon" => $this->module_icon,
 				"module_color" => $this->module_color,
+				"module_img" => $this->module_img,
 				"module_id" => $this->module_id,
 				"text" => __("Add GGs profile"),
 				"url" => get_url($this->module_id."/oauth")
@@ -36,6 +37,7 @@ class ggs_profiles_model extends MY_Model {
 				"module_name" => $this->module_name,
 				"module_icon" => $this->module_icon,
 				"module_color" => $this->module_color,
+				"module_img" => $this->module_img,
 				"module_id" => $this->module_id,
 				"result" => $result
 			]),
@@ -50,7 +52,8 @@ class ggs_profiles_model extends MY_Model {
 				'name' => __('GGs'),
 				'desc' => __('GGs API Configuration'),
 				'color' => $this->module_color,
-				'icon' => $this->module_icon, 
+				'icon' => $this->module_icon,
+				"module_img" => $this->module_img,
 				'content' => view( $dir.'settings/configuration', ['path' => $path], true, $this ),
 			]
 		];
