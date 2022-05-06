@@ -69,6 +69,7 @@ if($CI->load->module_name == 'dashboard'){
                 $config['menu']['id'] = @$config['id'];
                 $config['menu']['icon'] = @$config['icon'];
                 $config['menu']['color'] = @$config['color'];
+                $config['menu']['img'] = @$config['img'];
 
                 $menus[] = $config['menu'];
             }
@@ -101,6 +102,8 @@ if($CI->load->module_name == 'dashboard'){
                     $name = $menu['name'];
                     $group[$name]['id'] = $menu['id'];
                     $group[$name]['name'] = $menu['name'];
+                    $group[$name]['img'] = $menu['img'];
+
                     $group[$name]['icon'] = $menu['icon'];
                     $group[$name]['color'] = $menu['color'];
 
