@@ -57,7 +57,10 @@ if (count($report_list) == 1) {
 
 				<div class="widget-item widget-item-3 search-list <?php _e(segment(3) == $id ? "active" : "") ?>" data-pid="<?php _e(get_data($row, 'pid')) ?>">
 					<a href="<?php _e(get_module_url("index/" . $id)) ?>" class="actionItem" data-result="html" data-content="column-two" data-history="<?php _e(get_module_url("index/" . $id)) ?>" data-call-after="Layout.tooltip();">
-						<div class="icon border"><img height="30" style="padding-bottom: 6px;" src="<?php _e($img) ?>"><i class="<?php _e($icon) ?>" style="color: <?php _e($color) ?>"></i></div>
+						<div class="icon border"> <?php
+													if ($img == "https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/photos/2022/04/gg_a542a716a5e431dbeee72402d1fcdb0b.png") {
+														echo '<img height="25" src="https://ggspace.nyc3.cdn.digitaloceanspaces.com/uploads/photos/2022/04/gg_a542a716a5e431dbeee72402d1fcdb0b.png">';
+													} ?><i class="<?php _e($icon) ?>" style="color: <?php _e($color) ?>"></i></div>
 						<div class="content content-2">
 							<div class="title fw-4"><?php _e($name) ?></div>
 							<div class="desc"><?php _e("Report") ?></div>
