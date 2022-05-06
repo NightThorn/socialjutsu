@@ -16,6 +16,8 @@ class post extends MY_Controller
 		$this->module_name = get_module_config($this, 'name');
 		$this->module_icon = get_module_config($this, 'icon');
 		$this->module_color = get_module_config($this, 'color');
+		$this->module_img = get_module_config($this, 'img');
+
 		$this->dir = get_directory_block(__DIR__, get_class($this));
 	}
 
@@ -56,7 +58,7 @@ class post extends MY_Controller
 		$block_schedule = Modules::run("post/block_schedule");
 
 		$views = [
-			"subheader" => view('main/subheader', ['module_name' => $this->module_name, 'module_icon' => $this->module_icon], true),
+			"subheader" => view('main/subheader', ['module_img' => $this->module_img, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon], true),
 			"column_one" => $block_accounts,
 			"column_two" => view("pages/general", [
 				'file_manager_photo' => $block_file_photo,
@@ -340,7 +342,7 @@ class post extends MY_Controller
 			}
 		}
 
-		return $this->load->view($this->dir . "main/sidebar", ['post' => $post, 'result' => $result_final, 'block_group' => $block_group, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon], true, $this);
+		return $this->load->view($this->dir . "main/sidebar", ['post' => $post, 'result' => $result_final, 'block_group' => $block_group, 'module_name' => $this->module_name, 'module_img' => $this->module_img, 'module_icon' => $this->module_icon], true, $this);
 	}
 
 	public function get_link()

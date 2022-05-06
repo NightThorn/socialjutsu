@@ -1,5 +1,5 @@
 <?php
-class facebook_post_model extends MY_Model {
+class ggs_post_model extends MY_Model {
 	public $tb_account_manager = "sp_account_manager";
 
 	public function __construct(){
