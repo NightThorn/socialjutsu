@@ -11,6 +11,8 @@ class dashboard extends MY_Controller {
 		$this->module_name = get_module_config( $this, 'name' );
 		$this->module_icon = get_module_config( $this, 'icon' );
 		$this->module_color = get_module_config( $this, 'color' );
+		$this->module_img = get_module_config($this, 'img');
+
 		$this->dir = get_directory_block(__DIR__, get_class($this));
 		//
 	}
@@ -22,8 +24,8 @@ class dashboard extends MY_Controller {
 
 		if( !is_ajax() ){
 			$views = [
-				"subheader" => view( 'main/subheader', [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color ], true ),
-				"column_one" => view("main/sidebar", [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon ], true ),
+				"subheader" => view( 'main/subheader', ['module_img' => $this->module_img, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color ], true ),
+				"column_one" => view("main/sidebar", ['module_img' => $this->module_img, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon ], true ),
 				"column_two" => view("pages/general", ["result" => $this->block_report($ids)] ,true), 
 			];
 			
