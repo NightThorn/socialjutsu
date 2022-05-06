@@ -19,9 +19,6 @@ class ggs_post extends MY_Controller {
         $app_secret = get_option('ggs_client_secret', '');
         $app_version = get_option('ggs_app_version', 'v7.0');
 
-        if($app_id == "" || $app_secret == "" || $app_version == ""){
-            redirect( get_url("social_network_configuration/index/ggs") );
-        }
 	}
 
 	public function index($page = "", $ids = "")
