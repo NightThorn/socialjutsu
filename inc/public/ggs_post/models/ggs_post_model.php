@@ -5,7 +5,6 @@ class ggs_post_model extends MY_Model {
 	public function __construct(){
 		parent::__construct();
 		$module_path = get_module_directory(__DIR__);
-		include $module_path.'libraries/vendor/autoload.php';
 
 		//
 		$this->module_name = get_module_config( $module_path, 'name' );
