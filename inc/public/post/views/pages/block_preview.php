@@ -7,7 +7,7 @@
 
 					<div class="tab nav nav-tabs">
 						<?php foreach ($result as $key => $row) : ?>
-							<a href="#preview-tab-<?php _e($key) ?>" class="<?php _e($key == 0 ? 'active' : '') ?>" data-toggle="tab" aria-expanded="true"><img height="30" src="<?php _e($row['img']) ?>"><i class=" <?php _e($row['icon']) ?>" style="color: <?php _e($row['color']) ?>"></i></a>
+							<a href="#preview-tab-<?php _e($key) ?>" class="<?php _e($key == 0 ? 'active' : '') ?>" data-toggle="tab" aria-expanded="true"><img height="30" style="padding-bottom: 6px;" src="<?php _e($row['img']) ?>"><i class=" <?php _e($row['icon']) ?>" style="color: <?php _e($row['color']) ?>"></i></a>
 						<?php endforeach ?>
 					</div>
 
