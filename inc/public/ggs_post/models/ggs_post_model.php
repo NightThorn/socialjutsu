@@ -181,7 +181,7 @@ class ggs_post_model extends MY_Model {
 			case 'text':
 				
 				$endpoint .= "feed";
-				$params = ['message' => $caption];
+				$params = ['message' => $caption, 'user_id' => $account->pid];
 
 				break;
 			
@@ -189,14 +189,25 @@ class ggs_post_model extends MY_Model {
 
 		try
 		{
-            $response = $this->fb->post($endpoint, $params, $account->token)->getDecodedBody();
+
+
+			$url = 'https://ggs.tv/api/v1/post.php';
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+			$response = curl_exec($ch);
             $post_id =  $response['id'];
             unlink_watermark($medias);
             return [
             	"status" => "success",
             	"message" => __('Success'),
             	"id" => $post_id,
-            	"url" => "https://fb.com/".$post_id,
+            	"url" => "https://ggs.tv/post/".$post_id,
             	"type" => $post_type
             ]; 
         } catch(Exception $e) {
