@@ -32,7 +32,6 @@
 		                <div class="icon"><img src="<?php _e( get_data($row, 'avatar') )?>"></div>
 		                <div class="content content-2">
 		                    <div class="title"><?php _e( get_data($row, 'name') )?></div>
-		                    <div class="desc"><?php _e( get_data($row, 'id') )?></div>
 		                </div>
 		            </a>
 					
