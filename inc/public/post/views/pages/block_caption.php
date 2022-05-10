@@ -6,6 +6,6 @@
 		</div>
 	</div>
 	<div class="twitterWarning">
-		<span id="twitterWarning" style="color: red; display: none;">Reminder: Captions over 280 characters will be trimmed when posted to Twitter.</span>
+		<span id="twitterWarning" class="hide" style="color: red;">Reminder: Captions over 280 characters will be trimmed when posted to Twitter.</span>
 	</div>
 </div>

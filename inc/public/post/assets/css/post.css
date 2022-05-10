@@ -25,7 +25,10 @@
     color: #fff;
     border-radius: 30px;
 }
+.hide{
 
+    display: none;
+}
 .post .post-content .caption textarea {
     min-height: 100px;
 }
