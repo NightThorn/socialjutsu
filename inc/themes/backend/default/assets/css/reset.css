@@ -491,7 +491,7 @@
 
 /*Text Color*/
 .text-primary{ 
-	color: #5867dd!important;
+	color: #113098!important;
 }
 
 .text-success{
@@ -503,7 +503,7 @@
 }
 
 .text-info{ 
-	color: #5578eb!important;
+	color: #113098!important;
 }
 
 .text-warning{
@@ -1211,9 +1211,7 @@ textarea.form-control {
     border-color: #f4f4f4 #f4f4f4 #fff;
 }
 
-.nav-tabs {
-    border-bottom: 1px solid #f4f4f4;
-}
+
 
 .tab-content.tab-border{
 	border: 1px solid transparent;

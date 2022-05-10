@@ -19,11 +19,11 @@
 			<div class="col-6">
 				<div class="form-group">
 					<label><?php _e('Interval per post (minute)')?></label>
-					<input type="number" class="form-control" autocomplete="off" name="interval_per_post" value="5">
+					<input type="hidden" class="form-control" autocomplete="off" name="interval_per_post" value="5">
 				</div>
 			</div>
 		</div>
-		<div class="row post-repost">
+		<div style="display: none;" class="row post-repost">
 			<div class="col-6">
 				<div class="form-group">
 					<label><?php _e('Repost frequency (day)')?></label>
@@ -38,7 +38,7 @@
 			<div class="col-6">
 				<div class="form-group">
 					<label><?php _e('Repost until')?></label>
-					<input type="text" class="form-control datetime" autocomplete="off" name="repost_until" value="">
+					<input type="hidden" class="form-control datetime" autocomplete="off" name="repost_until" value="">
 				</div>
 			</div>
 		</div>

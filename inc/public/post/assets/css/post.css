@@ -10,11 +10,9 @@
 }
 
 .post .post-type .item a{
-    border-left: 1px solid #f4f4f4;
-    border-top: 1px solid #f4f4f4;
-    border-bottom: 1px solid #f4f4f4;
-    padding: 12px 15px;
-    color: #74788d;
+  
+    padding: 9px 15px;
+    color: #9b9ca1;
     display: block;
 }
 
@@ -50,7 +48,6 @@
     line-height: 30px;
     padding: 0 10px;
     display: inline-block;
-    border-right: 1px solid #f1f1f1;
     float: left;
 }
 .ai .caption .caption-toolbar {
@@ -140,7 +137,7 @@
 }
 
 .post .post-advance .nav-tabs{
-    border-bottom: 0 solid #f4f4f4;
+    border-bottom: none !important;
 }
 
 .post .post-advance .advance-content{

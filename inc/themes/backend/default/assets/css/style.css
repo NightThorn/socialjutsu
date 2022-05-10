@@ -611,7 +611,6 @@ body#sidebar-dark .mCS-minimal.mCSB_scrollTools_vertical .mCSB_dragger{
     width: 275px;
     height: 100%;
     position: absolute;
-    border-right: 1px solid #f4f4f4;
     overflow: hidden;
     padding: 25px;
     background-color: #ffffff;
@@ -631,7 +630,6 @@ body#sidebar-dark .mCS-minimal.mCSB_scrollTools_vertical .mCSB_dragger{
 .content-three-column .comlumn-three-main .column-two{
     width: 50%;
     float: left;
-    border-right: 1px solid #f4f4f4;
     height: 100%;
     padding: 25px;
     overflow: hidden;
