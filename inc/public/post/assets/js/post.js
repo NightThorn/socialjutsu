@@ -182,6 +182,15 @@ function Post(){
         if($(".post-message").length > 0){
             $(".post-message").data("emojioneArea").on("keyup", function(editor) {
                 console.log(111);
+                if ($(".post-message").length > 180) {
+                        console.log(221);
+                    document.getElementById("twitterWarning").style.display = "block";
+
+                } else {
+                    document.getElementById("twitterWarning").style.display = "none";
+
+
+                }
                 var data = editor.html();
                 editor.parents(".caption").find('.count-word span').html( data.length );
                 if(data != ""){
@@ -210,20 +219,7 @@ function Post(){
                     $(".post-preview .caption").html('<div class="line-no-text"></div><div class="line-no-text"></div><div class="line-no-text w50"></div>');
                 }
             });
-            if ($(".post-message").length > 180) { 
-                $(".post-message").data("emojioneArea").on("keyup", function (editor) {
-                    
-                    var data = editor.html();
-                    editor.parents(".caption").find('.twitterWarning span').style.display = 'block';
-
-                    if (data != "") {
-                        $(".post-preview .caption").html(data);
-                    } else {
-                        $(".post-preview .caption").html('<div class="line-no-text"></div><div class="line-no-text"></div><div class="line-no-text w50"></div>');
-                    }
-                }); 
-
-            }
+            
         }
     };
 
