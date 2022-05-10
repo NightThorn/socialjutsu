@@ -26,10 +26,10 @@ RewriteRule . index.php [L,QSA]
   ExpiresByType image/png "access plus 31536000 seconds"
   ExpiresByType image/gif "access plus 31536000 seconds"
   ExpiresByType application/x-shockwave-flash "access plus 31536000 seconds"
-  ExpiresByType text/css "access plus 31536000 seconds"
-  ExpiresByType text/javascript "access plus 31536000 seconds"
-  ExpiresByType application/javascript "access plus 31536000 seconds"
-  ExpiresByType application/x-javascript "access plus 31536000 seconds"
+  ExpiresByType text/css "access plus 3 seconds"
+  ExpiresByType text/javascript "access plus 3 seconds"
+  ExpiresByType application/javascript "access plus 3 seconds"
+  ExpiresByType application/x-javascript "access plus 3 seconds"
 </ifModule>
 # END Expire headers
 
@@ -42,7 +42,7 @@ RewriteRule . index.php [L,QSA]
     Header set Cache-Control "public"
   </filesMatch>
   <filesMatch ".(js)$">
-    Header set Cache-Control "private"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
   </filesMatch>
   <filesMatch ".(x?html?|php)$">
     Header set Cache-Control "private, must-revalidate"
