@@ -38,7 +38,7 @@ function Instagram_post(){
 	        //Review content
 	        if($(".post-comment").length > 0){
 	            $(".post-comment").data("emojioneArea").on("keyup", function(editor) {
-	                console.log(111);
+	                console.log(111111111111);
 	                var data = editor.html();
 	                editor.parents(".caption").find('.count-word span').html( data.length );
 	                if(data != ""){
