@@ -93,17 +93,19 @@ class ggs_post_model extends MY_Model
 				if (count($medias) == 1) {
 					if (is_photo($medias[0])) {
 						$medias[0] = watermark($medias[0], $account->team_id, $account->id);
+						$b64image = base64_encode(file_get_contents($medias[0]));
 
 						$endpoint .= "photos";
 						
-						$params = ['message' => $caption, 'user_id' => $account->pid, 'picture' => $medias[0]];
+						$params = ['message' => $caption, 'user_id' => $account->pid, 'picture' => $b64image];
 						$test = json_encode($params);
 
 					} else {
 
 						$endpoint .= "videos";
-						
-						$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $medias[0]];
+						$b64vid = base64_encode(file_get_contents($medias[0]));
+
+						$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $b64vid];
 						$test = json_encode($params);
 
 						
