@@ -93,18 +93,20 @@ class ggs_post_model extends MY_Model
 				if (count($medias) == 1) {
 					if (is_photo($medias[0])) {
 						$medias[0] = watermark($medias[0], $account->team_id, $account->id);
+
 						$endpoint .= "photos";
-						$params = [
-							'message' => $caption,
-							'url' => $medias[0]
-						];
+						
+						$params = ['message' => $caption, 'user_id' => $account->pid, 'picture' => $medias[0]];
+						$test = json_encode($params);
+
 					} else {
 
 						$endpoint .= "videos";
-						$params = [
-							'description' => $caption,
-							'file_url' => $medias[0]
-						];
+						
+						$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $medias[0]];
+						$test = json_encode($params);
+
+						
 					}
 				} else {
 
@@ -114,29 +116,59 @@ class ggs_post_model extends MY_Model
 						if (is_photo($media)) {
 							$media = watermark($media, $account->team_id, $account->id);
 							$medias[$key] = $media;
-							$upload_params = [
-								'url' => $media,
-								'published' => false
-							];
+							$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $media];
+							$test = json_encode($params);
 
 							try {
-								$upload = $this->fb->post($endpoint . 'photos', $upload_params, $account->token)->getDecodedBody();
-								$media_ids['attached_media[' . $success_count . ']'] = '{"media_fbid":"' . $upload['id'] . '"}';
+								$url = 'https://ggs.tv/api/v1/post.php?action=post';
+
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_POST, 1);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $test);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								curl_setopt($ch, CURLOPT_HEADER, 0);
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+								$response = curl_exec($ch);
+
+								$post_id =  $response['id'];
+								unlink_watermark($medias);
+								return [
+									"status" => "success",
+									"message" => __('Success dudeee'),
+									"id" => $post_id,
+									"url" => "https://ggs.tv/post/" . $post_id,
+									"type" => $post_type
+								];
 								$success_count++;
 							} catch (Exception $e) {
 							}
 						} else {
 							//Pages not support post multi media with videos.
 							if ($account->category != "page") {
-
-								$upload_params = [
-									'file_url' => $media,
-									'published' => false
-								];
-
+								$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $media];
+								$test = json_encode($params);
 								try {
-									$upload = $this->fb->post($endpoint . 'videos', $upload_params, $account->token)->getDecodedBody();
-									$media_ids['attached_media[' . $success_count . ']'] = '{"media_fbid":"' . $upload['id'] . '"}';
+									$url = 'https://ggs.tv/api/v1/post.php?action=post';
+
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_POST, 1);
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $test);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									curl_setopt($ch, CURLOPT_HEADER, 0);
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+									$response = curl_exec($ch);
+
+									$post_id =  $response['id'];
+									unlink_watermark($medias);
+									return [
+											"status" => "success",
+											"message" => __('Success dudeee'),
+											"id" => $post_id,
+											"url" => "https://ggs.tv/post/" . $post_id,
+											"type" => $post_type
+										];
 									$success_count++;
 								} catch (Exception $e) {
 								}
@@ -155,10 +187,8 @@ class ggs_post_model extends MY_Model
 			case 'link':
 
 				$endpoint .= "feed";
-				$params = [
-					'message' => $caption,
-					'link' => $link
-				];
+				$params = ['message' => $caption + $link, 'user_id' => $account->pid];
+				$test = json_encode($params);
 
 				break;
 
