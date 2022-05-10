@@ -93,22 +93,25 @@ class ggs_post_model extends MY_Model
 				if (count($medias) == 1) {
 					if (is_photo($medias[0])) {
 						$medias[0] = watermark($medias[0], $account->team_id, $account->id);
-						$b64image = base64_encode(file_get_contents($medias[0]));
 
+						$path = $medias[0];
+						$type = pathinfo($path, PATHINFO_EXTENSION);
+						$data = file_get_contents($path);
+						$b64image = 'data:image/' . $type . ';base64,' . base64_encode($data);
 						$endpoint .= "photos";
-						
+
 						$params = ['message' => $caption, 'user_id' => $account->pid, 'picture' => $b64image];
 						$test = json_encode($params);
-
 					} else {
 
 						$endpoint .= "videos";
-						$b64vid = base64_encode(file_get_contents($medias[0]));
 
+						$path = $medias[0];
+						$type = pathinfo($path, PATHINFO_EXTENSION);
+						$data = file_get_contents($path);
+						$b64vid = 'data:video/' . $type . ';base64,' . base64_encode($data);
 						$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $b64vid];
 						$test = json_encode($params);
-
-						
 					}
 				} else {
 
@@ -118,7 +121,12 @@ class ggs_post_model extends MY_Model
 						if (is_photo($media)) {
 							$media = watermark($media, $account->team_id, $account->id);
 							$medias[$key] = $media;
-							$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $media];
+
+							$path = $medias[$key];
+							$type = pathinfo($path, PATHINFO_EXTENSION);
+							$data = file_get_contents($path);
+							$b64image = 'data:image/' . $type . ';base64,' . base64_encode($data);
+							$params = ['message' => $caption, 'user_id' => $account->pid, 'picture' => $b64image];
 							$test = json_encode($params);
 
 							try {
@@ -146,7 +154,6 @@ class ggs_post_model extends MY_Model
 							} catch (Exception $e) {
 							}
 						} else {
-							//Pages not support post multi media with videos.
 							if ($account->category != "page") {
 								$params = ['message' => $caption, 'user_id' => $account->pid, 'video' => $media];
 								$test = json_encode($params);
@@ -165,12 +172,12 @@ class ggs_post_model extends MY_Model
 									$post_id =  $response['id'];
 									unlink_watermark($medias);
 									return [
-											"status" => "success",
-											"message" => __('Success dudeee'),
-											"id" => $post_id,
-											"url" => "https://ggs.tv/post/" . $post_id,
-											"type" => $post_type
-										];
+										"status" => "success",
+										"message" => __('Success dudeee'),
+										"id" => $post_id,
+										"url" => "https://ggs.tv/post/" . $post_id,
+										"type" => $post_type
+									];
 									$success_count++;
 								} catch (Exception $e) {
 								}
@@ -189,7 +196,7 @@ class ggs_post_model extends MY_Model
 			case 'link':
 
 				$endpoint .= "feed";
-				$params = ['message' => $caption + $link, 'user_id' => $account->pid];
+				$params = ['message' => $caption. " " .$link, 'user_id' => $account->pid];
 				$test = json_encode($params);
 
 				break;
