@@ -6,8 +6,8 @@
     <div class="row justify-content-center">
       <div class="col-12 col-sm-9 col-xl-6">
         <div class="breadcrumb-content text-center">
-          <h2><?php _e("Our latest news")?></h2>
-          <p><?php _e("Update the latest information from us")?></p>
+          <h2><?php _e("Blog")?></h2>
+          <p><?php _e("Check out our latest blog posts")?></p>
         </div>
       </div>
     </div>
