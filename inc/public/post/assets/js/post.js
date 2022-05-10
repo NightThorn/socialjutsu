@@ -182,16 +182,14 @@ function Post(){
         if($(".post-message").length > 0){
             $(".post-message").data("emojioneArea").on("keyup", function(editor) {
                 console.log(111);
-                if ($(".post-message").length > 180) {
-                        console.log(221);
+               
+                var data = editor.html();
+                if (data.length > 180) {
+                    console.log(221);
                     document.getElementById("twitterWarning").style.display = "block";
-
                 } else {
                     document.getElementById("twitterWarning").style.display = "none";
-
-
                 }
-                var data = editor.html();
                 editor.parents(".caption").find('.count-word span').html( data.length );
                 if(data != ""){
                     $(".post-preview .caption").html(data);
