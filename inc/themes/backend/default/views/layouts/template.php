@@ -9,7 +9,9 @@
 	<meta name="description" content="<?php _e(get_option('website_desc', '#1 Marketing Platform for Social Network')) ?>">
 	<meta name="keywords" content="<?php _e(get_option('website_keywords', 'social network, marketing, brands, businesses, agencies, individuals')) ?>">
 	<link rel="icon" type="image/png" href="<?php _e(get_option('website_favicon', get_url("inc/themes/backend/default/assets/img/favicon.png"))) ?>" />
-
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
 	<!--Css-->
 	<link rel="stylesheet" type="text/css" href="<?php _e(get_theme_backend_url('assets/fonts/line/line-awesome.min.css')) ?>">
 	<link rel="stylesheet" type="text/css" href="<?php _e(get_theme_backend_url('assets/fonts/feather/feather.css')) ?>">

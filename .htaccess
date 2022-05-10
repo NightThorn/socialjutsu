@@ -20,7 +20,7 @@ RewriteRule . index.php [L,QSA]
 # BEGIN Expire headers
 <ifModule mod_expires.c>
   ExpiresActive Off
-  
+
   ExpiresDefault "access plus 5 seconds"
   ExpiresByType image/x-icon "access plus 31536000 seconds"
   ExpiresByType image/jpeg "access plus 31536000 seconds"
