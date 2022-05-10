@@ -23,8 +23,9 @@
 }
 
 .post .post-type .item.active a{
-    background: #5578eb;
+    background: #113098;
     color: #fff;
+    border-radius: 20px;
 }
 
 .post .post-content .caption textarea{
