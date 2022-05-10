@@ -178,7 +178,7 @@ function Post() {
         //Review content
         if ($(".post-message").length > 0) {
             $(".post-message").data("emojioneArea").on("keyup", function (editor) {
-                console.log(111);
+                console.log(1333311);
 
                 var data = editor.html();
                 if ($(".post-message").length > 180) {
