@@ -210,6 +210,20 @@ function Post(){
                     $(".post-preview .caption").html('<div class="line-no-text"></div><div class="line-no-text"></div><div class="line-no-text w50"></div>');
                 }
             });
+            if ($(".post-message").length > 180) { 
+                $(".post-message").data("emojioneArea").on("keyup", function (editor) {
+                    
+                    var data = editor.html();
+                    editor.parents(".caption").find('.twitterWarning span').style.display = 'block';
+
+                    if (data != "") {
+                        $(".post-preview .caption").html(data);
+                    } else {
+                        $(".post-preview .caption").html('<div class="line-no-text"></div><div class="line-no-text"></div><div class="line-no-text w50"></div>');
+                    }
+                }); 
+
+            }
         }
     };
 
