@@ -10,7 +10,7 @@
 <div class="subheader-toolbar">
 	<div class="search-container" id="search-container">
 		<form class="input-group" id="unsplash">
-			<input style="border-radius: 20px;" type="text" placeholder="Search Unsplash™.." id="search" name="search">
+			<input style="border-radius: 20px;" type="text" placeholder=" Search Free Images" id="search" name="search">
 			<button style="border-radius: 20px;" type="submit"><i class="fas fa-search"></i></button>
 		</form>
 		<div style="width: 235px; padding: 5px 15px 2px; position: absolute; background-color: #1e1e2d;" class="result" id="result"></div>
@@ -64,13 +64,14 @@
 
 					$("#result").append(`
 					
-					<img width="100" height="100" src="${photo.urls.regular}"/>
+					<img id="unsplashImage" width="100" height="100" src="${photo.urls.regular}"/>
 					
 					`)
 				})
 			}
 		})
 	})
+
 
 
 	$(document).mouseup(e => {

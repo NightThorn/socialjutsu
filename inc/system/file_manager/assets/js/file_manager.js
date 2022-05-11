@@ -252,6 +252,16 @@ function File_Manager(){
             });
         });
     };
+
+    this.Unsplash = function () {
+        
+        $(document).on("click", "#unsplashImage", function () {
+            var url = element.attr('src');
+            self.saveFile(url);
+        });
+    };
+
+    }
     
     this.OneDrive = function(){
         $(document).on("click", ".btn-onedrive", function(){
