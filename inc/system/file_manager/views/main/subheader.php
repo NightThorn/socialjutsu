@@ -46,9 +46,7 @@
 
 <script>
 	$("#unsplash").submit(function(event) {
-
 		event.preventDefault();
-
 		var search = $("#search").val();
 		var url = "https://api.unsplash.com/search/photos?query=" + search + "&client_id=6g3NDyeZ0vzEr2U90O8vBLORi-564yPp15vif6V8YR8";
 		$.ajax({
@@ -69,16 +67,15 @@
 		})
 	})
 
-	$(document).ready(function(e) {
-		$('#search-container').focusout(function() {
-			$('#results').hover(
+		$("#search-container").focusout(function() {
+			$("#results").hover(
 				function() {
 					return;
 				},
 				function() {
-					$('#results').fadeOut('slow');
-					$('#results').html('');
+					$("#results").fadeOut('slow');
+					$("#results").html('');
 				});
 		});
-	});
+	
 </script>
