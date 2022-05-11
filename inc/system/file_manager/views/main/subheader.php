@@ -65,15 +65,8 @@
 			}
 		})
 	})
-
-	$(document).on("click", function(event) {
-		console.log("click on document");
-
-			var trigger = $("#search-container")[0];
-			var dropdown = $("#result");
-			if (dropdown !== event.target && !dropdown.has(event.target).length && trigger !== event.target) {
-				$("#result").hide();
-			}
-		
+	$("#search-container").focusout(function() {
+		$(".result").hide();
 	});
+
 </script>
