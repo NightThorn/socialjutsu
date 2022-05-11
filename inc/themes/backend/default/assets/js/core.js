@@ -10,7 +10,6 @@ function Core(){
     	self.CKEditor();
         self.emojioneArea();
     };
-
     this.help = function(){
         /*Check all*/
         $(document).on("change", ".check-all", function(){
@@ -26,7 +25,6 @@ function Core(){
             }
             return false;
         });
-
         /*Check all*/
         $(document).on("change", ".check-box-all", function(){
             var that = $(this);
