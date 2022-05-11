@@ -488,7 +488,7 @@ this.custom_scrollbar = function (class_name) {
         scrollInertia: 200,
     });
 };
-}
+
 
 var File_Manager = new File_Manager();
 $(function () {
