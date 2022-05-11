@@ -65,19 +65,13 @@
 			}
 		})
 	})
-	$("body").click(
-		function(e) {
-			console.log("click on body");
 
-			if (e.target.className !== "result") {
-				$(".result").hide();
-			}
-		}
-	);
-	$(document).on('click', function(e) {
+	$(document).on("click", function(event) {
 		console.log("click on document");
-		if ($(e.target).closest("#result").length === 0) {
-			$("#result").hide();
+
+		var $trigger = $(".search-container");
+		if ($trigger !== event.target && !$trigger.has(event.target).length) {
+			$(".result").hide();
 		}
 	});
 </script>
