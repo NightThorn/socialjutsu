@@ -10,10 +10,10 @@
 <div class="subheader-toolbar">
 	<div class="search-container" id="search-container">
 		<form class="input-group" id="unsplash">
-			<input type="text" placeholder="Search pics on Unsplash™" id="search" name="search">
-			<button type="submit"><i class="fas fa-search"></i></button>
+			<input style="border-radius: 20px;" type="text" placeholder="Search Unsplash™.." id="search" name="search">
+			<button style="border-radius: 20px;" type="submit"><i class="fas fa-search"></i></button>
 		</form>
-		<div style="width: 210px; overflow: auto; position: absolute;" class="result" id="result"></div>
+		<div style="width: 235px; padding: 5px 15px 2px; position: absolute; background-color: #1e1e2d;" class="result" id="result"></div>
 
 	</div>
 	<div class="btn-group mr-2" role="group">
@@ -51,6 +51,7 @@
 	$("#unsplash").submit(function(event) {
 		event.preventDefault();
 		$("#result").empty();
+
 		$container.toggleClass('is-active');
 
 		var search = $("#search").val();
