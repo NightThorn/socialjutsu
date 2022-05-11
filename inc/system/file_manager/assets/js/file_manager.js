@@ -240,6 +240,8 @@ function File_Manager() {
 
     this.Dropbox = function () {
         $(document).on("click", ".btn-dropbox", function () {
+            console.log("testDB")
+
             Dropbox.choose({
                 linkType: "direct",
                 multiselect: true,
