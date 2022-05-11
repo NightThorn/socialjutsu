@@ -51,7 +51,7 @@
 	$("#unsplash").submit(function(event) {
 		event.preventDefault();
 		$("#result").empty();
-		$menu.toggleClass('is-active');
+		$container.toggleClass('is-active');
 
 		var search = $("#search").val();
 		var url = "https://api.unsplash.com/search/photos?query=" + search + "&client_id=6g3NDyeZ0vzEr2U90O8vBLORi-564yPp15vif6V8YR8";
@@ -77,7 +77,7 @@
 			&&
 			$container.has(e.target).length === 0) // ... nor a descendant of the container
 		{
-			$menu.removeClass('is-active');
+			$container.removeClass('is-active');
 		}
 	});
 </script>
