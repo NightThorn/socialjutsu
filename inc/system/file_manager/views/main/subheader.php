@@ -14,6 +14,8 @@
 				<input type="text" placeholder="Search for Images" name="search">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
+			<div style="width: 50px; overflow: auto;" id="result"></div>
+
 		</div>
 		<button type="button" class="btn btn-secondary fileinput-button"><i class="fas fa-upload"></i> <?php _e('Upload') ?><input id="fileupload" type="file" name="files[]" multiple=""></button>
 		<?php if (_p('file_manager_google_drive') && get_option('file_manager_google_drive_status', 0) == 1) { ?>
@@ -40,7 +42,6 @@
 	    <button type="button" class="btn btn-secondary"><i class="fas fa-list"></i></button>
 	</div> -->
 </div>
-<div id="result"></div>
 
 <script>
 	$("#unsplash").submit(function(event) {
@@ -60,7 +61,7 @@
 
 					$("#result").append(`
 					
-					<img src="${photo.urls.regular}"/>
+					<img width="50" height="50" src="${photo.urls.regular}"/>
 					
 					`)
 				})
