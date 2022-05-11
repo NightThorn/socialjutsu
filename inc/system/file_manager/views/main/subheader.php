@@ -8,15 +8,16 @@
 </div>
 
 <div class="subheader-toolbar">
-	<div class="btn-group mr-2" role="group">
-		<div class="search-container">
-			<form id="unsplash">
-				<input type="text" placeholder="Search for Images" name="search">
-				<button type="submit"><i class="fa fa-search"></i></button>
-			</form>
-			<div style="width: 50px; overflow: auto;" id="result"></div>
+	<div class="search-container">
+		<form id="unsplash">
+			<input type="text" placeholder="Search for Images" name="search">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+		<div style="width: 210px; overflow: auto;" id="result"></div>
 
-		</div>
+	</div>
+	<div class="btn-group mr-2" role="group">
+
 		<button type="button" class="btn btn-secondary fileinput-button"><i class="fas fa-upload"></i> <?php _e('Upload') ?><input id="fileupload" type="file" name="files[]" multiple=""></button>
 		<?php if (_p('file_manager_google_drive') && get_option('file_manager_google_drive_status', 0) == 1) { ?>
 			<button type="button" class="btn btn-secondary btn-google-drive" id="btn-google-drive" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="<?php _e('Google Drive') ?>"><i class="fab fa-google-drive"></i></button>
@@ -61,7 +62,7 @@
 
 					$("#result").append(`
 					
-					<img width="50" height="50" src="${photo.urls.regular}"/>
+					<img width="100" height="100" src="${photo.urls.regular}"/>
 					
 					`)
 				})
