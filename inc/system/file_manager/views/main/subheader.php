@@ -10,7 +10,7 @@
 <div class="subheader-toolbar">
 	<div class="search-container" id="search-container">
 		<form class="input-group" id="unsplash">
-			<input type="text" placeholder="Search pics on Unsplash™" name="search">
+			<input type="text" placeholder="Search pics on Unsplash™" id="search" name="search">
 			<button type="submit"><i class="fas fa-search"></i></button>
 		</form>
 		<div style="width: 210px; overflow: auto; position: absolute;" id="result"></div>
@@ -47,6 +47,8 @@
 <script>
 	$("#unsplash").submit(function(event) {
 		event.preventDefault();
+		$("#result").empty();
+
 		var search = $("#search").val();
 		var url = "https://api.unsplash.com/search/photos?query=" + search + "&client_id=6g3NDyeZ0vzEr2U90O8vBLORi-564yPp15vif6V8YR8";
 		$.ajax({
@@ -54,7 +56,6 @@
 			method: 'GET',
 			url: url,
 			success: function(data) {
-				$("#result").empty();
 				data.results.forEach(photo => {
 
 					$("#result").append(`
@@ -67,15 +68,9 @@
 		})
 	})
 
-		$("#search-container").focusout(function() {
-			$("#results").hover(
-				function() {
-					return;
-				},
-				function() {
-					$("#results").fadeOut('slow');
-					$("#results").html('');
-				});
-		});
-	
+	$(document).on('click', function(e) {
+		if ($(e.target).closest("#results").length === 0) {
+			$("#results").hide();
+		}
+	});
 </script>
