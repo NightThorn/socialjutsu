@@ -252,7 +252,7 @@ function File_Manager(){
             });
         });
     };
-
+    
     this.OneDrive = function(){
         $(document).on("click", ".btn-onedrive", function(){
             var odOptions = {
