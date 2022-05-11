@@ -6,6 +6,7 @@ function File_Manager(){
         self.uploadFile();
         self.deleteFile();
         self.Dropbox();
+        self.Unsplash();
         self.OneDrive();
         self.GoogleDrive();
         self.uploadFromUrl();
