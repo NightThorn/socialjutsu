@@ -6,16 +6,16 @@
 	<span class="separator"></span>
 	<div class="small"> <?php _e(sprintf(__("%s Media Items"), $media_info->count)) ?></div>
 </div>
-<div class="search-container">
-	<form class="input-group" id="unsplash">
-		<input type="text" placeholder="Search for Images" name="search">
-		<button type="submit"><i class="fa fa-search"></i></button>
-	</form>
-	<div style="width: 210px; overflow: auto; position: absolute;" id="result"></div>
 
-</div>
 <div class="subheader-toolbar">
+	<div class="search-container">
+		<form class="input-group" id="unsplash">
+			<input type="text" placeholder="Search free images on Unsplash™" name="search">
+			<button type="submit"><i class="fab fa-unsplash"></i></button>
+		</form>
+		<div style="width: 210px; overflow: auto; position: absolute;" id="result"></div>
 
+	</div>
 	<div class="btn-group mr-2" role="group">
 
 		<button type="button" class="btn btn-secondary fileinput-button"><i class="fas fa-upload"></i> <?php _e('Upload') ?><input id="fileupload" type="file" name="files[]" multiple=""></button>
