@@ -69,9 +69,11 @@
 	$(document).on("click", function(event) {
 		console.log("click on document");
 
-		var $trigger = $(".search-container");
-		if ($trigger !== event.target && !$trigger.has(event.target).length) {
-			$(".result").hide();
-		}
+			var trigger = $("#search-container")[0];
+			var dropdown = $("#result");
+			if (dropdown !== event.target && !dropdown.has(event.target).length && trigger !== event.target) {
+				$("#result").hide();
+			}
+		
 	});
 </script>
