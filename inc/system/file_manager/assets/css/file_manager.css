@@ -17,8 +17,12 @@
 .file-manager .fm-storage{
 
 }
-
-
+.is-active .result {
+    display: block;
+}
+.result {
+    display: none;
+}
 .search-container button {
   float: right;
   padding: 6px 10px;

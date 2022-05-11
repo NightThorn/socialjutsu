@@ -45,9 +45,14 @@
 </div>
 
 <script>
+	const $menu = $('.result');
+	const $container = $('.search-container');
+
 	$("#unsplash").submit(function(event) {
 		event.preventDefault();
 		$("#result").empty();
+		$menu.toggleClass('is-active');
+
 		var search = $("#search").val();
 		var url = "https://api.unsplash.com/search/photos?query=" + search + "&client_id=6g3NDyeZ0vzEr2U90O8vBLORi-564yPp15vif6V8YR8";
 		$.ajax({
@@ -65,8 +70,14 @@
 			}
 		})
 	})
-	$("#search-container").focusout(function() {
-		$(".result").hide();
-	});
 
+
+	$(document).mouseup(e => {
+		if (!$container.is(e.target) // if the target of the click isn't the container...
+			&&
+			$container.has(e.target).length === 0) // ... nor a descendant of the container
+		{
+			$menu.removeClass('is-active');
+		}
+	});
 </script>
