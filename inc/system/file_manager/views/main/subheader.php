@@ -13,7 +13,7 @@
 			<input type="text" placeholder="Search pics on Unsplash™" id="search" name="search">
 			<button type="submit"><i class="fas fa-search"></i></button>
 		</form>
-		<div style="width: 210px; overflow: auto; position: absolute;" id="result"></div>
+		<div style="width: 210px; overflow: auto; position: absolute;" class="result" id="result"></div>
 
 	</div>
 	<div class="btn-group mr-2" role="group">
@@ -48,11 +48,9 @@
 	$("#unsplash").submit(function(event) {
 		event.preventDefault();
 		$("#result").empty();
-
 		var search = $("#search").val();
 		var url = "https://api.unsplash.com/search/photos?query=" + search + "&client_id=6g3NDyeZ0vzEr2U90O8vBLORi-564yPp15vif6V8YR8";
 		$.ajax({
-
 			method: 'GET',
 			url: url,
 			success: function(data) {
@@ -67,10 +65,19 @@
 			}
 		})
 	})
+	$("body").click(
+		function(e) {
+			console.log("click on body");
 
+			if (e.target.className !== "result") {
+				$(".result").hide();
+			}
+		}
+	);
 	$(document).on('click', function(e) {
-		if ($(e.target).closest("#results").length === 0) {
-			$("#results").hide();
+		console.log("click on document");
+		if ($(e.target).closest("#result").length === 0) {
+			$("#result").hide();
 		}
 	});
 </script>
