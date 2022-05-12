@@ -213,7 +213,7 @@ class post extends MY_Controller
 			"caption" => $caption,
 			"time_post" => $time_post,
 			"is_schedule" => $is_schedule,
-			"interval_per_post" => $interval_per_post,
+			"interval_per_post" => 1,
 			"repost_frequency" => $repost_frequency,
 			"repost_until" => $repost_until,
 			"advance" => $advance
