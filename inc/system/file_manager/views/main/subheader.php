@@ -52,7 +52,7 @@
 		position: absolute;
 		bottom: 8px;
 		right: 16px;
-		font-size: 18px;
+		font-size: 10px;
 	}
 </style>
 <script>
