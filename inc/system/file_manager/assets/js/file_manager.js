@@ -172,7 +172,7 @@ function File_Manager() {
             sanitize: false,
             content: function () {
                 var text = $(this).data('text');
-                return '<div class="input-group"><input type="text" class="form-control url_save" placeholder="aaaaaa' + text + '"><div class="input-group-append"><button class="btn btn-info btn-save-from-url" type="submit"><i class="fas fa-arrow-right"></i></button></div></div>';
+                return '<div class="input-group"><input type="text" class="form-control url_save" placeholder="' + text + '"><div class="input-group-append"><button class="btn btn-info btn-save-from-url" type="submit"><i class="fas fa-arrow-right"></i></button></div></div>';
             }
         }).on('click', function () {
             $('.btn-save-from-url').click(function () {

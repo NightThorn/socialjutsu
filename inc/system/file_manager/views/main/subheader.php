@@ -10,8 +10,8 @@
 <div class="subheader-toolbar">
 	<div class="search-container" id="search-container">
 		<form class="input-group" id="unsplash">
-			<input style="border-radius: 20px;" type="text" placeholder=" Search Free Images" id="search" name="search">
-			<button style="border-radius: 20px;" type="submit"><i class="fas fa-search"></i></button>
+			<input style="border-top-left-radius: 20px; border-bottom-left-radius: 20px; border: 1px solid #e2e5ec;" type="text" placeholder=" Search Free Images" id="search" name="search">
+			<button class="btn btn-secondary" style="border-radius: 20px; border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit"><i class="fas fa-search"></i></button>
 		</form>
 		<div style="width: 235px; padding: 5px 15px 2px; position: absolute; background-color: #1e1e2d;" class="result" id="result"></div>
 
