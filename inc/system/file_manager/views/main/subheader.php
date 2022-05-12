@@ -46,14 +46,14 @@
 <style>
 	.imagecontainer {
 		position: relative;
-		width: 50%;
+		display: inline-flex;
 	}
 
 	.bottomright {
 		position: absolute;
-		bottom: 8px;
-		right: 16px;
-		font-size: 10px;
+		top: 0;
+		left: 1px;
+		font-size: 7px;
 	}
 </style>
 <script>
