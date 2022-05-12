@@ -264,250 +264,251 @@ function File_Manager() {
         });
     };
 
-}
 
-this.OneDrive = function () {
-    $(document).on("click", ".btn-onedrive", function () {
-        var odOptions = {
-            clientId: FILE_MANAGER_ONEDRIVE_API_KEY,
-            action: "download",
-            multiSelect: true,
-            advanced: {
-                filter: '.jpeg,.jpg,.png,.gif,.mp4',
-                redirectUri: self.path()
-            },
-            success: function (files) {
-                files = files.value;
-                for (var i = 0; i < files.length; i++) {
-                    self.saveFile(files[i]["@microsoft.graph.downloadUrl"]);
-                }
-            },
-            cancel: function () { },
-            error: function (error) { console.log(error); }
-        };
-        OneDrive.open(odOptions);
-    });
 
-};
-
-this.GoogleDrive = function () {
-    if ($(".btn-google-drive").length > 0) {
-        $().gdrive('init', {
-            'devkey': FILE_MANAGER_GOOGLE_API_KEY,
-            'appid': FILE_MANAGER_GOOGLE_CLIENT_ID
+    this.OneDrive = function () {
+        $(document).on("click", ".btn-onedrive", function () {
+            var odOptions = {
+                clientId: FILE_MANAGER_ONEDRIVE_API_KEY,
+                action: "download",
+                multiSelect: true,
+                advanced: {
+                    filter: '.jpeg,.jpg,.png,.gif,.mp4',
+                    redirectUri: self.path()
+                },
+                success: function (files) {
+                    files = files.value;
+                    for (var i = 0; i < files.length; i++) {
+                        self.saveFile(files[i]["@microsoft.graph.downloadUrl"]);
+                    }
+                },
+                cancel: function () { },
+                error: function (error) { console.log(error); }
+            };
+            OneDrive.open(odOptions);
         });
 
-        $('.btn-google-drive').gdrive('set', {
-            'trigger': 'btn-google-drive'
-        });
-    }
-};
+    };
 
-this.saveGoogleDriveFile = function (data) {
-    var that = $('.file-manager');
-    var type = $('.file-manager .btnOpenFileManager').data('file-type');
+    this.GoogleDrive = function () {
+        if ($(".btn-google-drive").length > 0) {
+            $().gdrive('init', {
+                'devkey': FILE_MANAGER_GOOGLE_API_KEY,
+                'appid': FILE_MANAGER_GOOGLE_CLIENT_ID
+            });
 
-    if (type == undefined) {
-        var type = "";
-    } else {
-        var type = '/' + type;
-    }
-
-    var action = self.path() + 'save_files/google_drive' + type;
-    $('.fm-progress-bar').show().css('width', 50 + '%');
-    Core.ajax_post(that, action, data, function (result) {
-        if (result.status == "success") {
-            self.addFile(result.media, result.media_tmp, result.type);
-            self.ajax_load(0);
-        }
-
-        $('.fm-progress-bar').show().css('width', 100 + '%');
-        setTimeout(function () {
-            $('.fm-progress-bar').fadeOut(100).css('width', 0 + '%');
-        }, 1000);
-    });
-};
-
-this.saveFile = function (url) {
-    var that = $('.file-manager-none');
-    var data = $.param({ token: token, url: url });
-    var type = $('.post-type .item.active input[name="post_type"]').val();
-
-    if (type == undefined) {
-        var type = "";
-    } else {
-        var type = '/' + type;
-    }
-
-    var action = self.path() + 'save_files/index' + type;
-
-    $('.fm-progress-bar').show().css('width', 50 + '%');
-    Core.ajax_post(that, action, data, function (result) {
-        if (result.status == "success") {
-            self.addFile(result.media, result.media_tmp, result.type);
-            self.ajax_load(0);
-        }
-
-        $('.fm-progress-bar').show().css('width', 100 + '%');
-        setTimeout(function () {
-            $('.fm-progress-bar').fadeOut(100).css('width', 0 + '%');
-        }, 1000);
-    });
-};
-
-this.call_load_more = function () {
-    var that = $('.ajax-load-files[data-type="scroll"]');
-    var scrollDiv = that.data('scroll');
-
-    if (that.length > 0) {
-        $(scrollDiv).bind('scroll', function () {
-
-            var _scrollPadding = 80;
-            var _scrollTop = $(scrollDiv).scrollTop();
-            var _divHeight = $(scrollDiv).height();
-            var _scrollHeight = $(scrollDiv).get(0).scrollHeight;
-
-            $(window).trigger('resize');
-            if (_scrollTop + _divHeight + _scrollPadding >= _scrollHeight) {
-                self.ajax_load();
-            }
-
-        });
-    }
-};
-
-this.ajax_load = function (page) {
-    var that = $('.ajax-load-files');
-    var type = that.data('file-type');
-
-    if (type == undefined) {
-        var type = "";
-    } else {
-        var type = '/' + type
-    }
-
-    if (page != undefined) {
-        that.attr('data-page', 0);
-        that.attr('data-loading', 0);
-    }
-
-    var keyword = $(".file-manager .filter-keyword").val();
-    if (keyword == undefined || keyword == "") {
-        var keyword = "";
-    }
-
-    if (that.length > 0) {
-        var action = self.path() + 'ajax_load/' + type;
-        var type = that.data('type');
-        var page = parseInt(that.attr('data-page'));
-        var loading = that.attr('data-loading');
-        var data = { token: token, page: page, keyword: keyword };
-        var scrollDiv = that.data('scroll');
-
-        if (loading == undefined || loading == 0) {
-            that.attr('data-loading', 1);
-
-            $.ajax({
-                url: action,
-                type: 'POST',
-                dataType: 'html',
-                data: data
-            }).done(function (result) {
-                $('.fm-loading-more').remove();
-
-                if (page == 0) {
-                    that.html(result);
-                }
-                else {
-                    that.append(result);
-                }
-
-                if (result != '') {
-                    that.attr('data-loading', 0);
-                }
-
-                self.lazy();
-                self.load_video();
-                that.attr('data-page', page + 1);
-
-                $(".nicescroll").getNiceScroll().resize();
+            $('.btn-google-drive').gdrive('set', {
+                'trigger': 'btn-google-drive'
             });
         }
-    }
-};
+    };
 
-this.load_video = function () {
-    if ($('.fm-video').length > 0) {
-        $('.fm-video').each(function (index) {
-            $(this).get(0).currentTime = 2;
-        });
-    }
-};
+    this.saveGoogleDriveFile = function (data) {
+        var that = $('.file-manager');
+        var type = $('.file-manager .btnOpenFileManager').data('file-type');
 
-this.lazy = function () {
-    $('.lazy').Lazy({
-        afterLoad: function (element) {
-            var _image = element.attr('src');
-            element.parent().css({ 'background-image': 'url(' + _image + ')', 'display': 'none' }).fadeIn();
-            element.remove();
+        if (type == undefined) {
+            var type = "";
+        } else {
+            var type = '/' + type;
         }
+
+        var action = self.path() + 'save_files/google_drive' + type;
+        $('.fm-progress-bar').show().css('width', 50 + '%');
+        Core.ajax_post(that, action, data, function (result) {
+            if (result.status == "success") {
+                self.addFile(result.media, result.media_tmp, result.type);
+                self.ajax_load(0);
+            }
+
+            $('.fm-progress-bar').show().css('width', 100 + '%');
+            setTimeout(function () {
+                $('.fm-progress-bar').fadeOut(100).css('width', 0 + '%');
+            }, 1000);
+        });
+    };
+
+    this.saveFile = function (url) {
+        var that = $('.file-manager-none');
+        var data = $.param({ token: token, url: url });
+        var type = $('.post-type .item.active input[name="post_type"]').val();
+
+        if (type == undefined) {
+            var type = "";
+        } else {
+            var type = '/' + type;
+        }
+
+        var action = self.path() + 'save_files/index' + type;
+
+        $('.fm-progress-bar').show().css('width', 50 + '%');
+        Core.ajax_post(that, action, data, function (result) {
+            if (result.status == "success") {
+                self.addFile(result.media, result.media_tmp, result.type);
+                self.ajax_load(0);
+            }
+
+            $('.fm-progress-bar').show().css('width', 100 + '%');
+            setTimeout(function () {
+                $('.fm-progress-bar').fadeOut(100).css('width', 0 + '%');
+            }, 1000);
+        });
+    };
+
+    this.call_load_more = function () {
+        var that = $('.ajax-load-files[data-type="scroll"]');
+        var scrollDiv = that.data('scroll');
+
+        if (that.length > 0) {
+            $(scrollDiv).bind('scroll', function () {
+
+                var _scrollPadding = 80;
+                var _scrollTop = $(scrollDiv).scrollTop();
+                var _divHeight = $(scrollDiv).height();
+                var _scrollHeight = $(scrollDiv).get(0).scrollHeight;
+
+                $(window).trigger('resize');
+                if (_scrollTop + _divHeight + _scrollPadding >= _scrollHeight) {
+                    self.ajax_load();
+                }
+
+            });
+        }
+    };
+
+    this.ajax_load = function (page) {
+        var that = $('.ajax-load-files');
+        var type = that.data('file-type');
+
+        if (type == undefined) {
+            var type = "";
+        } else {
+            var type = '/' + type
+        }
+
+        if (page != undefined) {
+            that.attr('data-page', 0);
+            that.attr('data-loading', 0);
+        }
+
+        var keyword = $(".file-manager .filter-keyword").val();
+        if (keyword == undefined || keyword == "") {
+            var keyword = "";
+        }
+
+        if (that.length > 0) {
+            var action = self.path() + 'ajax_load/' + type;
+            var type = that.data('type');
+            var page = parseInt(that.attr('data-page'));
+            var loading = that.attr('data-loading');
+            var data = { token: token, page: page, keyword: keyword };
+            var scrollDiv = that.data('scroll');
+
+            if (loading == undefined || loading == 0) {
+                that.attr('data-loading', 1);
+
+                $.ajax({
+                    url: action,
+                    type: 'POST',
+                    dataType: 'html',
+                    data: data
+                }).done(function (result) {
+                    $('.fm-loading-more').remove();
+
+                    if (page == 0) {
+                        that.html(result);
+                    }
+                    else {
+                        that.append(result);
+                    }
+
+                    if (result != '') {
+                        that.attr('data-loading', 0);
+                    }
+
+                    self.lazy();
+                    self.load_video();
+                    that.attr('data-page', page + 1);
+
+                    $(".nicescroll").getNiceScroll().resize();
+                });
+            }
+        }
+    };
+
+    this.load_video = function () {
+        if ($('.fm-video').length > 0) {
+            $('.fm-video').each(function (index) {
+                $(this).get(0).currentTime = 2;
+            });
+        }
+    };
+
+    this.lazy = function () {
+        $('.lazy').Lazy({
+            afterLoad: function (element) {
+                var _image = element.attr('src');
+                element.parent().css({ 'background-image': 'url(' + _image + ')', 'display': 'none' }).fadeIn();
+                element.remove();
+            }
+        });
+    };
+
+    this.path = function () {
+        return PATH + 'file_manager/';
+    };
+
+    this.notify = function (message, type) {
+        switch (type) {
+            case "success":
+                var backgroundColor = "#00efa9";
+                break;
+
+            case "error":
+                var backgroundColor = "#ff6a70";
+                break;
+
+            default:
+                var backgroundColor = "#5867dd";
+                break;
+        }
+
+        iziToast.show({
+            theme: 'dark',
+            icon: 'ft-bell',
+            title: '',
+            position: 'bottomCenter',
+            message: message,
+            backgroundColor: backgroundColor,
+            progressBarColor: 'rgba(255, 255, 255, 0.8)',
+        });
+    };
+
+    this.custom_scrollbar = function (class_name) {
+        $(class_name).mCustomScrollbar({
+            theme: "minimal-dark",
+            scrollInertia: 200,
+        });
+    };
+
+
+    var File_Manager = new File_Manager();
+    $(function () {
+        File_Manager.init();
     });
-};
 
-this.path = function () {
-    return PATH + 'file_manager/';
-};
-
-this.notify = function (message, type) {
-    switch (type) {
-        case "success":
-            var backgroundColor = "#00efa9";
-            break;
-
-        case "error":
-            var backgroundColor = "#ff6a70";
-            break;
-
-        default:
-            var backgroundColor = "#5867dd";
-            break;
+    function reload() {
+        File_Manager.ajax_load(0);
+        $.fancybox.close();
     }
 
-    iziToast.show({
-        theme: 'dark',
-        icon: 'ft-bell',
-        title: '',
-        position: 'bottomCenter',
-        message: message,
-        backgroundColor: backgroundColor,
-        progressBarColor: 'rgba(255, 255, 255, 0.8)',
-    });
-};
+    function overplay() {
+        $(".loading-overplay").css({ "z-index": 100000000 });
+        Core.overplay();
+    }
 
-this.custom_scrollbar = function (class_name) {
-    $(class_name).mCustomScrollbar({
-        theme: "minimal-dark",
-        scrollInertia: 200,
-    });
-};
-
-
-var File_Manager = new File_Manager();
-$(function () {
-    File_Manager.init();
-});
-
-function reload() {
-    File_Manager.ajax_load(0);
-    $.fancybox.close();
-}
-
-function overplay() {
-    $(".loading-overplay").css({ "z-index": 100000000 });
-    Core.overplay();
-}
-
-function hide_overplay() {
-    $(".loading-overplay").css({ "z-index": 800 });
-    Core.overplay("hide");
+    function hide_overplay() {
+        $(".loading-overplay").css({ "z-index": 800 });
+        Core.overplay("hide");
+    }
 }
