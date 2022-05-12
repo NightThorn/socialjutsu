@@ -256,10 +256,8 @@ function File_Manager() {
     };
 
     this.Unsplash = function () {
-        $(document).on("click", "#unsplashImage", function () {
-            var url = element.attr('src');
-            console.log("test")
-
+        $(document).on("click", ".unsplashImage", function () {
+            var url = $this.attr('src');
             self.saveFile(url);
         });
     };

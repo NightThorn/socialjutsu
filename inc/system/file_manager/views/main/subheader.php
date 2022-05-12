@@ -64,7 +64,7 @@
 
 					$("#result").append(`
 					
-					<img id="unsplashImage" width="100" height="100" src="${photo.urls.regular}"/>
+					<img class="unsplashImage" id="unsplashImage${photo.id}" width="100" height="100" src="${photo.urls.regular}"/>
 					
 					`)
 				})
