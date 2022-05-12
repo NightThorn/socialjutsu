@@ -46,6 +46,7 @@
 <style>
 	.imagecontainer {
 		position: relative;
+		width: 50%;
 	}
 
 	.bottomright {
@@ -74,8 +75,10 @@
 				data.results.forEach(photo => {
 
 					$("#result").append(`
+					<div class="imagecontainer">
 					<img class="unsplashImage" id="unsplashImage${photo.id}" width="100" height="100" src="${photo.urls.regular}"/>
 					  <a target="_blank" href="https://unsplash.com/@${photo.user.username}?utm_source=socialjutsu&utm_medium=referral"><div class="bottomright">${photo.user.name}</div></a>
+					</div>
 					`)
 				})
 			}
