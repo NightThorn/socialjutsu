@@ -257,7 +257,7 @@ function File_Manager() {
 
     this.Unsplash = function () {
         $(document).on("click", ".unsplashImage", function () {
-            var url = $this.attr('src');
+            var url = $(this).attr('src');
             self.saveFile(url);
         });
     };

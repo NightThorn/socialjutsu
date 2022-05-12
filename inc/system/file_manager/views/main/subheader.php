@@ -43,7 +43,18 @@
 	    <button type="button" class="btn btn-secondary"><i class="fas fa-list"></i></button>
 	</div> -->
 </div>
+<style>
+	.imagecontainer {
+		position: relative;
+	}
 
+	.bottomright {
+		position: absolute;
+		bottom: 8px;
+		right: 16px;
+		font-size: 18px;
+	}
+</style>
 <script>
 	const $menu = $('.result');
 	const $container = $('.search-container');
@@ -63,9 +74,10 @@
 				data.results.forEach(photo => {
 
 					$("#result").append(`
-					
+					<div class="imagecontainer">
 					<img class="unsplashImage" id="unsplashImage${photo.id}" width="100" height="100" src="${photo.urls.regular}"/>
-					
+					  <a href="https://unsplash.com/@${photo.user.username}?utm_source=socialjutsu&utm_medium=referral"><div class="bottomright">${photo.user.name}</div></a>
+					</div>
 					`)
 				})
 			}
