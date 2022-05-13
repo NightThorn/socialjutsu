@@ -69,7 +69,7 @@ class facebook_pages extends MY_Controller {
             	}else{
             		$data = [
 		           		"status" => "error",
-		           		"message" => __('No profile to add, looks like the response data did not send back anything.')
+		           		"message" => "No profile to add, looks like the response data did not send back anything.". $response
 		           	];
             	}
             }else{
