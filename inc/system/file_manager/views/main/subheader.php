@@ -43,3 +43,56 @@
 	    <button type="button" class="btn btn-secondary"><i class="fas fa-list"></i></button>
 	</div> -->
 </div>
+<style>
+	.imagecontainer {
+		position: relative;
+		display: inline-flex;
+	}
+
+	.bottomright {
+		position: absolute;
+		top: 0;
+		left: 1px;
+		font-size: 7px;
+	}
+</style>
+<script>
+	const $menu = $('.result');
+	const $container = $('.search-container');
+
+	$("#unsplash").submit(function(event) {
+		event.preventDefault();
+		$("#result").empty();
+
+		$container.toggleClass('is-active');
+
+		var search = $("#search").val();
+		var url = "https://api.unsplash.com/search/photos?query=" + search + "&client_id=6g3NDyeZ0vzEr2U90O8vBLORi-564yPp15vif6V8YR8";
+		$.ajax({
+			method: 'GET',
+			url: url,
+			success: function(data) {
+				data.results.forEach(photo => {
+
+					$("#result").append(`
+					<div class="imagecontainer">
+					<img class="unsplashImage" id="unsplashImage${photo.id}" width="100" height="100" src="${photo.urls.regular}"/>
+					  <a target="_blank" href="https://unsplash.com/@${photo.user.username}?utm_source=socialjutsu&utm_medium=referral"><div class="bottomright">${photo.user.name}</div></a>
+					</div>
+					`)
+				})
+			}
+		})
+	})
+
+
+
+	$(document).mouseup(e => {
+		if (!$container.is(e.target) // if the target of the click isn't the container...
+			&&
+			$container.has(e.target).length === 0) // ... nor a descendant of the container
+		{
+			$container.removeClass('is-active');
+		}
+	});
+</script>
