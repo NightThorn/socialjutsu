@@ -72,7 +72,7 @@
      <div style="padding: 10px;" class="title fs-16 text-info"><i class="far fa-hand-spock"></i> Let Our A.I. Get You Some Post Ideas</div>
      <h3></h3>
      <form id="ideaform" method="post">
-         <div class="form-group">
+         <div class="input-group">
              <input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
              <button class="btn btn-secondary" id="generate" style="border-radius: 20px; border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit"><i class="fas fa-search"></i></button>
          </div>
