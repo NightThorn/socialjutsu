@@ -72,15 +72,12 @@
      <div style="padding: 10px;" class="title fs-16 text-info"><i class="far fa-hand-spock"></i> Let Our A.I. Get You Some Post Ideas</div>
      <h3></h3>
      <form id="ideaform" method="post">
-
          <div class="form-group">
              <input class="form-control" type="text" id="topic" name="topic" placeholder="<?php _e("Enter a topic") ?>">
-             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+             <button class="btn btn-secondary" id="generate" style="border-radius: 20px; border-top-left-radius: 0; border-bottom-left-radius: 0;" type="submit"><i class="fas fa-search"></i></button>
+         </div>
+         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
-         </div>
-         <div class="fm-action text-center">
-             <button id="generate" class="btn btn-info btn-post-now" type="submit"><?php _e("Generate") ?></button>
-         </div>
      </form>
      <div id="overlay">
          <div class="cv-spinner">
