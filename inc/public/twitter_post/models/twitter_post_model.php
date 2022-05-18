@@ -234,7 +234,7 @@ class twitter_post_model extends MY_Model {
 	public function cut_text($text, $n = 280){ 
 		if(strlen($text) <= $n){
 			return $text;
-		}
+		} else{
 
 		$res = array();
 		$k = ceil(strlen($text) / $n);
@@ -244,5 +244,6 @@ class twitter_post_model extends MY_Model {
 
 		}
 		return $res;
+		}
 	}
 }
