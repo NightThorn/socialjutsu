@@ -227,7 +227,7 @@ class twitter_post_model extends MY_Model {
 		return false;
 	}
 	
-	public function cut_text($text, $n = 260){ 
+	public function cut_text($text, $n = 280){ 
 		if(strlen($text) <= $n){
 			return $text;
 		}
@@ -235,7 +235,9 @@ class twitter_post_model extends MY_Model {
 		$res = array();
 		$k = ceil(strlen($text) / $n);
 		for ($i = 0; $i < $k; $i++) {
-			$res[] = substr($text, $i * $n, $n);
+			$result = substr($text, $i * $n, $n);
+			$res[] = substr($result, 0, strrpos($result, ' '));
+
 		}
 		return $res;
 	}
