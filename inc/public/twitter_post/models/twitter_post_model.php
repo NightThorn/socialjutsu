@@ -169,6 +169,8 @@ class twitter_post_model extends MY_Model {
 
 
 	        if(isset($response->id)){
+				$post_ID =  $response->id;
+				
 	            $post_id =  $response->id;
 				if (count($caption) > 1) {
 					$isFirst = true;
@@ -183,13 +185,15 @@ class twitter_post_model extends MY_Model {
 							'in_reply_to_status_id' => $post_id,
 							'auto_populate_reply_metadata' => true
 						];
-						$this->twitter->post($endpoint, $param);
+						$replyID = $this->twitter->post($endpoint, $param);
+						$post_id =  $replyID->id;
+
 					}
 				}
 	            return [
 	            	"status" => "success",
 	            	"message" => __('Success'),
-	            	"id" => $post_id,
+	            	"id" => $post_ID,
 	            	"url" => "https://twitter.com/".$response->user->screen_name."/status/".$response->id_str,
 	            	"type" => $post_type
 	            ];
