@@ -63,7 +63,7 @@ class twitter_post_model extends MY_Model {
 		$medias = $data["medias"];
 		$link = $data["link"];
 		$advance = $data["advance"];
-		$caption = $this->cut_text( spintax( $data["caption"] ) );
+		$caption = $this->cut_text($data["caption"]);
 		$is_schedule = $data["is_schedule"];
 		$endpoint = "statuses/update";
 		
@@ -101,7 +101,7 @@ class twitter_post_model extends MY_Model {
                 }
 
                 $params = [
-                    'status' => $caption,
+                    'status' => $caption[0],
                 	'media_ids' => implode(',', $media_ids)
                 ];
 
@@ -138,7 +138,7 @@ class twitter_post_model extends MY_Model {
 				}
 
      			$params = [
-                    'status' => $caption,
+                    'status' => $caption[0],
                 	'media_ids' => $upload->media_id_string
                 ];
                 
@@ -147,14 +147,14 @@ class twitter_post_model extends MY_Model {
 			case 'link':
 				
 				$params = [
-                    'status' => $caption." ".$link,
+                    'status' => $caption[0]." ".$link,
                 ];
 
 				break;
 
 			case 'text':
 
-				$params = ['status' => $caption];
+				$params = ['status' => $caption[0]];
 
 				break;
 			
@@ -176,7 +176,23 @@ class twitter_post_model extends MY_Model {
 	            	"id" => $post_id,
 	            	"url" => "https://twitter.com/".$response->user->screen_name."/status/".$response->id_str,
 	            	"type" => $post_type
-	            ]; 
+	            ];
+				if (count($caption) > 1) {
+					$isFirst = true;
+
+					foreach ($caption as $reply){
+						if ($isFirst) {
+							$isFirst = false;
+							continue;
+						} 
+						$param = [
+							'status' => $reply,
+							'in_reply_to_status_id' => $post_id,
+							'auto_populate_reply_metadata' => true
+						];
+						$response = $this->twitter->post($endpoint, $param);
+					}
+				}
 	        }else{
 	            return [
 	            	"status" => "error",
@@ -210,25 +226,16 @@ class twitter_post_model extends MY_Model {
 		return false;
 	}
 	
-	public function cut_text($text, $n = 280){ 
+	public function cut_text($text, $n = 260){ 
 		if(strlen($text) <= $n){
 			return $text;
 		}
-		
-		$text= substr($text, 0, $n);
-		if($text[$n-1] == ' '){
-			return trim($text)."...";
+
+		$res = array();
+		$k = ceil(strlen($text) / $n);
+		for ($i = 0; $i < $k; $i++) {
+			$res[] = substr($text, $i * $n, $n);
 		}
-
-		$x  = explode(" ", $text);
-		$sz = sizeof($x);
-
-		if($sz <= 1){
-			return $text."...";
-		}
-
-		$x[$sz-1] = '';
-
-		return trim(implode(" ", $x))."...";
+		return $res;
 	}
 }
