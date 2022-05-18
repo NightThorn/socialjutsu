@@ -255,15 +255,15 @@
 <div class="container">
   <div class="border-top"></div>
 </div>
-<!-- <section class="testimonial_area section_padding_130" id="rating">
+<section class="testimonial_area section_padding_130" id="rating">
    <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
   <div class="testimonial-bottom-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-bottom.png')) ?>" alt=""></div>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading white text-center">
-          <h3><?php _e("Our Happy Clients") ?></h3>
-          <p><?php _e("Our clients praise us for our great results, personable service and expert knowledge. Here are what just a few of them had to say") ?></p>
+          <h3><?php _e("Our Happy Users!") ?></h3>
+          <p><?php _e("Our users praise us for our easy to use website, support, and innovative features! Here are what just a few of them had to say") ?></p>
           <div class="line"></div>
         </div>
       </div>
@@ -272,54 +272,45 @@
       <div class="col-10 col-md-9 col-lg-7">
         <div class="card border-0 p-4 p-sm-5 testimonials owl-carousel">
           <div class="single_testimonial_area text-center">
-            <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/testimonial-1.jpg')) ?>" alt=""></div>
+            <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/warchief.jpg')) ?>" alt=""></div>
             <div class="testimonial_text">
-              <p><?php _e("This tool has made sharing our story and building our brand on social media so much easier.") ?></p>
+              <p><?php _e("Just saying if you dont have an account on http://socialjustu.com YOU NEED ONE! This will not only help you promote your content, but it will save you TONS of time! Post to all your social media in the time it takes to make one post! Type, Click, Done!") ?></p>
               <div class="rating"><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i></div>
               <div class="testimonial_author_name">
-                <h5><?php _e("Adam John") ?></h5>
-                <h6><?php _e("CEO & Founder, Designing World") ?></h6>
+                <h5><?php _e("WarchiefOG") ?></h5>
+                <h6><?php _e("Twitch Streamer") ?></h6>
               </div>
             </div>
           </div>
           <div class="single_testimonial_area text-center">
-            <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/testimonial-2.jpg')) ?>" alt=""></div>
+            <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/mackman.jpg')) ?>" alt=""></div>
             <div class="testimonial_text">
-              <p><?php _e("Easy scheduling, simple time saving and lots of features rich") ?></p>
+              <p><?php _e("SocialJutsu is the simplest, most powerful, and easiest to use website when it comes to posting to all my favorite social media accounts!!") ?></p>
               <div class="rating"><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i></div>
               <div class="testimonial_author_name">
-                <h5><?php _e("Jannatun Lima") ?></h5>
-                <h6><?php _e("CEO & Founder, Cigna") ?></h6>
+                <h5><?php _e("Mackman Gaming") ?></h5>
+                <h6><?php _e("Youtube Content Creator") ?></h6>
               </div>
             </div>
           </div>
           <div class="single_testimonial_area text-center">
-            <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/testimonial-1.jpg')) ?>" alt=""></div>
+            <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/john.jpg')) ?>" alt=""></div>
             <div class="testimonial_text">
-              <p><?php _e("Very well organized tool with stunning high quality design. Thank you so much!") ?></p>
+              <p><?php _e("Being able to post to all of our socials, especially our own site, saves us time, money, and allows us to focus on what really matters: building our community!") ?></p>
               <div class="rating"><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i></div>
               <div class="testimonial_author_name">
-                <h5><?php _e("Ben Terry") ?></h5>
-                <h6><?php _e("CEO & Founder, General Motors") ?></h6>
+                <h5><?php _e("John Reaves") ?></h5>
+                <h6><?php _e("CEO & Co-Owner, GGs.tv") ?></h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
-
-  <!-- <div class="register-form">
-    <form action="<?php _e(get_module_url("ajax_email", $this)) ?>" class="actionLogin" method="post" data-redirect="<?php _e(post('redirect') ? post('redirect') : get_url('dashboard')) ?>">
-      <div class="form-group">
-        <input class="form-control" type="text" name="email" placeholder="<?php _e("Email") ?>">
-      </div>
-      <span class="show-message"></span>
-      <button class="btn wimax-btn w-100" type="submit">Join the waitlist!</button>
-      <span style="display: none;" id="thanks">Thank you. You will receive an email when the site is live!</span>
-    </form>
   </div> 
-</section> -->
+
+ 
+</section> 
 <?php if (!empty($faqs)) { ?>
   <div class="faq_area section_padding_130" id="faq">
     <div class="container">
