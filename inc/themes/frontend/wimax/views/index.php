@@ -256,7 +256,7 @@
   <div class="border-top"></div>
 </div>
 <section class="testimonial_area section_padding_130" id="rating">
-   <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
+  <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
   <div class="testimonial-bottom-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-bottom.png')) ?>" alt=""></div>
   <div class="container">
     <div class="row justify-content-center">
@@ -267,17 +267,19 @@
           <div class="line"></div>
         </div>
       </div>
-    </div> 
-     <div class="row justify-content-center">
+    </div>
+    <div class="row justify-content-center">
       <div class="col-10 col-md-9 col-lg-7">
         <div class="card border-0 p-4 p-sm-5 testimonials owl-carousel">
           <div class="single_testimonial_area text-center">
             <div class="testimonial_author_thumb"><img src="<?php _e(get_theme_frontend_url('assets/img/advisor-img/warchief.jpg')) ?>" alt=""></div>
             <div class="testimonial_text">
-              <p><?php _e("Just saying if you dont have an account on http://socialjustu.com YOU NEED ONE! This will not only help you promote your content, but it will save you TONS of time! Post to all your social media in the time it takes to make one post! Type, Click, Done!") ?></p>
+              <p><?php _e("Just saying if you dont have an account on SJ, YOU NEED ONE! This will not only help you promote your content, but it will save you TONS of time! Post to all your social media in the time it takes to make one post! Type, Click, Done!") ?></p>
               <div class="rating"><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i></div>
               <div class="testimonial_author_name">
-                <h5><?php _e("WarchiefOG") ?></h5>
+                <a href="https://twitter.com/warchiefog">
+                  <h5><?php _e("WarchiefOG") ?></h5>
+                </a>
                 <h6><?php _e("Twitch Streamer") ?></h6>
               </div>
             </div>
@@ -288,7 +290,9 @@
               <p><?php _e("SocialJutsu is the simplest, most powerful, and easiest to use website when it comes to posting to all my favorite social media accounts!!") ?></p>
               <div class="rating"><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i></div>
               <div class="testimonial_author_name">
-                <h5><?php _e("Mackman Gaming") ?></h5>
+                <a href="https://twitter.com/mackmangg">
+                  <h5><?php _e("Mackman Gaming") ?></h5>
+                </a>
                 <h6><?php _e("Youtube Content Creator") ?></h6>
               </div>
             </div>
@@ -299,18 +303,19 @@
               <p><?php _e("Being able to post to all of our socials, especially our own site, saves us time, money, and allows us to focus on what really matters: building our community!") ?></p>
               <div class="rating"><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i><i class="lni-star-filled"></i></div>
               <div class="testimonial_author_name">
-                <h5><?php _e("John Reaves") ?></h5>
-                <h6><?php _e("CEO & Co-Owner, GGs.tv") ?></h6>
+                <a href="https://twitter.com/johnreaveslive">
+                  <h5><?php _e("John Reaves") ?></h5></a>
+                  <h6><?php _e("CEO & Co-Owner, GGs.tv") ?></h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div> 
+  </div>
 
- 
-</section> 
+
+</section>
 <?php if (!empty($faqs)) { ?>
   <div class="faq_area section_padding_130" id="faq">
     <div class="container">
@@ -349,12 +354,12 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-         <div class="section_heading white text-center">
-              <h3><?php _e("Start your free trial. Are you ready to try SocialJutsu? ! No contract. No credit card") ?></h3>
-              <div class="line bg-white"></div>
-              <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>"><?php _e("Join the Beta!") ?></a>
-            </div>
-         
+        <div class="section_heading white text-center">
+          <h3><?php _e("Start your free trial. Are you ready to try SocialJutsu? ! No contract. No credit card") ?></h3>
+          <div class="line bg-white"></div>
+          <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>"><?php _e("Join the Beta!") ?></a>
+        </div>
+
       </div>
     </div>
   </div>
