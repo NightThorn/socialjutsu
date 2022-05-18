@@ -170,6 +170,22 @@ class twitter_post_model extends MY_Model {
 
 	        if(isset($response->id)){
 	            $post_id =  $response->id;
+				if (count($caption) > 1) {
+					$isFirst = true;
+
+					foreach ($caption as $reply) {
+						if ($isFirst) {
+							$isFirst = false;
+							continue;
+						}
+						$param = [
+							'status' => $reply,
+							'in_reply_to_status_id' => $post_id,
+							'auto_populate_reply_metadata' => true
+						];
+						$this->twitter->post($endpoint, $param);
+					}
+				}
 	            return [
 	            	"status" => "success",
 	            	"message" => __('Success'),
@@ -177,22 +193,7 @@ class twitter_post_model extends MY_Model {
 	            	"url" => "https://twitter.com/".$response->user->screen_name."/status/".$response->id_str,
 	            	"type" => $post_type
 	            ];
-				if (count($caption) > 1) {
-					$isFirst = true;
-
-					foreach ($caption as $reply){
-						if ($isFirst) {
-							$isFirst = false;
-							continue;
-						} 
-						$param = [
-							'status' => $reply,
-							'in_reply_to_status_id' => $post_id,
-							'auto_populate_reply_metadata' => true
-						];
-						$response = $this->twitter->post($endpoint, $param);
-					}
-				}
+				
 	        }else{
 	            return [
 	            	"status" => "error",
