@@ -194,15 +194,9 @@ class ggs_post_model extends MY_Model
 				break;
 
 			case 'link':
-					$medias[0] = watermark($medias[0], $account->team_id, $account->id);
-
-					$path = $medias[0];
-					$type = pathinfo($path, PATHINFO_EXTENSION);
-					$data = file_get_contents($path);
-					$b64image = 'data:image/' . $type . ';base64,' . base64_encode($data);
-
+				
 				$endpoint .= "feed";
-				$params = ['message' => $caption. " " .$link, 'user_id' => $account->pid, 'picture' => $b64image];
+				$params = ['message' => $caption. " " .$link, 'user_id' => $account->pid];
 				$test = json_encode($params);
 
 				break;
