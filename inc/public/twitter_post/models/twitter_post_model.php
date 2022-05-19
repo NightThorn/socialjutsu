@@ -180,6 +180,7 @@ class twitter_post_model extends MY_Model {
 							$isFirst = false;
 							continue;
 						}
+						if($reply != ""){
 						$param = [
 							'status' => $reply,
 							'in_reply_to_status_id' => $post_id,
@@ -187,7 +188,7 @@ class twitter_post_model extends MY_Model {
 						];
 						$replyID = $this->twitter->post($endpoint, $param);
 						$post_id =  $replyID->id;
-
+						}
 					}
 				}
 	            return [
@@ -239,8 +240,9 @@ class twitter_post_model extends MY_Model {
 			return $res;
 		} else{
 
-			$string = wordwrap($text, 280, "||");
-			$res = explode("||", $string);
+			$string = wordwrap($text, 280, "\r\n\r\n");
+			$res = explode("\r\n\r\n", wordwrap($string, 280));
+
 		return $res;
 		}
 	}
