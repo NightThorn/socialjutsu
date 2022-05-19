@@ -235,15 +235,10 @@ class twitter_post_model extends MY_Model {
 	public function cut_text($text, $n = 280){
 		$res = array();
 
-		if(strlen($text) <= $n){
-			$res[] = $text;
-			return $res;
-		} else{
-
 			$string = wordwrap($text, 280, "\r\n\r\n\r\n");
 			$res = explode("\r\n\r\n\r\n", wordwrap($string, 280));
 
 		return $res;
-		}
+		
 	}
 }
