@@ -178,17 +178,9 @@ function Post() {
         //Review content
         if ($(".post-message").length > 0) {
             $(".post-message").data("emojioneArea").on("keyup", function (editor) {
-                console.log(1333311);
 
                 var data = editor.html();
-                if ($(".post-message").length > 180) {
-                    console.log(221);
-                    var con = document.getElementById("twitterWarning");
-                    con.style.display = "block";
-                } else {
-                    var con = document.getElementById("twitterWarning");
-                    con.style.display = "none";
-                }
+                
                 editor.parents(".caption").find('.count-word span').html(data.length);
                 if (data != "") {
                     $(".post-preview .caption").html(data);
