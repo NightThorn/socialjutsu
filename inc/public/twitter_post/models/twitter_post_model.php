@@ -239,12 +239,8 @@ class twitter_post_model extends MY_Model {
 			return $res;
 		} else{
 
-		$k = ceil(strlen($text) / $n);
-		for ($i = 0; $i < $k; $i++) {
-			$result = substr($text, $i * $n, $n);
-			$res[] = substr($result, 0, strrpos($result, ' '));
-
-		}
+			$string = wordwrap($text, 280, "||");
+			$res = explode("||", $string);
 		return $res;
 		}
 	}
