@@ -231,12 +231,14 @@ class twitter_post_model extends MY_Model {
 		return false;
 	}
 	
-	public function cut_text($text, $n = 280){ 
+	public function cut_text($text, $n = 280){
+		$res = array();
+
 		if(strlen($text) <= $n){
-			return $text;
+			$res[] = $text;
+			return $res;
 		} else{
 
-		$res = array();
 		$k = ceil(strlen($text) / $n);
 		for ($i = 0; $i < $k; $i++) {
 			$result = substr($text, $i * $n, $n);
