@@ -241,7 +241,8 @@ class twitter_post_model extends MY_Model {
 
 		$k = ceil(strlen($text) / $n);
 		for ($i = 0; $i < $k; $i++) {
-			$res[] = substr($text, $i * $n, $n);
+			$result = substr($text, $i * $n, $n);
+			$res[] = substr($result, 0, strrpos($result, ' '));
 
 		}
 		return $res;
