@@ -1,9 +1,9 @@
 <?php
 return [
     'id' => 'group_manager',
-    'name' => 'Group manager',
-    'author' => 'Stackcode',
-    'author_uri' => 'https://stackposts.com',
+    'name' => 'Social Groups',
+    'author' => 'SocialJutsu',
+    'author_uri' => 'https://socialjutsu.com',
     'version' => '1.0',
     'desc' => '',
     'icon' => 'fas fa-users',
@@ -11,7 +11,7 @@ return [
     'menu' => [
         'tab' => 4,
     	'position' => 800,
-    	'name' => 'Group manager',
+    	'name' => 'Social Groups',
     ],
     'css' => [
         "assets/css/group_manager.css"

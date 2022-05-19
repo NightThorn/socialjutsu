@@ -1,9 +1,9 @@
 <?php
 return [
     'id' => 'caption',
-    'name' => 'Caption',
-    'author' => 'Stackcode',
-    'author_uri' => 'https://stackposts.com',
+    'name' => 'Saved Captions',
+    'author' => 'socialjutsu',
+    'author_uri' => 'https://socialjutsu.com',
     'version' => '1.0',
     'desc' => '',
     'icon' => 'far fa-list-alt',
@@ -11,7 +11,7 @@ return [
     'menu' => [
         'tab' => 4,
     	'position' => 700,
-    	'name' => 'Caption',
+    	'name' => 'Saved Captions',
     ],
     'css' => [
          'assets/css/caption.css'

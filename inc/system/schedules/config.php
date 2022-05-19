@@ -1,9 +1,9 @@
 <?php
 return [
     'id' => 'schedules',
-    'name' => 'Schedules',
-    'author' => 'Stackcode',
-    'author_uri' => 'https://stackposts.com',
+    'name' => 'Calendar',
+    'author' => 'SocialJutsu',
+    'author_uri' => 'https://socialjutsu.com',
     'version' => '1.0',
     'desc' => '',
     'icon' => 'far fa-calendar-alt',
@@ -11,7 +11,7 @@ return [
     'menu' => [
         'tab' => 4,
         'position' => 1100,
-        'name' => 'Schedules',
+        'name' => 'Calendar',
     ],
     "css" => [
         "assets/css/schedules.css"

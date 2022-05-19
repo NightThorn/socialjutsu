@@ -1,9 +1,9 @@
 <?php
 return [
     'id' => 'file_manager',
-    'name' => 'File manager',
-    'author' => 'Stackcode',
-    'author_uri' => 'https://stackposts.com',
+    'name' => 'Media',
+    'author' => 'SocialJutsu',
+    'author_uri' => 'https://socialjutsu.com',
     'version' => '1.0',
     'desc' => '',
     'icon' => 'far fa-folder-open',
@@ -11,7 +11,7 @@ return [
     'menu' => [
         'tab' => 4,
         'position' => 900,
-        'name' => 'File manager'
+        'name' => 'Media'
     ],
 	'css' => [
         'assets/plugins/file.upload/css/jquery.fileupload.css',
