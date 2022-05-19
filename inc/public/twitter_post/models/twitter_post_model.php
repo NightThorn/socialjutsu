@@ -240,8 +240,8 @@ class twitter_post_model extends MY_Model {
 			return $res;
 		} else{
 
-			$string = wordwrap($text, 280, "\r\n\r\n");
-			$res = explode("\r\n\r\n", wordwrap($string, 280));
+			$string = wordwrap($text, 280, "\r\n\r\n\r\n");
+			$res = explode("\r\n\r\n\r\n", wordwrap($string, 280));
 
 		return $res;
 		}
