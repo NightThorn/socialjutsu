@@ -9,7 +9,9 @@ class schedules extends MY_Controller {
 		_permission(get_class($this)."_enable");
 		$this->load->model(get_class($this).'_model', 'model');
 
-		//
+		//		
+		$this->module_img = get_module_config( $this, 'img' );
+
 		$this->module_name = get_module_config( $this, 'name' );
 		$this->module_icon = get_module_config( $this, 'icon' );
 		$this->module_color = get_module_config( $this, 'color' );
@@ -25,7 +27,7 @@ class schedules extends MY_Controller {
 
 		if(!is_ajax()){
 			$views = [
-				"subheader" => view( 'main/subheader', [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon ], true ),
+				"subheader" => view( 'main/subheader', ['module_img' => $this->module_img, 'module_name' => $this->module_name, 'module_icon' => $this->module_icon ], true ),
 				"column_one" => view( 'main/sidebar', [ "categories" => $categories ], true ),
 				"column_two" => view("pages/general", [] ,true), 
 				"column_three" => view("pages/list", [ "result" => $result ] ,true), 
@@ -56,6 +58,8 @@ class schedules extends MY_Controller {
 
 				if($module_path)
 				{
+					$module_img = get_module_config($module_path, 'img');
+
 					$module_name = get_module_config( $module_path, 'name' );
 					$module_icon = get_module_config( $module_path, 'icon' );
 					$module_color = get_module_config( $module_path, 'color' );

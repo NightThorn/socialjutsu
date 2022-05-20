@@ -9,6 +9,7 @@ class schedules_model extends MY_Model {
 
 		//
 		$this->module_name = get_module_config( $module_path, 'name' );
+		$this->module_img = get_module_config($module_path, 'img');
 		$this->module_icon = get_module_config( $module_path, 'icon' );
 		$this->module_color = get_module_config( $module_path, 'color' );
 		//
@@ -20,7 +21,8 @@ class schedules_model extends MY_Model {
 			'position' => 1000,
 			'name' => $this->module_name,
 			'color' => $this->module_color,
-			'icon' => $this->module_icon, 
+			'icon' => $this->module_icon,
+			'img' => $this->module_img, 
 			'id' => str_replace("_model", "", get_class($this)),
 			'html' => view( $dir.'pages/block_permissions', ['path' => $path], true, $this ),
 		];
@@ -190,8 +192,10 @@ class schedules_model extends MY_Model {
 					$result[$key]->module_name = get_module_config( $module_path, 'name' );
 					$result[$key]->module_icon = get_module_config( $module_path, 'icon' );
 					$result[$key]->module_color = get_module_config( $module_path, 'color' );
+					$result[$key]->module_img = get_module_config($module_path, 'img');
 
 				}else{
+					$result[$key]->module_img = "";
 
 					$result[$key]->module_name = "";
 					$result[$key]->module_icon = "";
