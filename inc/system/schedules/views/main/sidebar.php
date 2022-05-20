@@ -63,7 +63,7 @@
 				<div class="widget-item widget-item-3 search-list">
 					<a href="#">
 						<div class="icon border">
-							<img height="30" style="margin-bottom: 10px; margin-right: 2px;" src="<?php _e($row->module_img) ?>"><i class="<?php _e($row->module_icon) ?>" style="color: <?php _e($row->module_color) ?>"></i>
+							<i class="<?php _e($row->module_icon) ?>" style="color: <?php _e($row->module_color) ?>"></i>
 						</div>
 						<div class="content content-1">
 							<div class="title fw-4"><?php _e($row->module_name) ?></div>
