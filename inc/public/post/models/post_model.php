@@ -248,7 +248,6 @@ public function idea($topic){
 
 									if( !$post_id )
 									{
-										$time_post += ($count_schedule == 0)?0:$interval_per_post*60;
 										$result = [
 											"ids" => ids(),
 											"team_id" => $team_id,
