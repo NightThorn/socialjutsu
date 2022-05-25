@@ -19,7 +19,7 @@
 			<div class="col-6">
 				<div class="form-group">
 					<label><?php _e('Interval per post (minute)')?></label>
-					<input type="hidden" class="form-control" autocomplete="off" name="interval_per_post" value="5">
+					<input type="hidden" class="form-control" autocomplete="off" name="interval_per_post" value="0">
 				</div>
 			</div>
 		</div>

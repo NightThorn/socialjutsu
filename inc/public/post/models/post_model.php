@@ -264,7 +264,7 @@ public function idea($topic){
 											]),
 											"time_post" => $time_post,
 											"time_delete" => NULL,
-											"delay" => 1,
+											"delay" => 0,
 											"repost_frequency" => $repost_frequency,
 											"repost_until" => $repost_frequency? $repost_until :NULL,
 											"status" => 1,
@@ -358,7 +358,7 @@ public function idea($topic){
 										]),
 										"time_post" => $time_post,
 										"time_delete" => NULL,
-										"delay" => 1,
+										"delay" => 0,
 										"repost_frequency" => $repost_frequency,
 										"repost_until" => $repost_frequency? $repost_until :NULL,
 										"changed" => now()
