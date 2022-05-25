@@ -192,7 +192,7 @@ class post extends MY_Controller
 		}
 		validate('null', __('Time post'), $time_post);
 		validate('repost_frequency', __('How many reposts per day?'), $repost_frequency, 0);
-		validate('min_number', __('How much time between each post is sent'), $interval_per_post, 1);
+		
 
 		if ($repost_frequency > 0) {
 			validate('null', __('Repost until'), $repost_until);
