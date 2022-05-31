@@ -52,6 +52,8 @@ class instagram_post extends MY_Controller {
 		$block_preview = Modules::run("post/block_preview", [get_class($this)]);
 		$block_accounts = Modules::run("post/block_accounts", "instagram");
 		$block_link = Modules::run("post/block_link");
+		$idea = Modules::run("post/idea");
+
 		$block_caption = Modules::run("post/block_caption");
 		$block_schedule = Modules::run("post/block_schedule");
 		Modules::run(get_class($this)."/block");
@@ -59,7 +61,7 @@ class instagram_post extends MY_Controller {
 		$views = [
 			"subheader" => view( 'main/subheader', [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color ], true ),
 			"column_one" => $block_accounts,
-			"column_two" => view("pages/general", [ 'file_manager_media' => $block_file_media, 'file_manager_story' => $block_file_story, 'file_manager_igtv' => $block_file_igtv, 'file_manager_carousel' => $block_file_carousel, 'block_post_type' => $block_post_type, 'block_link' => $block_link, 'block_caption' => $block_caption, 'block_schedule' => $block_schedule ] ,true), 
+			"column_two" => view("pages/general", [ 'file_manager_media' => $block_file_media, 'idea' => $idea, 'file_manager_story' => $block_file_story, 'file_manager_igtv' => $block_file_igtv, 'file_manager_carousel' => $block_file_carousel, 'block_post_type' => $block_post_type, 'block_link' => $block_link, 'block_caption' => $block_caption, 'block_schedule' => $block_schedule ] ,true), 
 			"column_three" => $block_preview, 
 		];
 		

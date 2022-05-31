@@ -53,12 +53,14 @@ class linkedin_post extends MY_Controller {
 		$block_link = Modules::run("post/block_link");
 		$block_caption = Modules::run("post/block_caption");
 		$block_schedule = Modules::run("post/block_schedule");
+		$idea = Modules::run("post/idea");
+
 		Modules::run(get_class($this)."/block");
 
 		$views = [
 			"subheader" => view( 'main/subheader', [ 'module_name' => $this->module_name, 'module_icon' => $this->module_icon, 'module_color' => $this->module_color ], true ),
 			"column_one" => $block_accounts,
-			"column_two" => view("pages/general", [ 'file_manager_photo' => $block_file_photo, 'block_post_type' => $block_post_type, 'block_link' => $block_link, 'block_caption' => $block_caption, 'block_schedule' => $block_schedule ] ,true), 
+			"column_two" => view("pages/general", [ 'file_manager_photo' => $block_file_photo, 'block_post_type' => $block_post_type, 'block_link' => $block_link, 'block_caption' => $block_caption, 'block_schedule' => $block_schedule, 'idea' => $idea ] ,true), 
 			"column_three" => $block_preview, 
 		];
 		
