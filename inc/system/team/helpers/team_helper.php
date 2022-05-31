@@ -63,13 +63,13 @@ if(!function_exists("send_mail_form")){
             }
 
             //Recipients
-            $mail->setFrom( get_option('email_from', 'example@gmail.com'), get_option('email_name', 'Stackposts') );
+            $mail->setFrom( get_option('email_from', 'example@gmail.com'), get_option('email_name', 'SocialJutsu') );
             $mail->addAddress( $email );
-            $mail->addReplyTo( get_option('email_from', 'example@gmail.com'), get_option('email_name', 'Stackposts') );
+            $mail->addReplyTo( get_option('email_from', 'example@gmail.com'), get_option('email_name', 'SocialJutsu') );
 
             $variables = [
             "{invite_link}" => $invite_link,
-            "{website_name}" => get_option('website_title', 'Stackposts - Social Marketing Tool'),
+            "{website_name}" => get_option('website_title', 'SocialJutsu - Social Marketing Tool'),
             "{website_link}" => get_url(),
         ];
 
