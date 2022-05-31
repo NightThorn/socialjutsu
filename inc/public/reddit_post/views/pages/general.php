@@ -23,5 +23,6 @@
 	</div>
 
 	<?php _e($block_schedule, false) ?>
+	<?php _e($idea, false) ?>
 
 </div>
