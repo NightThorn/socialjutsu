@@ -26,7 +26,25 @@ if(!function_exists("update_option")){
         }
     }
 }
+if (!function_exists("get_pref")) {
+    function get_pref()
+    {
 
+
+        $CI = &get_instance();
+        if (_s("uid")) {
+            $uid = _u("id");
+        }
+        $option = $CI->main_model->get("*", "sp_users", "id = '{$uid}'");
+        if ($option->theme == 1) {
+            $pref = "sidebar-dark";
+            return $pref;
+        } else {
+            $pref = "full-dark";
+            return $pref;
+        }
+    }
+}
 /*Themes*/
 if(!function_exists('get_theme_backend_url')){
     function get_theme_backend_url($path = ''){

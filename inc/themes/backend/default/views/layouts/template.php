@@ -9,7 +9,7 @@
 	<meta name="description" content="<?php _e(get_option('website_desc', '#1 Marketing Platform for Social Network')) ?>">
 	<meta name="keywords" content="<?php _e(get_option('website_keywords', 'social network, marketing, brands, businesses, agencies, individuals')) ?>">
 	<link rel="icon" type="image/png" href="<?php _e(get_option('website_favicon', get_url("inc/themes/backend/default/assets/img/favicon.png"))) ?>" />
-	
+
 	<!--Css-->
 	<link rel="stylesheet" type="text/css" href="<?php _e(get_theme_backend_url('assets/fonts/line/line-awesome.min.css')) ?>">
 	<link rel="stylesheet" type="text/css" href="<?php _e(get_theme_backend_url('assets/fonts/feather/feather.css')) ?>">
@@ -81,7 +81,7 @@
 
 <!-- sidebar-small  -->
 
-<body class="<?php _e(get_option('appearance_default_menu', 0) ? "" : "sidebar-small") ?>" id="<?php _e(get_option('appearance_menu_color', "light")) ?>">
+<body class="<?php _e(get_option('appearance_default_menu', 0) ? "" : "sidebar-small") ?>" id="<?php _e(get_pref()) ?>">
 
 	<div class="loading-overplay" id="loading-overplay">
 		<div class='loader loader1'>
