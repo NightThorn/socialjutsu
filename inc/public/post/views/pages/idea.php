@@ -1,4 +1,18 @@
  <style>
+     body#full-dark .ai .caption .caption-toolbar {
+         border-left: 1px solid #323a5f;
+         border-right: 1px solid #323a5f;
+         border-bottom: 1px solid #323a5f;
+         border-top: 1px solid #323a5f;
+         background-color: #192038;
+     }
+
+     body#full-dark .ai .caption .caption-toolbar .item {
+         color: #fff;
+         border-right: 1px solid #323a5f;
+     }
+
+
      .caption-toolbar a.item {
          height: 30px;
          line-height: 30px;
