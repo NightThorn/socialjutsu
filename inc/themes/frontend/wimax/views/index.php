@@ -25,7 +25,7 @@
       <div class="col-12 col-md-6">
         <div class="welcome_text_area">
           <h2 class="wow fadeInUp" data-wow-delay="0.2s"><?php _e("SocialJutsu™") ?></h2>
-          <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">The Ninja-Level Social Media Management Software</h3>
+          <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Social Media Made Easy.</h3>
           <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Save time and energy by posting to all of your socials from one spot! Schedule your posts, view analytics, and let our AI Post Generator provide you with post ideas to engage and market to your audience!</h5>
 
           <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Join the Beta!") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
