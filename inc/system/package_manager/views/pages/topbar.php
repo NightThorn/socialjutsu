@@ -20,7 +20,7 @@ if ($team->owner == $uid) {
         <input type="checkbox" <?php echo $theme->theme == 1 ? 'checked' : '' ?> id="onoffswitch">
         <span class="slider round"></span>
     </label>
-    <i style="font-size: x-large; padding: 10px;" class="fas fa-lightbulb"></i>
+    <i style="font-size: x-large; padding: 10px; color: #efef27;" class="fas fa-lightbulb"></i>
 
 </div>
 
