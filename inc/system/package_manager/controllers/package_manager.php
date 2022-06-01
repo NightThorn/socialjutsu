@@ -55,21 +55,7 @@ class package_manager extends MY_Controller
 			_e($page, false);
 		}
 	}
-	public function settheme()
-	{
-		$id = (int) $this->input->post('theme');
 
-		$CI = &get_instance();
-		if (_s("uid")) {
-			$uid = _u("id");
-		}
-		$int_value = intval($uid);
-		$int_theme = intval($id);
-		$sql = "UPDATE sp_users SET theme = ? WHERE id = ?";
-		$this->db->query($sql, array($int_theme, $int_value));
-
-		
-	}
 
 	public function save($update = "no", $ids = "")
 	{

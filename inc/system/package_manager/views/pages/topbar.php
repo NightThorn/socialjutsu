@@ -104,29 +104,28 @@ if ($team->owner == $uid) {
     $(document).ready(function() {
         $('#onoffswitch').click(function() {
             var mode = $(this).prop('checked');
-            console.log(mode);
             if (mode) {
                 var value = 1;
                 $("body").attr('id', 'sidebar-dark');
-                console.log(value);
 
             } else {
                 var value = 0;
                 $("body").attr('id', 'full-dark');
-                console.log(value);
+
 
             }
             $.ajax({
-                url: "<?php echo base_url(); ?>package_manager/settheme",
+                url: "<?php echo base_url('dashboard/settheme'); ?>",
                 type: "POST",
                 data: {
+                    '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>',
                     "theme": value,
                 },
                 success: function(data) {
                     console.log(data);
                 },
                 error: function(data) {
-                    console.log(data);
+                    console.log("faillll");
                 }
             });
         });

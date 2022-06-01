@@ -16,7 +16,24 @@ class dashboard extends MY_Controller {
 		$this->dir = get_directory_block(__DIR__, get_class($this));
 		//
 	}
+	public function settheme()
+	{
+		$id = (int) $this->input->post('theme');
 
+		$CI = &get_instance();
+		if (_s("uid")) {
+			$uid = _u("id");
+		}
+		print_r($uid);
+
+		$int_value = intval($uid);
+		$int_theme = intval($id);
+		print_r($id);
+		$sql = "UPDATE sp_users SET theme = ? WHERE id = ?";
+		$this->db->query($sql, array($int_theme, $int_value));
+		$tr = $this->db->last_query();
+		print_r($tr);
+	}
 	public function index($ids = "")
 	{
 		$team_id = _t("id");
