@@ -449,11 +449,9 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
 
-if (stripos($_SERVER['REQUEST_URI'], "/webhook") === FALSE) {
-	$config['csrf_protection'] = TRUE;
-} else {
+
 	$config['csrf_protection'] = FALSE;
-}
+
 $config['csrf_token_name'] = 'token';
 $config['csrf_cookie_name'] = 'token';
 $config['csrf_expire'] = 1209600;
