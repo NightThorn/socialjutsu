@@ -12,13 +12,18 @@ if ($team->owner == $uid) {
     $expiration_date = $user->expiration_date;
 }
 ?>
+
 <div class="m-r-10 m-t-2 d-none d-sm-block">
+    <i style="font-size: x-large; padding: 10px;" class="far fa-lightbulb"></i>
 
     <label class="switch">
         <input type="checkbox" <?php echo $theme->theme == 1 ? 'checked' : '' ?> id="onoffswitch">
         <span class="slider round"></span>
     </label>
+    <i style="font-size: x-large; padding: 10px;" class="fas fa-lightbulb"></i>
+
 </div>
+
 <?php if (!_u("role") && strtotime($expiration_date . "23:59:59") < time()) { ?>
     <span class="position-absolute w-100 text-white bg-danger l-1 t-65 p-t-16 p-b-16 p-l-25 p-r-25"><i class="far fa-bell"></i> <?php _e("Your subscription has expired. Renew your subscription so as not to interrupt your plan.") ?></span>
 <?php } else { ?>
@@ -37,6 +42,7 @@ if ($team->owner == $uid) {
         display: inline-block;
         width: 60px;
         height: 34px;
+        vertical-align: middle;
     }
 
     /* Hide default HTML checkbox */
