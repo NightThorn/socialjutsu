@@ -145,7 +145,7 @@ class post extends MY_Controller
 		$repost_until = timestamp_sql(post("repost_until"));
 		$advance = post("advance");
 
-		validate('empty', __('Please select at least a profile'), $accounts);
+		validate('empty', __('Please select at least one profile'), $accounts);
 
 		switch ($post_type) {
 			case 'media':
