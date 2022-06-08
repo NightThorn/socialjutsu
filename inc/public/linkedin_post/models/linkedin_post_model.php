@@ -66,7 +66,7 @@ class linkedin_post_model extends MY_Model {
 		switch ($data['post_type']) {
 
 			case 'video':
-				$errors[] = __("Linkedin API not support post video");
+				$errors[] = __("Linkedin API does not support posting video");
 				break;
 		}
 

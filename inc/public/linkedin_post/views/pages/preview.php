@@ -64,7 +64,7 @@
 
             <div class="preview-linkedin-media item-post-type" data-type="video">
                 <div class="text-center p-25">
-                    <?php _e("This social network not support post this post type")?>
+                    <?php _e("This social network does not support posting this post type")?>
                 </div>
             </div>
 

@@ -144,7 +144,7 @@
             </div>
             <div class="preview-instagram preview-instagram-photo item-post-type" data-type="text">
                 <div class="text-center p-25">
-                    <?php _e("This social network not support post this post type")?>
+                    <?php _e("This social network does not support posting this post type")?>
                 </div>
             </div>
         </div>
