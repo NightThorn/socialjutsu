@@ -123,9 +123,11 @@ if ($team->owner == $uid) {
                 },
                 success: function(data) {
                     console.log(data);
+
                 },
+                cache: false,
                 error: function(data) {
-                    console.log("ajax call failed");
+                    console.log("faillll");
                 }
             });
         });

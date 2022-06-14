@@ -95,7 +95,7 @@
 		</div>
 	</div>
 
-	<div class="header">
+	<div  class="header">
 		<?php _e(isset($CI->topbar) ? $CI->topbar : "", false) ?>
 	</div>
 
