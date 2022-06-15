@@ -63,7 +63,8 @@ $account_manager = $CI->account_manager;
 													$id_enable = $row['id']."_enable";
 												?>
 
-												<?php if( isset( $full_permissions->$id_enable ) && $id_enable != "post_enable" ){?>
+												<?php if( isset( $full_permissions->$id_enable ) && $id_enable != "post_enable" && $row['name'] != "Socials" ){?>
+
 											  	<li class="list-group-item d-flex justify-content-between align-items-center">
 											    	<span><i class="<?php _e( $row['icon'] )?>"></i> <?php _e( $row['name'] )?></span>
 											    	<label class="i-checkbox i-checkbox--tick i-checkbox--brand p-l-0">
@@ -76,31 +77,7 @@ $account_manager = $CI->account_manager;
 												<?php endforeach ?>
 											</ul>
 										</div>
-										<div class="col-md-6">
-											<ul class="list-group">
-												<li class="list-group-item d-flex justify-content-between align-items-center">
-											    	<span class="fw-6"><?php _e("Account manager")?></span>
-											  	</li>
-											  	<?php
-												if(!empty($account_manager)){
-													foreach ($account_manager as $key => $name) {
-														$id_enable = "am_".$key;
-												?>
-
-												<?php if( isset( $full_permissions->$id_enable )){?>
-											  	<li class="list-group-item d-flex justify-content-between align-items-center">
-											    	<span><i class="far fa-user-circle"></i> <?php _e( $name )?></span>
-											    	<label class="i-checkbox i-checkbox--tick i-checkbox--brand p-l-0">
-														<input type="checkbox" name="permissions[am_<?php _e($key)?>]" <?php _e( isset( $result[$id_enable] ) ?"checked":"" )?> value="1"> 
-														<span></span>
-													</label>
-											  	</li>
-											  	<?php }?>
-
-
-											  	<?php }}?>
-											</ul>
-										</div>
+										
 									</div>
 									
 								</div>
