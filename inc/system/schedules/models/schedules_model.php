@@ -145,7 +145,7 @@ class schedules_model extends MY_Model {
 		$this->db->query(" SET time_zone = '{$timezone_number}' ");
 
 		$this->db->select("
-			from_unixtime(a.time_post,'%Y-%m-%d %H:%i:%s') as time_posts, 
+			from_unixtime(a.time_post,'%m/%d/%Y %H:%i') as time_posts, 
 			from_unixtime(a.repost_until,'%Y-%m-%d %H:%i:%s') as repost_untils, 
 			a.time_post, 
 			a.repost_until, 
