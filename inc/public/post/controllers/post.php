@@ -251,7 +251,7 @@ class post extends MY_Controller
 			$data = json_decode($row->data);
 			$medias = is_array($data->medias) ? $data->medias : [];
 			$info = json_decode($row->result);
-			echo (' <div class="item search-schedule" style="min-width: 100%; border: 1px solid #f4f4f4;
+			echo (' <p>Scheduled Posts</p><div class="item search-schedule" style="min-width: 100%; border: 1px solid #f4f4f4;
     border-radius: 4px;
     padding: 15px;
     position: relative;
