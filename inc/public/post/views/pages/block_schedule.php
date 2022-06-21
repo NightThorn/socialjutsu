@@ -46,6 +46,8 @@
 	</div>
 </div>
 <div class="scheduled" id="scheduled">
+	<p>Scheduled Posts</p>
+	
 </div>
 <div class="fm-action text-right">
 	<?php if (!$post) { ?>
