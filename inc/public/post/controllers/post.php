@@ -224,13 +224,10 @@ class post extends MY_Controller
 		$social_can_post = json_decode($validator["can_post"]);
 		if (($skip_validate && !empty($social_can_post)) || $validator["status"] == "success") {
 			$result = $this->model->post($data, $social_can_post);
-			if ($result['status'] == "success") {
-				ms($result);
-				redirect(get_url("dashboard"));
-			} else {
+			
 
 				ms($result);
-			}
+			
 		}
 		ms($validator);
 	}
