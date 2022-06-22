@@ -45,9 +45,7 @@
 		</div>
 	</div>
 </div>
-<div class="scheduled" id="scheduled">
-	<p>Scheduled Posts</p>
-	
+<div class="scheduled" id="scheduled">	
 </div>
 <div class="fm-action text-right">
 	<?php if (!$post) { ?>
@@ -113,32 +111,3 @@
 		});
 	</script>
 <?php } ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<script>
-	$(document).ready(function() {
-		$("#scheduletime").on('change', function postinput() {
-			var time = $(this).val();
-			$(".scheduled").empty();
-
-			$.ajax({
-				url: "<?php echo site_url('post/getscheduled'); ?>",
-				method: "POST",
-				data: {
-					time: time,
-				},
-				success: function(data) {
-					if (data != "") {
-
-						$(".scheduled").empty().append(data);
-
-					}
-
-				},
-				error: function() {
-					alert("Something went wrong. Please try again later.");
-				}
-			});
-		});
-	});
-</script>
