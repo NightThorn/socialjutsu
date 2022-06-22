@@ -199,7 +199,7 @@ public function idea($topic){
 	{
 		$time_check = explode("-", $time);
 
-		$category = "";
+		$category = "all";
 
 		$status = 1;
 
