@@ -42,7 +42,7 @@ if(!function_exists("send_mail")){
             "{days_left}" => get_days_left($uid),
             "{expiration_date}" => get_expiration_date($uid),
             "{activation_link}" => get_activation_link($uid),
-            "{website_name}" => get_option('website_title', 'Stackposts - Social Marketing Tool'),
+            "{website_name}" => get_option('website_title', 'SocialJutsu - Social Marketing Tool'),
             "{pricing_page}" => get_url("pricing"),
             "{website_link}" => get_url(),
             "{recovery_password_link}" => get_recovery_password_link($uid),
@@ -78,9 +78,9 @@ if(!function_exists("send_mail")){
 			}
 
 		    //Recipients
-		    $mail->setFrom(get_option('email_from', 'example@gmail.com'), get_option('email_name', 'Stackposts'));
+		    $mail->setFrom(get_option('email_from', 'example@gmail.com'), get_option('email_name', 'SocialJutsu'));
 		    $mail->addAddress( get_email($uid), get_full_name($uid));
-		    $mail->addReplyTo(get_option('email_from', 'example@gmail.com'), get_option('email_name', 'Stackposts'));
+		    $mail->addReplyTo(get_option('email_from', 'example@gmail.com'), get_option('email_name', 'SocialJutsu'));
 
 		    // Content
 		    $mail->isHTML(true); 
