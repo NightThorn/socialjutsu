@@ -123,7 +123,7 @@ class linkedin_post_model extends MY_Model {
 
 			case 'link':
 				$link_info = get_link_info($link);
-				$response = $this->linkedin->linkedInLinkPost($access_token, $account->pid, $caption, $link_info['image'], $link_info['title'], $link_info['description'], $link);
+				$response = $this->linkedin->linkedInLinkPost($access_token, $account->pid, $caption, get_file_path($medias[0]), $link_info['title'], $link_info['description'], $link);
 				break;
 
 			case 'text':
