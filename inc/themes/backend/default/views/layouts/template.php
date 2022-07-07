@@ -170,7 +170,7 @@
 		</div>
 	</div>
 
-	<div class="wrapper">
+	<div id="wrapper" class="wrapper">
 
 		<?php _e($template['body'], false) ?>
 
