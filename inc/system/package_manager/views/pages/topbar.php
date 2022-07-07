@@ -38,14 +38,14 @@ if ($team->owner == $uid) {
         <a href="<?php _e(get_url("pricing")) ?>" class="btn btn-info text-uppercase"><?php _e("Upgrade now") ?></a>
     <?php } ?>
 </div>
-<div class="modal" style="display: none;" id="feedback" role="dialog">
-    <div class="modal-text" role="document">
+<div class="fbmodal" style="display: none;" id="feedback" role="dialog">
+    <div class="fbmodal-text" role="document">
         <div class="modal-header">
             <h4 class="modal-title">Feedback</h4>
             <button type="button" onclick="hide()" class="close">&times;</button>
 
         </div>
-        <div class="modal-body">
+        <div class="fbmodal-body">
             <form method="post" id="form" enctype="multipart/form-data">
 
 
@@ -71,16 +71,16 @@ if ($team->owner == $uid) {
 
 </div>
 <style>
-    .modal .modal-body .inputgroup {
+.fbmodal-body .inputgroup {
         margin-top: 10px;
     }
 
-    .modal .modal-body .inputgroup label {
+    .fbmodal-body .inputgroup label {
         color: white;
         width: 100px;
     }
 
-    .modal .modal-body textarea {
+    .fbmodal-body textarea {
 
         padding: 20px;
         vertical-align: middle;
@@ -154,7 +154,7 @@ if ($team->owner == $uid) {
         border-radius: 50%;
     }
 
-    .modal {
+    .fbmodal {
         width: 40%;
         height: 40%;
         background: #223344;
@@ -165,7 +165,7 @@ if ($team->owner == $uid) {
         border-radius: 20px;
     }
 
-    .modal-text {
+    .fbmodal-text {
 
         height: 100%;
     }
