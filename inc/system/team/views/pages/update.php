@@ -68,7 +68,7 @@ $account_manager = $CI->account_manager;
 											  	<li class="list-group-item d-flex justify-content-between align-items-center">
 											    	<span><i class="<?php _e( $row['icon'] )?>"></i> <?php _e( $row['name'] )?></span>
 											    	<label class="i-checkbox i-checkbox--tick i-checkbox--brand p-l-0">
-														<input type="checkbox" name="permissions[<?php _e( $id_enable)?>]" <?php _e( isset( $result[$id_enable] ) ?"checked":"" )?> value="1">
+														<input type="checkbox" name="permissions[<?php _e( $id_enable)?>]" checked value="1">
 														<span></span>
 													</label>
 											  	</li>
