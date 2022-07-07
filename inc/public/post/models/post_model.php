@@ -194,7 +194,15 @@ public function idea($topic){
 		return $response;
 
 }
-
+	public function insertfeedback($issues, $suggestion)
+	{
+		$team_id = _t("id");
+		$insert = $this->db->query(
+			'INSERT INTO feedback (user, suggestion, issues) VALUES (?, ?, ?)',
+			array($team_id, $suggestion, $issues)
+		);
+		return $insert;
+	}
 	public function list($time)
 	{
 		$time_check = explode("-", $time);

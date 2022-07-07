@@ -12,7 +12,9 @@ if ($team->owner == $uid) {
     $expiration_date = $user->expiration_date;
 }
 ?>
-
+<div style="margin-right: 40px;" class="m-t-5 d-none d-sm-block">
+    <button onclick="feedbackModal();" class="btn btn-danger"><?php _e("Leave Feedback") ?></button>
+</div>
 <div class="m-r-10 m-t-2 d-none d-sm-block">
     <i style="font-size: x-large; padding: 10px;" class="far fa-lightbulb"></i>
 
@@ -36,7 +38,59 @@ if ($team->owner == $uid) {
         <a href="<?php _e(get_url("pricing")) ?>" class="btn btn-info text-uppercase"><?php _e("Upgrade now") ?></a>
     <?php } ?>
 </div>
+<div class="modal" style="display: none;" id="feedback" role="dialog">
+    <div class="modal-text" role="document">
+        <div class="modal-header">
+            <h4 class="modal-title">Feedback</h4>
+            <button type="button" onclick="hide()" class="close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form method="post" id="form" enctype="multipart/form-data">
+
+
+                <div class="inputgroup">
+                    <label>Suggestion?</label>
+                    <textarea type="text" id="suggestion" name="suggestion"></textarea>
+                </div>
+                <div class="inputgroup">
+                    <label>Issues?</label>
+                    <textarea type="text" id="issues" name="issues"></textarea>
+                </div>
+                <div class="inputgroup">
+                    <input type="submit" style="margin-top: 10px;" class="btn btn-danger" name="send" value="Send">
+                </div>
+
+            </form>
+            <div class="success" style="display: none; margin: 10px;" id="success">
+                <?php _e("You have submitted feedback. Thank you!") ?>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 <style>
+    .modal .modal-body .inputgroup {
+        margin-top: 10px;
+    }
+
+    .modal .modal-body .inputgroup label {
+        color: white;
+        width: 100px;
+    }
+
+    .modal .modal-body textarea {
+
+        padding: 20px;
+        vertical-align: middle;
+        width: 70%;
+        height: 100px;
+        padding: 2px;
+        border-radius: 5px;
+        margin: 7px;
+    }
+
     .switch {
         position: relative;
         display: inline-block;
@@ -99,8 +153,63 @@ if ($team->owner == $uid) {
     .slider.round:before {
         border-radius: 50%;
     }
+
+    .modal {
+        width: 40%;
+        height: 40%;
+        background: #223344;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+
+    .modal-text {
+
+        height: 100%;
+    }
 </style>
 <script>
+    $(document).on('submit', '#form', function(e) {
+        e.preventDefault();
+
+
+        var form_data = new FormData($('#form')[0]);
+
+
+        $.ajax({
+            url: 'post/feedback',
+            type: 'POST',
+            processData: false,
+            contentType: false,
+            cache: false,
+            enctype: 'multipart/form-data',
+            data: form_data,
+            error: function() {
+                alert('Something is wrong');
+            },
+            success: function(data) {
+                document.getElementById("success").style.display = "block";
+                document.getElementById('form').reset();
+
+            }
+        });
+
+
+    });
+
+
+    function feedbackModal() {
+        document.getElementById('feedback').style.display = "block";
+        document.getElementById('wrapper').style.filter = "blur(1px)";
+    }
+
+    function hide() {
+        document.getElementById('feedback').style.display = "none";
+        document.getElementById('wrapper').style.filter = "none";
+
+    }
     $(document).ready(function() {
         $('#onoffswitch').click(function() {
             var mode = $(this).prop('checked');

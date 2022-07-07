@@ -237,6 +237,16 @@ class post extends MY_Controller
 		return view($this->dir . "pages/block_post_type", ["post_types" => $post_types], true);
 	}
 
+	public function feedback()
+	{
+		$issues = $this->input->post("issues");
+		$suggestion = $this->input->post("suggestion");
+
+
+		$insert = $this->model->insertfeedback($issues, $suggestion);
+
+		return $insert;
+	}
 	public function getscheduled()
 	{
 
