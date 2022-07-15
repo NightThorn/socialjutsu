@@ -29,8 +29,8 @@
           <button class="btn wimax-btn w-100" type="submit"><?php _e("Log In")?></button><a class="forgot-password" href="<?php _e( get_url("forgot_password") )?>"><?php _e("Forgot Password?")?></a>
         </form>
       </div>
-      <?php if( get_option('facebook_login_status', 0) || get_option('google_login_status', 0) || get_option('twitter_login_status', 0) ){?>
-    
+     
+    </div>
   </div>
   <!-- Register Side Content-->
   <div class="register-side-content bg-img" style="background-image: url(<?php _e( get_theme_frontend_url('assets/img/bg-img/hero-7.jpg'))?>);"></div>
