@@ -5,7 +5,7 @@
     <div class="register-content">
       <!-- Logo--><a class="logo" href="<?php _e( get_url() )?>"><img src="<?php _e( get_option('website_black', get_url("inc/themes/backend/default/assets/img/logo-black.png")) )?>" alt=""></a>
       <h5><?php _e("Welcome back.")?></h5>
-      <p><?php _e("Don't have an account?")?><a href="<?php _e( get_url("signup") )?>"><?php _e("Sign up")?></a></p>
+      <!--<p><?php _e("Don't have an account?")?><a href="<?php _e( get_url("signup") )?>"><?php _e("Sign up")?></a></p> -->
       <!-- Form-->
       <div class="register-form">
         <form action="<?php _e( get_module_url("ajax_login", $this) )?>" class="actionLogin" method="post" data-redirect="<?php _e( post('redirect')?post('redirect'):get_url('dashboard') )?>">
@@ -30,7 +30,7 @@
         </form>
       </div>
       <?php if( get_option('facebook_login_status', 0) || get_option('google_login_status', 0) || get_option('twitter_login_status', 0) ){?>
-      <!-- Sign in via others-->
+      <!-- Sign in via others
       <div class="signin-via-others">
         <p><?php _e("Or Log in with")?></p>
 
@@ -51,7 +51,7 @@
           <?php }?>
       </div>
       <?php }?>
-    </div>
+    </div> -->
   </div>
   <!-- Register Side Content-->
   <div class="register-side-content bg-img" style="background-image: url(<?php _e( get_theme_frontend_url('assets/img/bg-img/hero-7.jpg'))?>);"></div>

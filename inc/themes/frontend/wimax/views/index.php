@@ -28,8 +28,8 @@
           <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Social Media Made Easy.</h3>
           <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Save time and energy by posting to all of your socials from one spot! Schedule your posts, view analytics, and let our AI Post Generator provide you with post ideas to engage and market to your audience!</h5>
 
-          <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Join the Beta!") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
-
+          <!--<a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Join the Beta!") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
+-->
           <!-- <div class="register-form">
             <form action="<?php _e(get_module_url("ajax_email", $this)) ?>" class="actionLogin" method="post" data-redirect="<?php _e(post('redirect') ? post('redirect') : get_url('dashboard')) ?>">
               <div class="form-group">
@@ -425,7 +425,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
         <div class="section_heading white text-center">
           <h3><?php _e("Start your free trial. Are you ready to try SocialJutsu? No contract. No credit card") ?></h3>
           <div class="line bg-white"></div>
-          <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>"><?php _e("Join the Beta!") ?></a>
+         <!-- <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>"><?php _e("Join the Beta!") ?></a> -->
         </div>
 
       </div>
