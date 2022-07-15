@@ -43,9 +43,9 @@
           </div> -->
         </div>
       </div>
-      <!--<div class="col-10 col-sm-8 col-md-5">
-        <div class="welcome_area_thumb text-center wow fadeInUp" data-wow-delay="0.2s"><img src="<?php _e(get_theme_frontend_url('assets/img/bg-img/drakememe.jpg')) ?>" alt=""></div>
-      </div> -->
+      <div class="col-10 col-sm-8 col-md-5">
+        <div class="welcome_area_thumb text-center wow fadeInUp" data-wow-delay="0.2s"><img src="<?php _e(get_theme_frontend_url('assets/img/bg-img/ads.jpg')) ?>" alt=""></div>
+      </div> 
     </div>
   </div>
   <div class="container">
