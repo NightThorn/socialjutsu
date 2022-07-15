@@ -30,28 +30,7 @@
         </form>
       </div>
       <?php if( get_option('facebook_login_status', 0) || get_option('google_login_status', 0) || get_option('twitter_login_status', 0) ){?>
-      <!-- Sign in via others
-      <div class="signin-via-others">
-        <p><?php _e("Or Log in with")?></p>
-
-          <?php if( get_option('google_login_status', 0) ){?>
-          <a class="btn wimax-btn btn-4 w-100 mt-15 btn-google" href="<?php _e( get_url("login/google") )?>">
-            <img src="<?php _e( get_theme_frontend_url('assets/img/core-img/google-logo.png'))?>"> <?php _e("Log in with Google")?>
-          </a>
-          <?php }?>
-          <?php if( get_option('facebook_login_status', 0) ){?>
-          <a class="btn wimax-btn btn-4 w-100 mt-15 btn-facebook" href="<?php _e( get_url("login/facebook") )?>">
-            <i class="fa fa-facebook"> </i> <?php _e("Log in with Facebook")?>
-          </a>
-          <?php }?>
-          <?php if( get_option('twitter_login_status', 0) ){?>
-          <a class="btn wimax-btn btn-4 w-100 mt-15 btn-twitter" href="<?php _e( get_url("login/twitter") )?>">
-            <i class="fa fa-twitter"> </i> <?php _e("Log in with Twitter")?>
-          </a>
-          <?php }?>
-      </div>
-      <?php }?>
-    </div> -->
+    
   </div>
   <!-- Register Side Content-->
   <div class="register-side-content bg-img" style="background-image: url(<?php _e( get_theme_frontend_url('assets/img/bg-img/hero-7.jpg'))?>);"></div>
