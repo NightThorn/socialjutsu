@@ -52,7 +52,7 @@
     <div class="welcome-border"></div>
   </div>
 </section>
-<section class="about_area section_padding_130">
+<!--<section class="about_area section_padding_130">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
@@ -69,13 +69,13 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     </video>
 
 
-</section>
+</section> -->
 <section class="about_area section_padding_130">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s">
-          <h6><?php _e("Benefits") ?></h6>
+          <h6><?php _e("Why SocialJutsu?") ?></h6>
           <h3><?php _e("Focus on your product while we market them.") ?></h3>
           <div class="line"></div>
         </div>
@@ -102,8 +102,8 @@ border-radius: 20px;" width="100%" autoplay loop muted>
             <div class="col-12">
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.4s">
                 <div class="feature_icon"><i class="lni-layers"></i></div>
-                <h6><?php _e("Social Media Management") ?></h6>
-                <p><?php _e("We can handle posting to all of your socials") ?></p>
+                <h6><?php _e("See current ads") ?></h6>
+                <p><?php _e("View the current ads being ran on your Dashboard") ?></p>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     </div>
   </div>
 </section>
-<section class="using_benefits_area section_padding_130" id="benefits">
+<!--<section class="using_benefits_area section_padding_130" id="benefits">
   <div class="benefit-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/video-bottom.png')) ?>" alt=""></div>
   <div class="benefit-bottom-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/benefit-bottom.png')) ?>" alt=""></div>
   <div class="container">
@@ -184,7 +184,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!--<section class="about_app_area section_padding_130">
   <div class="container">
     <div class="row justify-content-center align-items-center">
