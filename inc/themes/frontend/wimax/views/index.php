@@ -25,8 +25,8 @@
       <div class="col-12 col-md-6">
         <div class="welcome_text_area">
           <h2 class="wow fadeInUp" data-wow-delay="0.2s"><?php _e("SocialJutsu™") ?></h2>
-          <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Social Media Made Easy.</h3>
-          <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Save time and energy by posting to all of your socials from one spot! Schedule your posts, view analytics, and let our AI Post Generator provide you with post ideas to engage and market to your audience!</h5>
+          <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Social Media Marketing Made Easy.</h3>
+          <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">We handle your digital marketing, so you don't have too! We specialize in Facebook ads, promoting your business to over 3 Billion daily active users! We can target your exact audience, maximizing the returns on your ad budget.</h5>
 
           <!--<a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Join the Beta!") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
 -->
@@ -43,9 +43,9 @@
           </div> -->
         </div>
       </div>
-      <div class="col-10 col-sm-8 col-md-5">
+      <!--<div class="col-10 col-sm-8 col-md-5">
         <div class="welcome_area_thumb text-center wow fadeInUp" data-wow-delay="0.2s"><img src="<?php _e(get_theme_frontend_url('assets/img/bg-img/drakememe.jpg')) ?>" alt=""></div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="container">
@@ -57,15 +57,15 @@
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s">
-          <h3>Post to ALL of your socials in under <u>30 SECONDS!</u></h3>
-          <p><?php _e("Pro Tip: Setup social groups for easy scheduling for different brands and accounts!") ?></p>
+          <h3>Let us Post to ALL of your socials in under <u>30 SECONDS!</u></h3>
+          <p><?php _e("If you choose to let us manage your social media accounts*") ?></p>
 
         </div>
       </div>
     </div>
     <video style="box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 19%);
 border-radius: 20px;" width="100%" autoplay loop muted>
-      <source src="<?php _e(get_theme_frontend_url('assets/post.mp4')) ?>" alt="ai post generator">
+      <source src="<?php _e(get_theme_frontend_url('assets/post.mp4')) ?>" alt="social media marketing post">
     </video>
 
 
@@ -75,8 +75,8 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s">
-          <h6><?php _e("Using Benefits") ?></h6>
-          <h3><?php _e("A simple, smart & proven way to boost your work performance") ?></h3>
+          <h6><?php _e("Benefits") ?></h6>
+          <h3><?php _e("Focus on your products while we market them.") ?></h3>
           <div class="line"></div>
         </div>
       </div>
@@ -96,14 +96,14 @@ border-radius: 20px;" width="100%" autoplay loop muted>
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.3s">
                 <div class="feature_icon"><i class="lni lni-timer"></i></div>
                 <h6><?php _e("Saving Time") ?></h6>
-                <p><?php _e("Dedicating just 10-20 minutes a day on your social media strategy can dramatically improve your customer relations and interactions") ?></p>
+                <p><?php _e("Skip the Advertising and Marketing training, and let us handle it!") ?></p>
               </div>
             </div>
             <div class="col-12">
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.4s">
                 <div class="feature_icon"><i class="lni-layers"></i></div>
-                <h6><?php _e("Schedule posts") ?></h6>
-                <p><?php _e("Select your date, time or whenever you want to publish on each of your social accounts with just a few clicks") ?></p>
+                <h6><?php _e("Social Media Management") ?></h6>
+                <p><?php _e("We can handle posting to all of your socials") ?></p>
               </div>
             </div>
           </div>
@@ -118,15 +118,15 @@ border-radius: 20px;" width="100%" autoplay loop muted>
             <div class="col-12">
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.2s">
                 <div class="feature_icon"><i class="lni lni-pie-chart"></i></div>
-                <h6><?php _e("Analytics performance") ?></h6>
-                <p><?php _e("Our Twitter and Instagram Analytics feature helps you get a sense on what posts work and which posts don't") ?></p>
+                <h6><?php _e("Analytics/Reports") ?></h6>
+                <p><?php _e("Get realtime Ads reports and Social Media analytics from your partner dashboard!") ?></p>
               </div>
             </div>
             <div class="col-12">
               <div class="single_about_part wow fadeInUp" data-wow-delay="0.3s">
                 <div class="feature_icon"><i class="lni lni-network"></i></div>
-                <h6><?php _e("Maximize Connections") ?></h6>
-                <p><?php _e("Respond to Direct Messages for Twitter and Instagram and stay connected to your audience") ?></p>
+                <h6><?php _e("Get Customers") ?></h6>
+                <p><?php _e("We advertise your product to a specific audience, allowing you to get HOT leads!") ?></p>
               </div>
             </div>
             <div class="col-12">
@@ -149,7 +149,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading white text-center wow fadeInUp" data-wow-delay="0.2s">
-          <h3><?php _e("We're more than a scheduling tool. Explore our features, and beat the algorithm") ?></h3>
+          <h3><?php _e("We're more than a Facebook Marketing company. Explore our features, and grow your reach!") ?></h3>
           <div class="line"></div>
         </div>
       </div>
@@ -159,8 +159,8 @@ border-radius: 20px;" width="100%" autoplay loop muted>
         <div class="single_benifits d-flex wow fadeInUp" data-wow-delay="200ms">
           <div class="icon_box"><i class="lni-heart"></i></div>
           <div class="benifits_text">
-            <h5><?php _e("Visually plan and schedule your social media campaigns") ?></h5>
-            <p><?php _e("Coordinate creative campaigns to drive engagement on social") ?>
+            <h5><?php _e("We can visually plan and schedule your social media campaigns") ?></h5>
+            <p><?php _e("Coordinate creative campaigns to drive engagement to your socials") ?>
           </div>
         </div>
       </div>
@@ -168,8 +168,8 @@ border-radius: 20px;" width="100%" autoplay loop muted>
         <div class="single_benifits d-flex wow fadeInUp" data-wow-delay="200ms">
           <div class="icon_box"><i class="lni-color-pallet"></i></div>
           <div class="benifits_text">
-            <h5><?php _e("Measure and report on the performance of your content") ?></h5>
-            <p><?php _e("Get in-depth insights to grow your reach, engagement, and sales") ?>
+            <h5><?php _e("We measure and report on the performance of your outreach") ?></h5>
+            <p><?php _e("Get in-depth insights into your ad spend, social media growth, and lead generation.") ?>
           </div>
         </div>
       </div>
@@ -177,15 +177,15 @@ border-radius: 20px;" width="100%" autoplay loop muted>
         <div class="single_benifits d-flex wow fadeInUp" data-wow-delay="200ms">
           <div class="icon_box"><i class="lni-grid-alt"></i></div>
           <div class="benifits_text">
-            <h5><?php _e("Monitor engagement across all your social channels") ?></h5>
-            <p><?php _e("Engage with your audience & build a community that loves your brand.") ?>
+            <h5><?php _e("Let us build and manage your website") ?></h5>
+            <p><?php _e("Along with Advertising and social media management, we also offer Web Development services.") ?>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="about_app_area section_padding_130">
+<!--<section class="about_app_area section_padding_130">
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-md-6 col-lg-5">
@@ -205,13 +205,13 @@ border-radius: 20px;" width="100%" autoplay loop muted>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <div class="container">
   <div class="border-top"></div>
 </div>
 
 
-<div class="features_section padding-b2" id="features">
+<!--<div class="features_section padding-b2" id="features">
   <div class="content_section">
     <div style="display: flex;
     flex-direction: column;" class="col centered grey-bg margin-t8">
@@ -280,7 +280,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     </div>
   </div>
 </div>
-
+-->
 
 
 <section class="work_process_area section_padding_130_80">
@@ -288,8 +288,8 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     <div class="row justify-content-center">
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading text-center">
-          <h3><?php _e("Extra Performance") ?></span></h3>
-          <p><?php _e("Some extra core features available") ?></p>
+          <h3><?php _e("Why Facebook Ads?") ?></span></h3>
+          <p><?php _e("How can Facebook Ads help you grow?") ?></p>
           <div class="line"></div>
         </div>
       </div>
@@ -298,22 +298,22 @@ border-radius: 20px;" width="100%" autoplay loop muted>
       <div class="col-12 col-sm-4 col-md-3">
         <div class="single_work_step">
           <div class="step-icon"><i class="lni lni-image"></i></div>
-          <h5><?php _e("Built-in Editor") ?></h5>
-          <p><?php _e("Easily edit your images with a super simple interface") ?></p>
+          <h5><?php _e("In-Feed Ads") ?></h5>
+          <p><?php _e("An app is placed in front of your target audience") ?></p>
         </div>
       </div>
       <div class="col-12 col-sm-4 col-md-3">
         <div class="single_work_step">
-          <div class="step-icon"><i class="lni lni-folder"></i></div>
-          <h5><?php _e("File manager") ?></h5>
-          <p><?php _e("Fully integrated with the best image uploading and editing currently available") ?></p>
+          <div class="step-icon"><i class="lni lni-inbox"></i></div>
+          <h5><?php _e("Click") ?></h5>
+          <p><?php _e("The user clicks the ad's CTA (call-to-action). This gets the user into your sales funnel.") ?></p>
         </div>
       </div>
       <div class="col-12 col-sm-4 col-md-3">
         <div class="single_work_step">
           <div class="step-icon"><i class="lni lni-code-alt"></i></div>
-          <h5><?php _e("AI Powered Ideas") ?></h5>
-          <p><?php _e("Let our AI Post Idea Generator give you content") ?></p>
+          <h5><?php _e("Collect Leads") ?></h5>
+          <p><?php _e("The user is sent to a form, where we collect their information for you. This information is then sent to you for your sales team to handle.") ?></p>
         </div>
       </div>
     </div>
@@ -322,7 +322,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
 <div class="container">
   <div class="border-top"></div>
 </div>
-<section class="testimonial_area section_padding_130" id="rating">
+<!--<section class="testimonial_area section_padding_130" id="rating">
   <div class="testimonial-top-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-top.png')) ?>" alt=""></div>
   <div class="testimonial-bottom-thumbnail"><img src="<?php _e(get_theme_frontend_url('assets/img/core-img/testimonial-bottom.png')) ?>" alt=""></div>
   <div class="container">
@@ -383,7 +383,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
   </div>
 
 
-</section>
+</section> -->
 <?php if (!empty($faqs)) { ?>
   <div class="faq_area section_padding_130" id="faq">
     <div class="container">
@@ -418,19 +418,19 @@ border-radius: 20px;" width="100%" autoplay loop muted>
     </div>
   </div>
 <?php } ?>
-<div class="download_app_area section_padding_130_80" id="download">
+<!--<div class="download_app_area section_padding_130_80" id="download">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="section_heading white text-center">
           <h3><?php _e("Start your free trial. Are you ready to try SocialJutsu? No contract. No credit card") ?></h3>
           <div class="line bg-white"></div>
-         <!-- <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>"><?php _e("Join the Beta!") ?></a> -->
+         <a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>"><?php _e("Join the Beta!") ?></a> 
         </div>
 
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <?php include "footer.php" ?>
 <?php include "bottom.php" ?>
