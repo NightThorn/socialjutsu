@@ -26,7 +26,7 @@
         <div class="welcome_text_area">
           <h2 class="wow fadeInUp" data-wow-delay="0.2s"><?php _e("SocialJutsu™") ?></h2>
           <h3 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">Social Media Marketing Made Easy.</h3>
-          <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">We handle your digital marketing, so you don't have too! We specialize in Facebook ads, promoting your business to over 3 Billion daily active users! We can target your exact audience, maximizing the returns on your ad budget.</h5>
+          <h5 class="wow fadeInUp" style="color: grey;" data-wow-delay="0.2s">We handle your digital marketing, so you don't have too! We specialize in Facebook ads, promoting your business to over <b>3 Billion</b> daily active Facebook users! We can target your exact audience, maximizing the returns on your ad budget.</h5>
 
           <!--<a class="btn wimax-btn mt-30 wow fadeInUp" href="<?php _e(get_url("signup")) ?>" data-wow-delay="0.4s"><?php _e("Join the Beta!") ?></a><a class="btn wimax-btn btn-2 mt-30 ml-2 wow fadeInUp" href="#features" data-wow-delay="0.5s"><?php _e("Learn More") ?></a>
 -->
@@ -76,7 +76,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
       <div class="col-12 col-sm-8 col-lg-6">
         <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s">
           <h6><?php _e("Benefits") ?></h6>
-          <h3><?php _e("Focus on your products while we market them.") ?></h3>
+          <h3><?php _e("Focus on your product while we market them.") ?></h3>
           <div class="line"></div>
         </div>
       </div>
@@ -175,7 +175,7 @@ border-radius: 20px;" width="100%" autoplay loop muted>
       </div>
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="single_benifits d-flex wow fadeInUp" data-wow-delay="200ms">
-          <div class="icon_box"><i class="lni-grid-alt"></i></div>
+          <div class="icon_box"><i class="lni lni-code-alt"></i></div>
           <div class="benifits_text">
             <h5><?php _e("Let us build and manage your website") ?></h5>
             <p><?php _e("Along with Advertising and social media management, we also offer Web Development services.") ?>
