@@ -14,7 +14,7 @@
   </div>
 </div>
 <!-- Blog Area-->
-<div class="fbmodal" style="display: none;" id="feedback" role="dialog">
+<div class="fbmodal" id="feedback" role="dialog">
     <div class="fbmodal-text" role="document">
         <div class="modal-header">
             <h4 class="modal-title">Contact Us!</h4>
