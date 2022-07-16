@@ -80,7 +80,11 @@ class wimax extends MY_Controller {
 		$data = array();
 		view('terms_and_policies', $data);
 	}
-
+	public function contact()
+	{	
+		$data = array();
+		view('contact', $data);
+	}
 	public function login()
 	{	
 		$data = array();
