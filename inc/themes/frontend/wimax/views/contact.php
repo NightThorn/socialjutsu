@@ -152,7 +152,7 @@
 
 
         $.ajax({
-            url: '<?php echo base_url(__CLASS__); ?>' + 'feedback',
+            url: '<?php _e( get_module_url('feedback', $this) )?>',
             type: 'POST',
             processData: false,
             contentType: false,
