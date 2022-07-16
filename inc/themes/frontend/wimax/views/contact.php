@@ -6,8 +6,7 @@
     <div class="row justify-content-center">
       <div class="col-12 col-sm-9 col-xl-6">
         <div class="breadcrumb-content text-center">
-          <h2><?php _e("Terms of Services")?></h2>
-          <p><?php _e("Below are our terms of services")?></p>
+          <h2><?php _e("Contact Us!")?></h2>
         </div>
       </div>
     </div>
@@ -16,11 +15,6 @@
 <!-- Blog Area-->
 <div class="fbmodal" id="feedback" role="dialog">
     <div class="fbmodal-text" role="document">
-        <div class="modal-header">
-            <h4 class="modal-title">Contact Us!</h4>
-            <button type="button" onclick="hide()" class="close">&times;</button>
-
-        </div>
         <div class="fbmodal-body">
             <form method="post" id="form" enctype="multipart/form-data">
 
