@@ -152,7 +152,7 @@
 
 
         $.ajax({
-            url: '<?php echo base_url(__CLASS__); ?>' + '/contact',
+            url: '<?php echo base_url(__CLASS__); ?>' + '/feedback',
             type: 'POST',
             processData: false,
             contentType: false,
