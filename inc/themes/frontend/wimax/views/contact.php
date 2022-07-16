@@ -55,11 +55,10 @@
 
 <style>
 .fbmodal-body .inputgroup {
-        margin-top: 10px;
+        margin: 30px;
     }
 
     .fbmodal-body .inputgroup label {
-        color: white;
         width: 100px;
     }
 
@@ -137,16 +136,7 @@
         border-radius: 50%;
     }
 
-    .fbmodal {
-        width: 40%;
-        height: 40%;
-        background: #223344;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 20px;
-    }
+   
 
     .fbmodal-text {
 
