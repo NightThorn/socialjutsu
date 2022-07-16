@@ -27,11 +27,11 @@
 
                 <div class="inputgroup">
                     <label>Email</label>
-                    <textarea type="email" id="email" name="email"></textarea>
+                    <input type="email" id="email" name="email" />
                 </div>
                 <div class="inputgroup">
                     <label>Business Name</label>
-                    <textarea type="text" id="business" name="business"></textarea>
+                    <input type="text" id="business" name="business" />
                 </div>
                 <div class="inputgroup">
                     <label>What can we help you with?</label>
