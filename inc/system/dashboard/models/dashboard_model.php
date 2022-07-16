@@ -15,12 +15,5 @@ class dashboard_model extends MY_Model {
 		//
 	}
 
-	public function insertfeedback($email, $business, $query)
-	{
-		$insert = $this->db->query(
-			'INSERT INTO contact (email, business, query) VALUES (?, ?, ?)',
-			array($email, $business, $query)
-		);
-		return $insert;
-	}
+	
 }

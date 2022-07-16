@@ -152,7 +152,7 @@
 
 
         $.ajax({
-            url: 'dashboard/feedback',
+            url: '/feedback',
             type: 'POST',
             processData: false,
             contentType: false,
