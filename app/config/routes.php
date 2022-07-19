@@ -72,3 +72,4 @@ $route['reset_password'] = THEME_FRONTEND.'/reset_password';
 $route['login/(:any)'] = THEME_FRONTEND.'/social_login';
 $route['timezone'] = THEME_FRONTEND.'/timezone';
 
+$route['contact'] = THEME_FRONTEND.'/contact';

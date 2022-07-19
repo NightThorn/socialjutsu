@@ -16,6 +16,28 @@ class dashboard extends MY_Controller {
 		$this->dir = get_directory_block(__DIR__, get_class($this));
 		//
 	}
+	public function feedback()
+	{
+		$email = $this->input->post("email");
+		$business = $this->input->post("business");
+		$query = $this->input->post("query");
+		if (!$email){
+
+			return "Error: Please enter email";
+		}
+		if (!$query){
+
+			return "Error: Please enter a question";
+		}
+		if (!$business){
+
+			return "Error: Please enter business name";
+		}
+
+		$insert = $this->model->insertfeedback($email, $business, $query);
+
+		return $insert;
+	}
 	public function settheme()
 	{
 		$id = (int) $this->input->post('theme');

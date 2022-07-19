@@ -26,7 +26,7 @@
               <li><a href="<?php _e( get_url() )?>#home"><?php _e("Home")?></a></li>
               <li><a href="<?php _e( get_url() )?>#features"><?php _e("Features")?></a></li>
              <li><a href="<?php _e( get_url("login") )?>"><?php _e("Login")?></a></li>
-              <li><a href="<?php _e( get_url("signup") )?>"><?php _e("Signup")?></a></li> 
+             <!-- <li><a href="<?php _e( get_url("signup") )?>"><?php _e("Signup")?></a></li> -->
             </ul>
           </div>
         </div>

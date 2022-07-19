@@ -17,7 +17,7 @@
             <div class="classynav">
               <ul id="corenav">
                 <li><a href="<?php _e( get_url() )?>#home"><?php _e("Home")?></a></li>
-                <li><a href="<?php _e( get_url() )?>#features"><?php _e("Features")?></a></li>
+                <!--<li><a href="<?php //_e( get_url() )?>#features"><?php //_e("Features")?></a></li> -->
                 <?php if(find_modules("payment")){ ?>
                 <li class="<?php _e( (segment(1) == "pricing")?"current_page_item":"" )?>">
                     <a href="<?php _e( get_url("pricing") )?>"><?php _e("Pricing")?></a>
@@ -51,7 +51,7 @@
               <!-- Login Button-->
               <?php if(!_s("uid")){?>
                 <?php if( get_option("signup_status", 1) ){?>
-                <div class="login-btn-area ml-5 mt-5 mt-lg-0"><a class="btn wimax-btn" href="<?php _e( get_url("signup") )?>"><?php _e("Get Started")?></a></div> 
+                <!--<div class="login-btn-area ml-5 mt-5 mt-lg-0"><a class="btn wimax-btn" href="<?php //_e( get_url("signup") )?>"><?php // _e("Get Started")?></a></div> -->
                 <?php }?>
               <?php }else{?>
                 <div class="login-btn-area ml-5 mt-5 mt-lg-0"><a class="btn wimax-btn" href="<?php _e( get_url("dashboard") )?>"><?php _e( sprintf( __("Hi, %s"), _u("fullname") ) )?></a></div>

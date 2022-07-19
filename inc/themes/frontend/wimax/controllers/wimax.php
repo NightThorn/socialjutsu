@@ -81,7 +81,28 @@ class wimax extends MY_Controller
 		$data = array();
 		view('pricing', $data);
 	}
+	public function feedback()
+	{
+		$email = $this->input->post("email");
+		$business = $this->input->post("business");
+		$query = $this->input->post("query");
+		if (!$email){
 
+			return "Error: Please enter email";
+		}
+		if (!$query){
+
+			return "Error: Please enter a question";
+		}
+		if (!$business){
+
+			return "Error: Please enter business name";
+		}
+
+		$insert = $this->model->insertfeedback($email, $business, $query);
+
+		return $insert;
+	}
 	public function privacy_policy()
 	{
 		$data = array();
@@ -93,7 +114,11 @@ class wimax extends MY_Controller
 		$data = array();
 		view('terms_and_policies', $data);
 	}
-
+	public function contact()
+	{	
+		$data = array();
+		view('contact', $data);
+	}
 	public function login()
 	{
 		$data = array();

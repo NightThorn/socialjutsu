@@ -12,6 +12,7 @@ if ($team->owner == $uid) {
     $expiration_date = $user->expiration_date;
 }
 ?>
+<div style="background: red; color: black; margin-right: 40px;">SOCIALJUTSU WILL BE DELETING ALL USER ACCOUNTS. PLEASE DO NOT SCHEDULE ANYMORE POSTS.</div>
 <div style="margin-right: 40px;" class="m-t-5 d-none d-sm-block">
     <button onclick="feedbackModal();" class="btn btn-danger"><?php _e("Leave Feedback") ?></button>
 </div>
