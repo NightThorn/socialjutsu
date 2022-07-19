@@ -633,7 +633,6 @@ p {
 
 /* Header CSS */
 .header_area {
-  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -902,23 +901,6 @@ p {
   height: 850px;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .welcome_area {
-    height: 750px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .welcome_area {
-    height: 650px;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .welcome_area {
-    height: 850px;
-  }
-}
 
 .welcome_area .welcome-border {
   width: 100%;
