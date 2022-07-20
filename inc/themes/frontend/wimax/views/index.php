@@ -71,7 +71,7 @@
   .card-body {
 
     overflow-wrap: break-word;
-
+    font-size: smaller;
   }
 
   /* Responsive columns */
