@@ -16,7 +16,7 @@ class wimax extends MY_Controller
 	public function index()
 	{
 		$limit  = 12;
-		$start = -1;
+		$start = 0;
 		$faqs = $this->model->fetch("*", $this->tb_faqs, "status = 1");
 		$items = $this->model->fetch("*", $this->tb_items, "category = 'home'");
 		$latest = $this->model->fetch("*", "sp_items", "id > 0", "id", "DESC", $start, $limit);
