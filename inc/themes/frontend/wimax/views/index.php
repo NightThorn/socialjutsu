@@ -48,14 +48,16 @@
   }
 
   .col {
-    float: left;
     width: 25%;
     padding: 0 10px;
+    margin-bottom: 50px;
   }
 
   /* Remove extra left and right margins, due to padding */
   .rowcards {
     margin: 0 -5px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   /* Clear floats after the columns */
