@@ -78,6 +78,7 @@
   @media screen and (max-width: 900px) {
     .colcard {
       width: 100%;
+      min-width: 340px;
       display: block;
       margin-bottom: 20px;
     }
