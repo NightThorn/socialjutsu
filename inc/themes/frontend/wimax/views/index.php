@@ -47,8 +47,9 @@
     padding: 20px;
   }
 
-  .col {
+  .colcard {
     width: 25%;
+    max-width: 25%;
     padding: 0 10px;
     margin-bottom: 50px;
   }
@@ -75,7 +76,7 @@
 
   /* Responsive columns */
   @media screen and (max-width: 900px) {
-    .col {
+    .colcard {
       width: 100%;
       display: block;
       margin-bottom: 20px;
@@ -94,7 +95,7 @@
     <div class="rowcards">
 
       <?php foreach ($latest as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -128,7 +129,7 @@
     <div class="rowcards">
 
       <?php foreach ($items as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -161,7 +162,7 @@
     <div class="rowcards">
 
       <?php foreach ($beauty as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -193,7 +194,7 @@
     <div class="rowcards">
 
       <?php foreach ($tech as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -224,7 +225,7 @@
     <div class="rowcards">
 
       <?php foreach ($tools as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -257,7 +258,7 @@
     <div class="rowcards">
 
       <?php foreach ($pets as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -288,7 +289,7 @@
     <div class="rowcards">
 
       <?php foreach ($kids as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -319,7 +320,7 @@
     <div class="rowcards">
 
       <?php foreach ($outdoors as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
@@ -351,7 +352,7 @@
     <div class="rowcards">
 
       <?php foreach ($kitchen as $key => $item) : ?>
-        <div class="col">
+        <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
               <div class="card-header">
