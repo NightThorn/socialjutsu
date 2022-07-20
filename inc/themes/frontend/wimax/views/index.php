@@ -91,7 +91,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Latest Finds</h3>
+      <img src="inc/themes/backend/default/assets/img/latest.png" width="100%" alt="latest amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -125,7 +125,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Home</h3>
+      <img src="inc/themes/backend/default/assets/img/home.png" width="100%" alt="home amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -158,7 +158,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Beauty</h3>
+      <img src="inc/themes/backend/default/assets/img/beauty.png" width="100%" alt="beauty amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -190,7 +190,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Tech</h3>
+      <img src="inc/themes/backend/default/assets/img/tech.png" width="100%" alt="tech amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -221,7 +221,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Tools and Gadgets</h3>
+      <img src="inc/themes/backend/default/assets/img/tools.png" width="100%" alt="tools amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -254,7 +254,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Pets</h3>
+      <img src="inc/themes/backend/default/assets/img/pets.png" width="100%" alt="pets amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -285,7 +285,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Kids/Baby</h3>
+      <img src="inc/themes/backend/default/assets/img/kids.png" width="100%" alt="kids amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -316,7 +316,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Sports/Outdoors</h3>
+      <img src="inc/themes/backend/default/assets/img/outdoors.png" width="100%" alt="outdoors amazon must buy">
     </div>
     <div class="rowcards">
 
@@ -348,7 +348,7 @@
   <div class="container h-50">
     <div class="heading">
 
-      <h3>Kitchen</h3>
+      <img src="inc/themes/backend/default/assets/img/kitchen.png" width="100%" alt="kitchen amazon must buy">
     </div>
     <div class="rowcards">
 
