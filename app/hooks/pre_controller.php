@@ -335,9 +335,7 @@ class pre_controller{
                 }
             }
 
-            if(!$value6  && stripos( current_url() , "/module") === false){
-                redirect( PATH."module/index/product/main_scripts?error=".urlencode("Invalid license or already installed on another domain.. Please contact the author for assistance") );
-            }
+           
         }
     }
 
