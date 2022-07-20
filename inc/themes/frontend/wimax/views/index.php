@@ -23,6 +23,7 @@
 
   .card-header {
     border-radius: 20px !important;
+    background-color: #37c30d40;
   }
 
   .carditem {
