@@ -106,11 +106,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -140,11 +141,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -173,11 +175,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -205,11 +208,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -236,11 +240,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -269,11 +274,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -300,11 +306,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -331,11 +338,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
@@ -363,11 +371,12 @@
         <div class="colcard">
           <a href="<?php _e($item->link) ?>" target="_blank">
             <div class="carditem">
-              <div class="card-header">
-                <h6><?php _e($item->title) ?></h6>
-              </div>
+
               <div class="media">
                 <img src="<?php _e($item->thumb) ?>" width="100%" />
+              </div>
+              <div class="card-header">
+                <h6><?php _e($item->title) ?></h6>
               </div>
               <div class="card-body">
                 <?php _e(htmlspecialchars_decode($item->text, ENT_QUOTES), false) ?>
