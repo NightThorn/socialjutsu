@@ -82,6 +82,13 @@
       display: block;
       margin-bottom: 20px;
     }
+
+    .media img {
+
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 
   /* Style the counter cards */
